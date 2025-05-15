@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.housemaid.activities.AgencyActivity">
+    <RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/toolbar_header" />
+
+        <android.support.v4.widget.SwipeRefreshLayout
+            android:id="@+id/swipe_refresh_layout"
+            android:layout_below="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rvAgencyListing"
+            android:layout_marginTop="2dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        </android.support.v7.widget.RecyclerView>
+
+        </android.support.v4.widget.SwipeRefreshLayout>
+
+    </RelativeLayout>
+        <ProgressBar
+            android:id="@+id/progress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:layout_gravity="center"/>
+
+        <com.housemaid.utils.MyTextView
+            android:id="@+id/tvNoData"
+            android:drawableTop="@drawable/no_data"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/_17sdp"
+            android:text="@string/no_list_found_in_your_area"
+            android:textColor="@color/colorPrimary"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:visibility="gone"/>
+    </FrameLayout>
+</layout>

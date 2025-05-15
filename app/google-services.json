@@ -1,0 +1,113 @@
+{
+  "project_info": {
+    "project_number": "392305885131",
+    "firebase_url": "https://housemaid-1525934969377.firebaseio.com",
+    "project_id": "housemaid-1525934969377",
+    "storage_bucket": "housemaid-1525934969377.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:392305885131:android:2ec648d917827e79",
+        "android_client_info": {
+          "package_name": "com.example.fluper.housemaid"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "392305885131-sbo7ni994agp0s9v4kdgikgt4lkg39tr.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.fluper.housemaid",
+            "certificate_hash": "d9be9e5d130e72bb2d321d5bccdd31c9cf7cbd2a"
+          }
+        },
+        {
+          "client_id": "392305885131-a39t5kfjdapcj2jhfbjmoqss9e03v656.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDeQHHeyH56A9FVlDHHc_BsNXekTFs8EJ8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "392305885131-a39t5kfjdapcj2jhfbjmoqss9e03v656.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "392305885131-b9na0miaqgihuhs1ukbbqccd9jv4h099.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.fluper.housemaid"
+              }
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:392305885131:android:529771008e055a8e",
+        "android_client_info": {
+          "package_name": "com.housemaid"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "392305885131-c2714qees5tok2hb7c56tv2fimq9fr4l.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.housemaid",
+            "certificate_hash": "d9be9e5d130e72bb2d321d5bccdd31c9cf7cbd2a"
+          }
+        },
+        {
+          "client_id": "392305885131-a39t5kfjdapcj2jhfbjmoqss9e03v656.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDeQHHeyH56A9FVlDHHc_BsNXekTFs8EJ8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "392305885131-a39t5kfjdapcj2jhfbjmoqss9e03v656.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "392305885131-b9na0miaqgihuhs1ukbbqccd9jv4h099.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.fluper.housemaid"
+              }
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

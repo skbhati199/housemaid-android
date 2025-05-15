@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.housemaid.activities.ChangeMobileNumberActivity">
+
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/toolbar_header" />
+
+        <android.support.v7.widget.AppCompatImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="100dp"
+            android:src="@drawable/change_password"
+            android:layout_centerHorizontal="true"/>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginTop="300dp">
+
+            <com.housemaid.utils.MyTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="@string/please_enter_mobile_number"
+                android:textColor="@color/colorDarkGrey"
+                android:textSize="15sp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/edittext_black"
+                android:orientation="horizontal">
+
+                <com.hbb20.CountryCodePicker
+                    android:id="@+id/countryCodePicker"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="1dp"
+                    android:padding="5dp"
+                    app:ccpDialog_keyboardAutoPopup="false"
+                    app:ccpDialog_searchEditTextTint="@color/colorPrimary"
+                    app:ccp_contentColor="@color/colorDarkGrey"
+                    app:ccp_showArrow="false"
+                    app:ccp_showFlag="false"
+                    app:ccp_showNameCode="false"
+                    app:ccp_defaultNameCode="TR"
+                    app:ccp_textSize="15sp">
+
+                </com.hbb20.CountryCodePicker>
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="5dp"
+                    android:background="@color/colorDarkGrey" />
+
+                <com.housemaid.utils.MyEditText
+                    android:id="@+id/etMobileNumber"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginStart="10dp"
+                    android:maxLength="12"
+                    android:background="@null"
+                    android:inputType="number"
+                    android:textColor="@color/colorDarkGrey"
+                    android:textColorHint="@color/colorDarkGrey"
+                    android:textSize="15sp" />
+
+            </LinearLayout>
+
+            <com.housemaid.utils.MyButton
+                android:id="@+id/btnNext"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/btn_blue"
+                android:textColor="@color/colorPrimaryDark"
+                android:text="@string/next"
+                android:textAllCaps="false"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:textSize="17sp"/>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+        <ProgressBar
+            android:id="@+id/progress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/AppTheme"
+            android:layout_gravity="center"
+            android:visibility="gone"/>
+    </FrameLayout>
+</layout>

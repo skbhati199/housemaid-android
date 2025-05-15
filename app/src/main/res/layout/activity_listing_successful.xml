@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context="com.housemaid.activities.agency.ListingSuccessfulActivity">
+
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/toolbar_header" />
+
+        <com.housemaid.utils.MyBoldTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center_horizontal"
+            android:text="@string/successful"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/_15sdp" />
+
+        <android.support.v7.widget.AppCompatImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/successfully" />
+
+        <com.housemaid.utils.MyTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:gravity="center_horizontal"
+            android:text="@string/your_listing_will_be_reviewed_by_our_editors"
+            android:textColor="@color/colorDarkGrey"
+            android:textSize="17sp" />
+
+        <com.housemaid.utils.MyTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="@string/and_your_listing_will_not_be_activated"
+            android:textColor="@color/colorDarkGrey"
+            android:textSize="17sp" />
+
+        <com.housemaid.utils.MyTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="@string/if_it_violates_our_rules"
+            android:textColor="@color/colorDarkGrey"
+            android:textSize="17sp" />
+
+        <com.housemaid.utils.MyTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:gravity="center_horizontal"
+            android:text="@string/after_the_listing_is_activated"
+            android:textColor="@color/colorDarkGrey"
+            android:textSize="17sp" />
+
+        <com.housemaid.utils.MyTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="@string/credits_will_be_deducted_from_your_account"
+            android:textColor="@color/colorDarkGrey"
+            android:textSize="17sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="10dp"
+            android:gravity="bottom"
+            android:orientation="vertical">
+
+
+            <com.housemaid.utils.MyButton
+                android:id="@+id/btnBuyCredit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                android:background="@drawable/btn_blue"
+                android:text="@string/buy_credit"
+                android:textAllCaps="false"
+                android:textColor="@color/colorWhite" />
+
+            <com.housemaid.utils.MyButton
+                android:id="@+id/btnReturnToMain"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="20dp"
+                android:background="@drawable/btn_blue"
+                android:text="@string/return_to_main_screen"
+                android:textAllCaps="false"
+                android:textColor="@color/colorWhite" />
+
+            <com.housemaid.utils.MyButton
+                android:id="@+id/btnNewListing"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="20dp"
+                android:background="@drawable/btn_blue"
+                android:text="@string/add_new_listing"
+                android:textAllCaps="false"
+                android:textColor="@color/colorWhite"
+                android:visibility="gone" />
+
+            <com.housemaid.utils.MyButton
+                android:id="@+id/btnAddMaid"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="20dp"
+                android:background="@drawable/btn_blue"
+                android:text="@string/add_maid"
+                android:textAllCaps="false"
+                android:textColor="@color/colorWhite" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</layout>

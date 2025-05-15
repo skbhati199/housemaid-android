@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="100dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
+        android:layout_centerInParent="true"
+        tools:ignore="UselessParent">
+
+        <LinearLayout
+            android:id="@+id/btnGallery"
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+        <android.support.v7.widget.AppCompatImageView
+        android:layout_width="wrap_content"
+            android:layout_gravity="center_horizontal"
+        android:layout_height="wrap_content"
+        android:src="@drawable/gallery"/>
+
+            <com.housemaid.utils.MyTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/gallery"
+                android:textSize="15sp"
+                android:layout_gravity="center_horizontal"
+                android:textColor="@color/colorDarkGrey"/>
+        </LinearLayout>
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"/>
+        <LinearLayout
+            android:id="@+id/btnCamera"
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <android.support.v7.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_height="wrap_content"
+                android:src="@drawable/camera"/>
+
+            <com.housemaid.utils.MyTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/camera"
+                android:textSize="15sp"
+                android:layout_gravity="center_horizontal"
+                android:textColor="@color/colorDarkGrey"/>
+        </LinearLayout>
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"/>
+        <LinearLayout
+            android:id="@+id/btnAvatar"
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <android.support.v7.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_height="wrap_content"
+                android:src="@drawable/avatar"/>
+
+            <com.housemaid.utils.MyTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/avatar"
+                android:textSize="15sp"
+                android:layout_gravity="center_horizontal"
+                android:textColor="@color/colorDarkGrey"/>
+        </LinearLayout>
+
+    </LinearLayout>
+</RelativeLayout>

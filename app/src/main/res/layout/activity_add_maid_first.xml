@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context="com.housemaid.activities.CompleteProfileActivity">
+
+            <include
+                android:id="@+id/toolbar"
+                layout="@layout/toolbar_header" />
+
+            <ScrollView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/toolbar">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <com.housemaid.utils.MyTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="5dp"
+                        android:text="@string/please_complete_maid_profile"
+                        android:textColor="@color/colorDarkGrey"
+                        android:textSize="15sp" />
+
+                    <ProgressBar
+                        android:id="@+id/progressBar"
+                        style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="32dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginTop="30dp"
+                        android:progress="0"
+                        android:progressDrawable="@drawable/progress_layout" />
+
+                    <android.support.v7.widget.AppCompatImageView
+                        android:id="@+id/ivProfilePicBig"
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:scaleType="centerCrop"
+                        android:layout_below="@id/progressBar"
+                        android:layout_marginTop="15dp"
+                        android:src="@color/colorGrey" />
+
+                    <com.housemaid.utils.MyTextView
+                        android:id="@+id/tvUpload"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/progressBar"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="50dp"
+                        android:text="@string/please_upload_image"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textSize="15sp" />
+
+                    <android.support.v7.widget.AppCompatImageView
+                        android:id="@+id/ivChoosePhoto"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_below="@+id/progressBar"
+                        android:layout_marginEnd="20dp"
+                        android:layout_marginTop="190dp"
+                        android:src="@drawable/upload_image" />
+
+
+                    <com.housemaid.utils.MyTextView
+                        android:layout_width="match_parent"
+                        android:layout_below="@+id/ivChoosePhoto"
+                        android:layout_height="wrap_content"
+                        android:text="@string/if_you_want_upload_more_photos"
+                        android:gravity="center"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginEnd="20dp"
+                        android:textSize="@dimen/_12sdp"
+                        android:textColor="@color/colorDarkGrey"/>
+
+                    <com.housemaid.utils.MyTextView
+                        android:layout_width="match_parent"
+                        android:layout_below="@+id/ivChoosePhoto"
+                        android:layout_height="wrap_content"
+                        android:text="@string/please_go_edit_my_account"
+                        android:gravity="center"
+                        android:digits="@string/name_digits"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginEnd="20dp"
+                        android:textSize="@dimen/_12sdp"
+                        android:layout_marginTop="@dimen/_15sdp"
+                        android:textColor="@color/colorDarkGrey"/>
+
+                    <com.housemaid.utils.MyEditText
+                        android:id="@+id/etUserName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/ivProfilePicBig"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginTop="80dp"
+                        android:background="@drawable/custom_text_view_grey"
+                        android:elevation="6dp"
+                        android:hint="@string/user_name"
+                        android:inputType="textCapWords"
+                        android:paddingEnd="10dp"
+                        android:paddingStart="10dp"
+                        android:textColor="@color/colorDarkGrey"
+                        android:textSize="15sp" />
+
+                    <LinearLayout
+                        android:id="@+id/ccp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginEnd="20dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_below="@+id/etUserName"
+                        android:background="@drawable/custom_text_view_grey"
+                        android:orientation="horizontal">
+
+                        <com.hbb20.CountryCodePicker
+                            android:id="@+id/countryCodePicker"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginTop="1dp"
+                            android:padding="5dp"
+                            app:ccpDialog_keyboardAutoPopup="false"
+                            app:ccpDialog_searchEditTextTint="@color/colorPrimary"
+                            app:ccp_contentColor="@color/colorDarkGrey"
+                            app:ccp_defaultNameCode="TR"
+                            app:ccp_showArrow="false"
+                            app:ccp_showFlag="false"
+                            app:ccp_showNameCode="false"
+                            app:ccp_textSize="15sp">
+
+                        </com.hbb20.CountryCodePicker>
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="5dp"
+                            android:background="@color/colorGrey" />
+
+                        <com.housemaid.utils.MyEditText
+                            android:id="@+id/etMobileNumber"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginEnd="20dp"
+                            android:layout_marginStart="10dp"
+                            android:background="@null"
+                            android:hint="@string/mobile_number"
+                            android:inputType="number"
+                            android:maxLength="12"
+                            android:textColor="@color/colorDarkGrey"
+                            android:textColorHint="@color/colorGrey"
+                            android:textSize="15sp" />
+
+                    </LinearLayout>
+
+
+                    <com.housemaid.utils.MyEditText
+                        android:id="@+id/etEmailID"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/ccp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/custom_text_view_grey"
+                        android:elevation="6dp"
+                        android:hint="@string/email_id"
+                        android:inputType="textEmailAddress"
+                        android:paddingEnd="10dp"
+                        android:paddingStart="10dp"
+                        android:textColor="@color/colorDarkGrey"
+                        android:textSize="15sp" />
+
+
+                    <com.housemaid.utils.MyButton
+                        android:id="@+id/btnNext"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/etEmailID"
+                        android:layout_marginEnd="20dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="30dp"
+                        android:background="@drawable/btn_blue"
+                        android:text="@string/next"
+                        android:textAllCaps="false"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textSize="17sp"
+                        android:textStyle="bold" />
+
+                    <com.housemaid.utils.MyButton
+                        android:id="@+id/btnCancel"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/btnNext"
+                        android:layout_marginBottom="@dimen/_10sdp"
+                        android:layout_marginEnd="20dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/btn_blue"
+                        android:text="@string/cancel"
+                        android:textAllCaps="false"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textSize="17sp"
+                        android:textStyle="bold" />
+                </RelativeLayout>
+
+            </ScrollView>
+
+
+        </RelativeLayout>
+
+        <ProgressBar
+            android:id="@+id/progress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="gone" />
+    </FrameLayout>
+</layout>

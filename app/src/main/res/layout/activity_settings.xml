@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.housemaid.activities.SettingsActivity">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <include
+                android:id="@+id/toolbar"
+                layout="@layout/toolbar_header" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp">
+
+                <com.housemaid.utils.MyTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp"
+                    android:text="@string/allow_notification"
+                    android:textColor="@color/colorDarkGrey"
+                    android:textSize="15sp"
+                    tools:ignore="RelativeOverlap" />
+
+                <android.support.v7.widget.SwitchCompat
+                    android:id="@+id/switchNotification"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:buttonTint="@color/colorPrimary"
+                    android:checked="true" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="5dp"
+                android:background="@color/colorGrey" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp">
+
+                <com.housemaid.utils.MyTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp"
+                    android:text="@string/hide_my_photo_and_email"
+                    android:textColor="@color/colorDarkGrey"
+                    android:textSize="15sp"
+                    tools:ignore="RelativeOverlap" />
+
+                <android.support.v7.widget.SwitchCompat
+                    android:id="@+id/switchHidePhoto"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:buttonTint="@color/colorPrimary"
+                    android:checked="false" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="5dp"
+                android:background="@color/colorGrey" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.housemaid.utils.MyTextView
+                    android:id="@+id/tvAppVersion"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="1"
+                    android:padding="5dp"
+                    android:text="App Version"
+                    android:textColor="@color/colorDarkGrey"
+                    android:textSize="15sp"
+                    tools:ignore="RelativeOverlap" />
+
+                <com.housemaid.utils.MyBoldTextView
+                    android:id="@+id/tvVersion"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="1"
+                    android:gravity="end"
+                    android:padding="5dp"
+                    android:textColor="@color/colorDarkGrey"
+                    android:textSize="15sp"
+                    tools:ignore="RelativeOverlap" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="5dp"
+                android:background="@color/colorGrey" />
+
+            <com.housemaid.utils.MyTextView
+                android:id="@+id/tvAboutUs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:drawableEnd="@drawable/right_arrow"
+                android:padding="5dp"
+                android:text="About Us"
+                android:textColor="@color/colorDarkGrey"
+                android:textSize="15sp"
+                tools:ignore="RelativeOverlap" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="5dp"
+                android:background="@color/colorGrey" />
+
+            <com.housemaid.utils.MyTextView
+                android:id="@+id/tvHelp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:drawableEnd="@drawable/right_arrow"
+                android:padding="5dp"
+                android:text="Help us to Develop"
+                android:textColor="@color/colorDarkGrey"
+                android:textSize="15sp"
+                tools:ignore="RelativeOverlap" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="5dp"
+                android:background="@color/colorGrey" />
+
+            <com.housemaid.utils.MyTextView
+                android:id="@+id/tvContactUs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:drawableEnd="@drawable/right_arrow"
+                android:padding="5dp"
+                android:text="Contact us"
+                android:textColor="@color/colorDarkGrey"
+                android:textSize="15sp"
+                tools:ignore="RelativeOverlap" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="5dp"
+                android:background="@color/colorGrey" />
+
+            <com.housemaid.utils.MyTextView
+                android:id="@+id/tvLogout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:drawableEnd="@drawable/right_arrow"
+                android:padding="5dp"
+                android:text="Log Out"
+                android:textColor="@color/colorDarkGrey"
+                android:textSize="15sp"
+                tools:ignore="RelativeOverlap" />
+
+
+        </LinearLayout>
+
+        <ProgressBar
+            android:id="@+id/progress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
+            android:visibility="gone" />
+    </FrameLayout>
+</layout>

@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context="com.housemaid.activities.EnterLocationActivity">
+
+            <include
+                android:id="@+id/toolbar"
+                layout="@layout/toolbar_header" />
+
+            <RelativeLayout
+                android:id="@+id/rlSearchLocation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/toolbar"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp">
+
+                <com.housemaid.utils.MyTextView
+                    android:id="@+id/tvSearchLocation"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginTop="15dp"
+                    android:background="@drawable/custom_text_view_grey"
+                    android:gravity="center_vertical"
+                    android:hint="@string/searchother"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="40dp"
+                    android:textColor="@color/colorDarkGrey"
+                    android:textSize="17sp"
+                    tools:ignore="LabelFor,RtlSymmetry" />
+
+                <android.support.v7.widget.AppCompatImageView
+                    android:layout_width="40dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/search_grey" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/ll"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rlSearchLocation"
+                android:layout_marginTop="5dp"
+                android:orientation="vertical">
+
+                <EditText
+                    android:id="@+id/Address"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/custom_text_view_grey"
+                    android:cursorVisible="false"
+                    android:editable="false"
+                    android:gravity="center_vertical"
+                    android:hint="@string/address"
+                    android:paddingStart="5dp"
+                    android:paddingEnd="5dp"
+                    android:singleLine="true"
+                    android:textColor="@color/colorDarkGrey"
+                    android:textSize="17sp"
+                    tools:ignore="Autofill,TextFields" />
+            </LinearLayout>
+
+            <FrameLayout
+                android:id="@+id/mapFrame"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/ll">
+
+                <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+                    xmlns:tools="http://schemas.android.com/tools"
+                    android:id="@+id/map"
+                    android:name="com.google.android.gms.maps.SupportMapFragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    tools:context="com.example.fluper.digiparking.activities.MapsActivity" />
+
+                <LinearLayout
+                    android:id="@+id/llLocationMarker"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="30dp"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <android.support.v7.widget.AppCompatImageView
+                        android:id="@+id/imageMarker"
+                        android:layout_width="35dp"
+                        android:layout_height="30dp"
+                        android:layout_marginTop="5dp"
+                        android:src="@drawable/shadow" />
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:id="@+id/progressBar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@color/colorPrimaryDark"
+                    android:visibility="gone">
+
+                </RelativeLayout>
+
+            </FrameLayout>
+
+        </RelativeLayout>
+
+        <com.housemaid.utils.MyButton
+            android:id="@+id/btnSubmit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/btn_blue"
+            android:text="@string/submit"
+            android:textAllCaps="false"
+            android:textColor="@color/colorWhite"
+            android:textSize="17sp" />
+
+        <ProgressBar
+            android:id="@+id/progress"
+            style="@style/AppTheme"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="gone" />
+    </FrameLayout>
+</layout>
+

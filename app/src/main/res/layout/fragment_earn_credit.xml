@@ -1,0 +1,165 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <FrameLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.housemaid.activities.fragments.EarnCreditFragment">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            tools:ignore="UselessParent">
+     <!--   <RelativeLayout
+            android:id="@+id/layoutWatch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginEnd="25dp">
+
+<com.housemaid.utils.MyBoldTextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textSize="17sp"
+    android:layout_centerVertical="true"
+    android:text="@string/watch_video"
+    android:textColor="@color/colorDarkGrey"
+    tools:ignore="RelativeOverlap" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentEnd="true"
+                android:src="@color/colorYellow"
+               />
+
+            <com.housemaid.utils.MyBoldTextView
+                android:id="@+id/tvWatchVideoCoin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="15dp"
+                android:layout_centerVertical="true"
+                android:textSize="17sp"
+                android:text="@string/_5"
+                android:textColor="@color/colorDarkGrey"
+                />
+        </RelativeLayout>-->
+
+       <!-- <RelativeLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginEnd="25dp">
+
+            <com.housemaid.utils.MyBoldTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="17sp"
+                android:layout_centerVertical="true"
+                android:text="@string/share_app_with_friends"
+                android:textColor="@color/colorDarkGrey" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentEnd="true"
+                android:src="@color/colorYellow"
+                />
+
+            <com.housemaid.utils.MyBoldTextView
+                android:id="@+id/tvShareCoin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="15dp"
+                android:layout_centerVertical="true"
+                android:textSize="17sp"
+                android:text="@string/_5"
+                android:textColor="@color/colorDarkGrey"
+                tools:ignore="RelativeOverlap" />
+
+        </RelativeLayout>-->
+
+            <RelativeLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginEnd="25dp">
+
+                <com.housemaid.utils.MyBoldTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="17sp"
+                    android:layout_centerVertical="true"
+                    android:text="@string/apply_offer"
+                    android:textColor="@color/colorDarkGrey"
+                    tools:ignore="RelativeOverlap" />
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_alignParentEnd="true"
+                    android:src="@color/colorYellow"
+                    />
+
+                <com.housemaid.utils.MyBoldTextView
+                    android:id="@+id/tvAppyOfferCoin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="15dp"
+                    android:layout_centerVertical="true"
+                    android:textSize="17sp"
+                    android:text="5"
+                    android:textColor="@color/colorDarkGrey"
+                    tools:ignore="HardcodedText" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginEnd="25dp">
+
+                <com.housemaid.utils.MyBoldTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="17sp"
+                    android:layout_centerVertical="true"
+                    android:text="@string/daily"
+                    android:textColor="@color/colorDarkGrey"
+                    tools:ignore="RelativeOverlap" />
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_alignParentEnd="true"
+                    android:src="@color/colorYellow"
+                    />
+
+                <com.housemaid.utils.MyBoldTextView
+                    android:id="@+id/tvDailyCoin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="15dp"
+                    android:layout_centerVertical="true"
+                    android:textSize="17sp"
+                    android:text="@string/_5"
+                    android:textColor="@color/colorDarkGrey"
+                    tools:ignore="RelativeOverlap" />
+
+            </RelativeLayout>
+        </LinearLayout>
+    </FrameLayout>
+</layout>

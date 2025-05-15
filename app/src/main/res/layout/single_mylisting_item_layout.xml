@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <android.support.v7.widget.CardView
+        android:id="@+id/card_my_active_list"
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        app:cardBackgroundColor="@color/colorWhite"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="20dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/layoutSingleItem"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="6dp"
+                android:orientation="horizontal"
+                android:weightSum="5"
+                tools:ignore="UselessParent">
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="2dp"
+                    android:layout_marginStart="2dp"
+                    android:layout_weight="2"
+                    app:cardCornerRadius="10dp">
+
+                    <android.support.v7.widget.AppCompatImageView
+                        android:id="@+id/ivProfilePic"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/user" />
+                </android.support.v7.widget.CardView>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="10dp"
+                    android:layout_weight="2.7"
+                    android:orientation="vertical">
+
+                    <!--android:text="@{userBean.name}"-->
+                    <com.housemaid.utils.MyTextView
+                        android:id="@+id/tvJobType"
+                        android:layout_marginTop="10dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/i_want_baby_care"
+                        android:textColor="@color/colorDarkGrey"
+                        android:textSize="15sp" />
+
+
+                    <com.housemaid.utils.MyTextView
+                        android:id="@+id/tvAddress"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="20dp"
+                        android:layout_marginTop="5dp"
+                        android:ellipsize="end"
+                        android:text="@string/sector_65_noida"
+                        android:textColor="@color/colorGrey"
+                        android:textSize="12sp" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:orientation="horizontal">
+
+                        <com.housemaid.utils.MyTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/language"
+                            android:textColor="@color/colorGrey"
+                            android:textSize="12sp" />
+
+                        <com.housemaid.utils.MyTextView
+                            android:id="@+id/tvPersonLanguage"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:text="@string/english"
+                            android:maxLines="1"
+                            android:ellipsize="end"
+                            android:textColor="@color/colorGrey"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+
+                    <com.housemaid.utils.MyTextView
+                        android:id="@+id/tvListingType"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:ellipsize="end"
+                        android:text="@string/listings"
+                        android:textColor="@color/colorGrey"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+                <android.support.v7.widget.AppCompatImageView
+                    android:id="@+id/ivListingMenu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="25dp"
+                    android:layout_weight="0.3"
+                    android:src="@drawable/more_grey"/>
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+
+    </android.support.v7.widget.CardView>
+
+</layout>

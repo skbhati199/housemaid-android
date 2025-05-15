@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <android.support.v7.widget.AppCompatImageView
+        android:id="@+id/ss"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:src="@drawable/successfully" />
+
+    <com.housemaid.utils.MyTextView
+        android:id="@+id/tvP"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ss"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:text="@string/your_listing_added_successfully"
+        android:textColor="@color/colorDarkGrey"
+        android:layout_marginBottom="30dp"
+        android:textSize="17sp" />
+
+
+
+</RelativeLayout>

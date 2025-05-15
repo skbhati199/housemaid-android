@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/profile_item"
+        android:title="Show Profile" />
+    <item android:id="@+id/block_item"
+        android:title="Block" />
+    <item android:id="@+id/unblock_item"
+        android:title="Unblock" />
+    <item android:id="@+id/delete_item"
+        android:title="Delete Chat" />
+</menu>

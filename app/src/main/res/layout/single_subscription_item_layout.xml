@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/custom_text_view_grey"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp">
+
+            <android.support.v7.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:padding="5dp"
+                android:src="@drawable/coin_tp" />
+
+            <android.support.v7.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:padding="5dp"
+                android:src="@drawable/coin_tp" />
+
+            <com.housemaid.utils.MyBoldTextView
+                android:id="@+id/tvPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:drawablePadding="5dp"
+                android:drawableStart="@drawable/coin"
+                android:gravity="center"
+                android:paddingStart="5dp"
+                android:textColor="@color/colorPrimary"
+                android:textSize="15sp" />
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorGrey" />
+
+        <com.housemaid.utils.MyTextView
+            android:id="@+id/tvCredits"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:drawablePadding="10dp"
+            android:drawableStart="@drawable/right"
+            android:paddingStart="15dp"
+            android:padding="2dp"
+            android:layout_marginEnd="10dp"
+            android:textSize="15sp"
+            android:text="50 Credit" />
+
+
+        <com.housemaid.utils.MyTextView
+            android:id="@+id/tvDescription1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:drawablePadding="10dp"
+            android:padding="2dp"
+            android:textSize="15sp"
+            android:drawableStart="@drawable/right"
+            android:paddingStart="15dp"
+            android:text="2 Listings Highlights"
+            android:singleLine="true"/>
+
+        <com.housemaid.utils.MyTextView
+            android:id="@+id/tvDescription2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:drawablePadding="10dp"
+            android:padding="2dp"
+            android:textSize="15sp"
+            android:drawableStart="@drawable/right"
+            android:paddingStart="15dp"
+            android:text=" Highlights" />
+
+        <com.housemaid.utils.MyButton
+            android:id="@+id/btnBuy"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:background="@drawable/custom_text_view_blue"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="15dp"
+            android:textSize="15sp"
+            android:textColor="@color/colorWhite"
+            android:text="Buy"
+            android:layout_marginBottom="10dp"/>
+
+    </LinearLayout>
+
+</layout>

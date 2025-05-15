@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.housemaid.activities.SelectionEntryActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/sign_in">
+
+        <android.support.v7.widget.AppCompatImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="80dp"
+            android:background="@drawable/logo" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:layout_marginStart="20dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="@dimen/_120sdp"
+            android:orientation="vertical">
+
+            <com.housemaid.utils.MyButton
+                android:id="@+id/btnSignIn"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:background="@drawable/btn_white"
+                android:text="@string/sign_in"
+                android:textAllCaps="false"
+                android:textColor="@color/colorPrimary"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+     <!--       <com.housemaid.utils.MyButton
+                android:id="@+id/btnSignUp"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/btn_white"
+                android:text="@string/sign_up"
+                android:textAllCaps="false"
+                android:textColor="@color/colorPrimary"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+-->
+            <com.housemaid.utils.MyButton
+                android:id="@+id/btnWithoutSignUp"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/btn_white"
+                android:text="@string/continue_without_sign_up"
+                android:textAllCaps="false"
+                android:textColor="@color/colorPrimary"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="@dimen/_25sdp"
+            android:orientation="horizontal">
+
+            <com.housemaid.utils.MyTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/have_not_you_registered_yet"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="15sp" />
+
+            <com.housemaid.utils.MyBoldTextView
+                android:id="@+id/btnSignUp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:text="@string/sign_up_underline"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="15sp" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <ProgressBar
+        android:id="@+id/progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:layout_gravity="center"/>
+    </FrameLayout>
+</layout>

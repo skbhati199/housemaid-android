@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout  xmlns:android="http://schemas.android.com/apk/res/android">
+<RelativeLayout
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginBottom="10dp">
+
+    <com.housemaid.utils.MyBoldTextView
+        android:id="@+id/tvHeader"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:text="Select Country"
+        android:background="@color/colorPrimary"
+        android:textSize="17sp"
+        android:padding="5dp"
+        android:gravity="center"
+        android:textColor="@color/colorWhite"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_below="@+id/tvHeader"
+        android:id="@+id/etSearchCountry"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/layout_edit_search"
+        android:fitsSystemWindows="true"
+        android:gravity="center"
+        android:hint="@string/search"
+        android:inputType="text"
+        android:textColor="@color/colorDarkGrey"
+        android:textColorHint="@color/colorGrey"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_below="@+id/etSearchCountry"
+        android:id="@+id/rvCountry"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+    </android.support.v7.widget.RecyclerView>
+</RelativeLayout>
+</layout>

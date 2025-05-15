@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context="com.housemaid.activities.CompleteProfileActivity">
+
+            <include
+                android:id="@+id/toolbar"
+                layout="@layout/toolbar_header" />
+
+                <RelativeLayout
+                    android:layout_below="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <com.housemaid.utils.MyTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="5dp"
+                        android:text="@string/please_complete_your_profile"
+                        android:textColor="@color/colorDarkGrey"
+                        android:textSize="15sp" />
+
+                    <ProgressBar
+                        android:id="@+id/progressBar"
+                        style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="32dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginTop="30dp"
+                        android:progress="0"
+                        android:progressDrawable="@drawable/progress_layout" />
+
+                    <android.support.v7.widget.AppCompatImageView
+                        android:id="@+id/ivProfilePicBig"
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:layout_below="@id/progressBar"
+                        android:layout_marginTop="15dp"
+                        android:scaleType="centerCrop"
+                        android:src="@color/colorGrey" />
+
+                    <com.housemaid.utils.MyTextView
+                        android:id="@+id/tvUpload"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/progressBar"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="50dp"
+                        android:text="@string/please_upload_image"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textSize="15sp" />
+
+                    <android.support.v7.widget.AppCompatImageView
+                        android:id="@+id/ivChoosePhoto"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_below="@+id/progressBar"
+                        android:layout_marginEnd="20dp"
+                        android:layout_marginTop="190dp"
+                        android:src="@drawable/upload_image" />
+
+
+                    <com.housemaid.utils.MyTextView
+                        android:layout_width="match_parent"
+                        android:layout_below="@+id/ivChoosePhoto"
+                        android:layout_height="wrap_content"
+                        android:text="@string/if_you_want_upload_more_photos"
+                        android:gravity="center"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginEnd="20dp"
+                        android:textSize="@dimen/_12sdp"
+                        android:textColor="@color/colorDarkGrey"/>
+
+                    <com.housemaid.utils.MyTextView
+                        android:layout_width="match_parent"
+                        android:layout_below="@+id/ivChoosePhoto"
+                        android:layout_height="wrap_content"
+                        android:text="@string/please_go_edit_my_account"
+                        android:gravity="center"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginEnd="20dp"
+                        android:textSize="@dimen/_12sdp"
+                        android:layout_marginTop="@dimen/_15sdp"
+                        android:textColor="@color/colorDarkGrey"/>
+
+                    <com.housemaid.utils.MyButton
+                        android:id="@+id/btnNext"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginBottom="@dimen/_15sdp"
+                        android:layout_marginEnd="20dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/btn_blue"
+                        android:text="@string/next"
+                        android:textAllCaps="false"
+                        android:layout_alignParentBottom="true"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textSize="17sp"
+                        android:textStyle="bold" />
+
+                    <com.housemaid.utils.MyButton
+                        android:id="@+id/btnSubmit"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/_10sdp"
+                        android:layout_marginEnd="20dp"
+                        android:layout_marginStart="20dp"
+                        android:background="@drawable/btn_blue"
+                        android:text="@string/next"
+                        android:textAllCaps="false"
+                        android:visibility="gone"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textSize="17sp"
+                        android:textStyle="bold" />
+                </RelativeLayout>
+
+        </RelativeLayout>
+
+        <ProgressBar
+            android:id="@+id/progress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="gone" />
+    </FrameLayout>
+</layout>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        app:cardBackgroundColor="@color/colorWhite"
+        app:cardElevation="20dp">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <com.housemaid.utils.MyBoldTextView
+                    android:id="@+id/tvCallingText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Calling"
+                    android:textSize="@dimen/_17sdp"
+                    android:gravity="center_horizontal"
+                    android:layout_marginTop="10dp"
+                    android:textColor="@color/colorDarkGrey"/>
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/ivProfilePic"
+                    android:layout_width="72dp"
+                    android:layout_height="72dp"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@drawable/user_c"
+                    android:layout_marginTop="10dp"/>
+
+                <android.support.v7.widget.AppCompatImageView
+                    android:id="@+id/btnEndCall"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:padding="8dp"
+                    android:layout_gravity="center_horizontal"
+                    android:src="@drawable/end"/>
+
+            </LinearLayout>
+
+            <ProgressBar
+                android:id="@+id/progress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:layout_gravity="center"/>
+        </FrameLayout>
+
+    </android.support.v7.widget.CardView>
+</layout>

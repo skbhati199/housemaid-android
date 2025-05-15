@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_12sdp"
+        android:layout_marginEnd="@dimen/_12sdp"
+        android:background="@color/colorWhite"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="@dimen/_12sdp"
+        tools:ignore="UselessParent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <com.housemaid.utils.MyTextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/you_have_to_pay"
+                android:textColor="@color/colorDarkGrey"
+                android:textSize="17sp" />
+
+            <com.housemaid.utils.MyTextView
+                android:id="@+id/tvPayCredit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_2sdp"
+                android:layout_marginEnd="@dimen/_2sdp"
+                android:textColor="@color/colorDarkGrey"
+                android:textSize="17sp" />
+
+            <com.housemaid.utils.MyTextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/credit"
+                android:textColor="@color/colorDarkGrey"
+                android:textSize="17sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <com.housemaid.utils.MyTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/your_current_credits"
+                android:textColor="@color/colorDarkGrey"
+                android:textSize="17sp" />
+
+            <com.housemaid.utils.MyTextView
+                android:id="@+id/tvCurrentCredits"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_4sdp"
+                android:textColor="@color/colorDarkGrey"
+                android:textSize="17sp" />
+        </LinearLayout>
+
+
+        <com.housemaid.utils.MyButton
+            android:id="@+id/btnPay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/btn_blue"
+            android:text="@string/pay"
+            android:textAllCaps="false"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="17sp" />
+
+        <com.housemaid.utils.MyButton
+            android:id="@+id/btnByCredit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="@drawable/btn_blue"
+            android:text="@string/by_credit"
+            android:textAllCaps="false"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="17sp" />
+
+    </LinearLayout>
+</LinearLayout>

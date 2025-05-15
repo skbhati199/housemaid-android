@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.housemaid.activities.dataList.StateListActivity">
+
+
+            <com.housemaid.utils.MyBoldTextView
+                android:id="@+id/tvHeader"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:text="@string/select_state"
+                android:background="@color/colorPrimary"
+                android:textSize="17sp"
+                android:padding="5dp"
+                android:gravity="center"
+                android:textColor="@color/colorWhite"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_below="@+id/tvHeader"
+                android:id="@+id/etSearchSate"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:background="@drawable/layout_edit_search"
+                android:fitsSystemWindows="true"
+                android:gravity="center"
+                android:hint="@string/search"
+                android:inputType="text"
+                android:textColor="@color/colorDarkGrey"
+                android:textColorHint="@color/colorGrey"/>
+
+            <android.support.v7.widget.RecyclerView
+                android:layout_below="@+id/etSearchSate"
+                android:id="@+id/rvState"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+            </android.support.v7.widget.RecyclerView>
+
+        <ProgressBar
+            android:id="@+id/progress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:layout_centerInParent="true"/>
+        <com.housemaid.utils.MyTextView
+            android:id="@+id/tvNoData"
+            android:drawableTop="@drawable/no_data"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/_17sdp"
+            android:text="@string/no_data_found"
+            android:textColor="@color/colorPrimary"
+            android:gravity="center"
+            android:layout_centerInParent="true"
+            android:visibility="gone"/>
+    </RelativeLayout>
+</layout>

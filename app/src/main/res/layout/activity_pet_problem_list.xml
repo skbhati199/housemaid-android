@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="@dimen/_10sdp"
+            tools:context="com.housemaid.activities.dataList.PetProblemListActivity">
+
+
+            <com.housemaid.utils.MyBoldTextView
+                android:id="@+id/tvHeader"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:background="@color/colorPrimary"
+                android:gravity="center"
+                android:padding="5dp"
+                android:text="Select State"
+                android:textColor="@color/colorWhite"
+                android:textSize="17sp" />
+
+
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rvPetProblem"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/tvHeader"
+                tools:listitem ="@layout/single_list_checkbox_item">
+
+            </android.support.v7.widget.RecyclerView>
+
+            <com.housemaid.utils.MyButton
+                android:id="@+id/btnSubmit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:background="@drawable/btn_blue"
+                android:text="Submit"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_alignParentBottom="true"
+                android:textAllCaps="false"
+                android:textColor="@color/colorPrimaryDark"
+                android:textStyle="bold"
+                android:textSize="17sp"
+                />
+        </RelativeLayout>
+        <ProgressBar
+            android:id="@+id/progress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:layout_gravity="center"/>
+
+    </FrameLayout>
+</layout>

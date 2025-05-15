@@ -1,0 +1,654 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.housemaid.activities.agency.fromHome.AddMaidActivity5">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <include
+                android:id="@+id/toolbar"
+                layout="@layout/toolbar_header" />
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/toolbar">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.housemaid.utils.MyTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="5dp"
+                        android:text="@string/please_complete_maid_profile"
+                        android:textColor="@color/colorDarkGrey"
+                        android:textSize="15sp" />
+
+                    <ProgressBar
+                        android:id="@+id/progressBar"
+                        style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="32dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginTop="30dp"
+                        android:progress="80"
+                        android:progressDrawable="@drawable/progress_layout" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/progressBar"
+                        android:orientation="vertical">
+
+
+                        <com.housemaid.utils.MyTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="15dp"
+                            android:background="@color/colorDarkGrey"
+                            android:gravity="center_vertical"
+                            android:paddingBottom="6dp"
+                            android:paddingStart="25dp"
+                            android:paddingTop="6dp"
+                            android:text="@string/education"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="17sp"
+                            tools:ignore="RtlSymmetry" />
+
+                        <EditText
+                            android:id="@+id/etEducationDetail"
+                            android:layout_width="match_parent"
+                            android:layout_height="100dp"
+                            android:layout_marginEnd="20dp"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginTop="10dp"
+                            android:background="@drawable/custom_text_view_grey"
+                            android:gravity="start"
+                            android:hint="@string/type_here"
+                            android:digits="@string/name_digits"
+                            android:inputType="textMultiLine"
+                            android:paddingBottom="5dp"
+                            android:paddingEnd="10dp"
+                            android:paddingStart="10dp"
+                            android:paddingTop="5dp"
+                            android:textColor="@color/colorDarkGrey"
+                            android:textSize="15sp"
+                            tools:ignore="Autofill" />
+
+                        <com.housemaid.utils.MyTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="15dp"
+                            android:background="@color/colorDarkGrey"
+                            android:gravity="center_vertical"
+                            android:paddingBottom="6dp"
+                            android:paddingStart="25dp"
+                            android:paddingTop="6dp"
+                            android:text="@string/certificate"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="17sp"
+                            tools:ignore="RtlSymmetry" />
+
+                        <EditText
+                            android:id="@+id/etCertificateDetail"
+                            android:layout_width="match_parent"
+                            android:layout_height="100dp"
+                            android:layout_marginEnd="20dp"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginTop="10dp"
+                            android:background="@drawable/custom_text_view_grey"
+                            android:gravity="start"
+                            android:hint="@string/type_here"
+                            android:digits="@string/name_digits"
+                            android:inputType="textMultiLine"
+                            android:paddingBottom="5dp"
+                            android:paddingEnd="10dp"
+                            android:paddingStart="10dp"
+                            android:paddingTop="5dp"
+                            android:textColor="@color/colorDarkGrey"
+                            android:textSize="15sp"
+                            tools:ignore="Autofill" />
+
+                        <com.housemaid.utils.MyTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="15dp"
+                            android:background="@color/colorDarkGrey"
+                            android:gravity="center_vertical"
+                            android:paddingBottom="6dp"
+                            android:paddingStart="25dp"
+                            android:paddingTop="6dp"
+                            android:text="@string/about_me"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="17sp"
+                            tools:ignore="RtlSymmetry" />
+
+                        <EditText
+                            android:id="@+id/etAboutDetail"
+                            android:layout_width="match_parent"
+                            android:layout_height="100dp"
+                            android:layout_marginEnd="20dp"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginTop="10dp"
+                            android:background="@drawable/custom_text_view_grey"
+                            android:gravity="start"
+                            android:digits="@string/name_digits"
+                            android:hint="@string/type_here"
+                            android:inputType="textMultiLine"
+                            android:paddingBottom="5dp"
+                            android:paddingEnd="10dp"
+                            android:paddingStart="10dp"
+                            android:paddingTop="5dp"
+                            android:textColor="@color/colorDarkGrey"
+                            android:textSize="15sp"
+                            tools:ignore="Autofill" />
+
+                        <com.housemaid.utils.MyTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="15dp"
+                            android:background="@color/colorDarkGrey"
+                            android:gravity="center_vertical"
+                            android:paddingBottom="6dp"
+                            android:paddingStart="25dp"
+                            android:paddingTop="6dp"
+                            android:text="@string/work_experience"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="17sp"
+                            tools:ignore="RtlSymmetry" />
+
+                        <EditText
+                            android:id="@+id/etWorkExperience"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:layout_marginEnd="20dp"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginTop="10dp"
+                            android:background="@drawable/custom_text_view_grey"
+                            android:gravity="start"
+                            android:hint="@string/type_here"
+                            android:inputType="textMultiLine"
+                            android:paddingBottom="5dp"
+                            android:paddingEnd="10dp"
+                            android:paddingStart="10dp"
+                            android:digits="@string/name_digits"
+                            android:paddingTop="5dp"
+                            android:textColor="@color/colorDarkGrey"
+                            android:textSize="15sp"
+                            tools:ignore="Autofill" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="20dp"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginTop="5dp"
+                            android:orientation="horizontal"
+                            android:weightSum="2">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <com.housemaid.utils.MyBoldTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/start_date"
+                                    android:textColor="@color/colorDarkGrey"
+                                    android:textSize="17sp" />
+
+                                <com.housemaid.utils.MyTextView
+                                    android:id="@+id/tvStartDate"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="40dp"
+                                    android:background="@drawable/custom_text_view_grey"
+                                    android:drawableEnd="@drawable/calendar"
+                                    android:gravity="center_vertical"
+                                    android:paddingEnd="10dp"
+                                    android:paddingStart="10dp"
+                                    android:textColor="@color/colorDarkGrey"
+                                    android:textSize="15sp"
+                                    tools:ignore="RtlSymmetry" />
+
+                            </LinearLayout>
+
+                            <Space
+                                android:layout_width="10dp"
+                                android:layout_height="match_parent" />
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <com.housemaid.utils.MyBoldTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/end_date"
+                                    android:textColor="@color/colorDarkGrey"
+                                    android:textSize="17sp" />
+
+                                <com.housemaid.utils.MyTextView
+                                    android:id="@+id/tvEndDate"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="40dp"
+                                    android:background="@drawable/custom_text_view_grey"
+                                    android:drawableEnd="@drawable/calendar"
+                                    android:gravity="center_vertical"
+                                    android:paddingEnd="10dp"
+                                    android:paddingStart="10dp"
+                                    android:textColor="@color/colorDarkGrey"
+                                    android:textSize="15sp" />
+
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/llAdd1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="20dp"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginTop="5dp"
+                            android:orientation="horizontal">
+
+                            <CheckBox
+                                android:id="@+id/checkbox"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:button="@drawable/custom_checkbox_blue" />
+
+                            <com.housemaid.utils.MyTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="10dp"
+                                android:text="@string/still_working"
+                                android:textColor="@color/colorDarkGrey"
+                                android:textSize="15sp" />
+
+                            <com.housemaid.utils.MyBoldTextView
+                                android:id="@+id/btnAdd1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="end"
+                                android:gravity="end"
+                                android:text="@string/add"
+                                android:textColor="@color/colorPrimary"
+                                android:textSize="15sp" />
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:id="@+id/llExperience2"
+                            android:orientation="vertical"
+                            android:layout_marginTop="15dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:visibility="gone">
+                            <View
+
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:background="@color/colorGrey" />
+
+                            <EditText
+                                android:id="@+id/etWorkExperience2"
+                                android:layout_width="match_parent"
+                                android:layout_height="50dp"
+                                android:layout_marginEnd="20dp"
+                                android:layout_marginStart="20dp"
+                                android:layout_marginTop="15dp"
+                                android:background="@drawable/custom_text_view_grey"
+                                android:gravity="start"
+                                android:digits="@string/name_digits"
+                                android:hint="@string/type_here"
+                                android:inputType="textMultiLine"
+                                android:paddingBottom="5dp"
+                                android:paddingEnd="10dp"
+                                android:paddingStart="10dp"
+                                android:paddingTop="5dp"
+                                android:textColor="@color/colorDarkGrey"
+                                android:textSize="15sp"
+                                tools:ignore="Autofill" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="20dp"
+                                android:layout_marginStart="20dp"
+                                android:layout_marginTop="5dp"
+                                android:orientation="horizontal"
+                                android:weightSum="2">
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:orientation="vertical">
+
+                                    <com.housemaid.utils.MyBoldTextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/start_date"
+                                        android:textColor="@color/colorDarkGrey"
+                                        android:textSize="17sp"
+                                        tools:ignore="TooDeepLayout" />
+
+                                    <com.housemaid.utils.MyTextView
+                                        android:id="@+id/tvStartDate2"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="40dp"
+                                        android:background="@drawable/custom_text_view_grey"
+                                        android:drawableEnd="@drawable/calendar"
+                                        android:gravity="center_vertical"
+                                        android:paddingEnd="10dp"
+                                        android:paddingStart="10dp"
+                                        android:textColor="@color/colorDarkGrey"
+                                        android:textSize="15sp"
+                                        tools:ignore="RtlSymmetry" />
+
+                                </LinearLayout>
+
+                                <Space
+                                    android:layout_width="10dp"
+                                    android:layout_height="match_parent" />
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:orientation="vertical">
+
+                                    <com.housemaid.utils.MyBoldTextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/end_date"
+                                        android:textColor="@color/colorDarkGrey"
+                                        android:textSize="17sp" />
+
+                                    <com.housemaid.utils.MyTextView
+                                        android:id="@+id/tvEndDate2"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="40dp"
+                                        android:background="@drawable/custom_text_view_grey"
+                                        android:drawableEnd="@drawable/calendar"
+                                        android:gravity="center_vertical"
+                                        android:paddingEnd="10dp"
+                                        android:paddingStart="10dp"
+                                        android:textColor="@color/colorDarkGrey"
+                                        android:textSize="15sp" />
+
+                                </LinearLayout>
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/llAdd2"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="20dp"
+                                android:layout_marginStart="20dp"
+                                android:layout_marginTop="5dp"
+                                android:orientation="horizontal">
+
+                                <CheckBox
+                                    android:id="@+id/checkbox2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:button="@drawable/custom_checkbox_blue" />
+
+                                <com.housemaid.utils.MyTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="10dp"
+                                    android:text="@string/still_working"
+                                    android:textColor="@color/colorDarkGrey"
+                                    android:textSize="15sp" />
+
+                                <com.housemaid.utils.MyBoldTextView
+                                    android:id="@+id/btnAdd2"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="end"
+                                    android:gravity="end"
+                                    android:text="@string/add"
+                                    android:textColor="@color/colorPrimary"
+                                    android:textSize="15sp" />
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:id="@+id/llExperience3"
+                            android:orientation="vertical"
+                            android:layout_marginTop="15dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:visibility="gone">
+                            <View
+
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:background="@color/colorGrey" />
+
+                            <EditText
+                                android:id="@+id/etWorkExperience3"
+                                android:layout_width="match_parent"
+                                android:layout_height="50dp"
+                                android:layout_marginEnd="20dp"
+                                android:layout_marginStart="20dp"
+                                android:layout_marginTop="15dp"
+                                android:background="@drawable/custom_text_view_grey"
+                                android:gravity="start"
+                                android:digits="@string/name_digits"
+                                android:hint="@string/type_here"
+                                android:inputType="textMultiLine"
+                                android:paddingBottom="5dp"
+                                android:paddingEnd="10dp"
+                                android:paddingStart="10dp"
+                                android:paddingTop="5dp"
+                                android:textColor="@color/colorDarkGrey"
+                                android:textSize="15sp"
+                                tools:ignore="Autofill" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="20dp"
+                                android:layout_marginStart="20dp"
+                                android:layout_marginTop="5dp"
+                                android:orientation="horizontal"
+                                android:weightSum="2">
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:orientation="vertical">
+
+                                    <com.housemaid.utils.MyBoldTextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/start_date"
+                                        android:textColor="@color/colorDarkGrey"
+                                        android:textSize="17sp" />
+
+                                    <com.housemaid.utils.MyTextView
+                                        android:id="@+id/tvStartDate3"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="40dp"
+                                        android:background="@drawable/custom_text_view_grey"
+                                        android:drawableEnd="@drawable/calendar"
+                                        android:gravity="center_vertical"
+                                        android:paddingEnd="10dp"
+                                        android:paddingStart="10dp"
+                                        android:textColor="@color/colorDarkGrey"
+                                        android:textSize="15sp"
+                                        tools:ignore="RtlSymmetry" />
+
+                                </LinearLayout>
+
+                                <Space
+                                    android:layout_width="10dp"
+                                    android:layout_height="match_parent" />
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:orientation="vertical">
+
+                                    <com.housemaid.utils.MyBoldTextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/end_date"
+                                        android:textColor="@color/colorDarkGrey"
+                                        android:textSize="17sp" />
+
+                                    <com.housemaid.utils.MyTextView
+                                        android:id="@+id/tvEndDate3"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="40dp"
+                                        android:background="@drawable/custom_text_view_grey"
+                                        android:drawableEnd="@drawable/calendar"
+                                        android:gravity="center_vertical"
+                                        android:paddingEnd="10dp"
+                                        android:paddingStart="10dp"
+                                        android:textColor="@color/colorDarkGrey"
+                                        android:textSize="15sp" />
+
+                                </LinearLayout>
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="20dp"
+                                android:layout_marginStart="20dp"
+                                android:layout_marginTop="5dp"
+                                android:orientation="horizontal">
+
+                                <CheckBox
+                                    android:id="@+id/checkbox3"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:button="@drawable/custom_checkbox_blue" />
+
+                                <com.housemaid.utils.MyTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="10dp"
+                                    android:text="@string/still_working"
+                                    android:textColor="@color/colorDarkGrey"
+                                    android:textSize="15sp" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+
+
+                        <com.housemaid.utils.MyTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="15dp"
+                            android:background="@color/colorDarkGrey"
+                            android:gravity="center_vertical"
+                            android:paddingBottom="6dp"
+                            android:paddingStart="25dp"
+                            android:paddingTop="6dp"
+                            android:text="@string/application_permission"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="17sp"
+                            tools:ignore="RtlSymmetry" />
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="20dp"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginTop="10dp">
+
+                            <com.housemaid.utils.MyTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/allow_notification"
+                                android:textColor="@color/colorDarkGrey"
+                                android:textSize="15sp"
+                                tools:ignore="RelativeOverlap" />
+
+                            <android.support.v7.widget.SwitchCompat
+                                android:id="@+id/switchNotification"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
+                                android:buttonTint="@color/colorPrimary"
+                                android:checked="true" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="20dp"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginTop="10dp">
+
+                            <com.housemaid.utils.MyTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/hide_my_photo_and_email"
+                                android:textColor="@color/colorDarkGrey"
+                                android:textSize="15sp"
+                                tools:ignore="RelativeOverlap" />
+
+                            <android.support.v7.widget.SwitchCompat
+                                android:id="@+id/switchHidePhoto"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
+                                android:buttonTint="@color/colorPrimary"
+                                android:checked="false" />
+                        </RelativeLayout>
+
+
+                        <com.housemaid.utils.MyButton
+                            android:id="@+id/btnSubmit"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:layout_marginBottom="20dp"
+                            android:layout_marginEnd="20dp"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginTop="15dp"
+                            android:background="@drawable/btn_blue"
+                            android:text="@string/submit"
+                            android:textAllCaps="false"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:textSize="17sp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+                </RelativeLayout>
+            </ScrollView>
+        </RelativeLayout>
+
+        <ProgressBar
+            android:id="@+id/progress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="gone" />
+    </FrameLayout>
+</layout>

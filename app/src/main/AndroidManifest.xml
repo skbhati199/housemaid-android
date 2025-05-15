@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.housemaid">
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission
+        android:name="android.permission.LOCATION_HARDWARE"
+        tools:ignore="ProtectedPermissions" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <application
+        android:name=".AppController"
+        android:allowBackup="true"
+        android:fullBackupContent="true"
+        android:icon="@drawable/app_icon"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/app_icon"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true"
+        android:debuggable="true"
+        tools:ignore="GoogleAppIndexingWarning,HardcodedDebugMode">
+        <activity android:name=".activities.FullScreenImageSlider"/>
+        <activity
+            android:name=".activities.user.fromHome.AddListingPhotoActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".activities.user.fromHome.MyListingDetailsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activities.ZoomPhotoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activities.SplashActivity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <service android:name=".service.MyFirebaseMessagingService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+        <service android:name=".service.MyFirebaseInstanceIDService">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+            </intent-filter>
+        </service>
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+
+        <activity
+            android:name=".activities.SelectionActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activities.SelectionEntryActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activities.SignUpActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".activities.SignInActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".activities.maid.beforeHome.CompleteProfileMaid2"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".activities.ForgotPasswordActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".activities.ChangePasswordOTPActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".activities.ChangePasswordActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".activities.CompleteProfileActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".activities.ChangeMobileNumberActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".activities.user.beforeHome.CompleteProfileNamesActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".activities.maid.beforeHome.CompleteProfileMaid1"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".activities.agency.beforeHome.CompleteProfileAgency"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".activities.maid.beforeHome.CompleteProfileMaid4"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".activities.maid.beforeHome.CompleteProfileMaid3"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".activities.EnterLocationActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden"></activity>
+        <activity
+            android:name=".activities.dataList.CountryListActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".activities.HomeActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".activities.dataList.StateListActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".activities.dataList.NationalityListActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".activities.dataList.LanguageListActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".activities.dataList.PetProblemListActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".activities.dataList.EducationListActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".activities.dataList.JobChoiceListActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".activities.dataList.SkillsListActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".activities.dataList.WorkingchoicesListActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".activities.dataList.MultipleCountryListActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".activities.user.fromHome.MaidInfoActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".activities.AgencyActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".activities.NotificationActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activities.PastBookingsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activities.SettingsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activities.UpgradeMemberShipActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activities.MyListingsActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".activities.FilterActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".activities.MyFavoritesListingActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activities.agency.fromHome.AddListingActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".activities.maid.fromHome.activity.HomeForMaidActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".activities.maid.fromHome.activity.MaidProfileActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activities.user.fromHome.HomeUserActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".activities.agency.fromHome.HomeAgencyActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".activities.agency.fromHome.AddListNextStepActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".activities.dataList.DistrictListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activities.dataList.CitylistActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activities.user.fromHome.AddListingUserActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden"></activity>
+        <activity
+            android:name=".activities.user.fromHome.AddListingFirstPageActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".activities.dataList.ListingTypeListActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".activities.user.fromHome.ListingSuccessfulActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activities.AgencyDetailsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activities.agency.fromHome.MyMaidsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activities.user.fromHome.UserProfileActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activities.DistrictSingleListActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".activities.dataList.CitylistSingleActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".activities.WorkingchoiceSingleListActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".activities.JobCategorySingleActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".activities.maid.fromHome.activity.FavouriteJobListingProfileActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".activities.agency.fromHome.AgencyProfileActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activities.maid.fromHome.activity.MaidHomeProfileActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".activities.agency.fromHome.OtherMaidsProfileActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".activities.user.fromHome.EditUserProfileActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".activities.AgencyMaidsActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".activities.agency.fromHome.EditAgencyPofileActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".activities.agency.fromHome.AgencyFavouritesActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activities.maid.fromHome.activity.EditMaidPofileActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".activities.agency.fromHome.AddMaidFirstActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".activities.agency.fromHome.AddMaidActivity2"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".activities.agency.fromHome.AddMaidActivity3"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden"></activity>
+        <activity
+            android:name=".activities.agency.fromHome.AddMaidActivity4"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".activities.agency.fromHome.AddMaidActivity5"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".activities.UserJobListingActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".activities.ChatActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".activities.SingleChatActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".activities.LiveConversationActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activities.PaymentGatwayActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activities.SettingWebViewActivity"
+            android:screenOrientation="portrait" />
+
+        <receiver android:name=".reciever.ActionReciever" />
+
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="com.housemaid"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths" />
+        </provider>
+
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="3a70a41f43f3eb8087896fd6367cd91de5e67e8d" />
+    </application>
+
+</manifest>

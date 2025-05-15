@@ -1,0 +1,591 @@
+<resources>
+    <string name="agora_app_id">68ba2e8a9d034c0fa50267a13c3a7122</string>
+
+    <string name="app_name">HouseMaid</string>
+    <string name="i_want_job">I Want Job</string>
+    <string name="i_want_maid">I Want a Maid</string>
+    <string name="i_am_agency">I am Agency</string>
+    <string name="sign_in">Sign In</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="continue_without_sign_up">Continue Without Sign In</string>
+    <string name="user_name">Full Name</string>
+    <string name="mobile_number">Mobile Number</string>
+    <string name="email_id">Email ID</string>
+    <string name="password">Password</string>
+    <string name="password_character">Password (At least 8 characters)</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="show">Show</string>
+    <string name="i_accept_terms_and_conditions_of_the_app">I accept Terms &amp; Conditions</string>
+    <string name="already_have_account">Already have an Account?</string>
+    <string name="login">Login</string>
+    <string name="create_account">Create Account</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="new_user">New User?</string>
+    <string name="next">Next</string>
+    <string name="please_enter_mobile_number">Please enter mobile number</string>
+    <string name="please_enter_otp_sent_on_your_mobile_number">Please enter OTP sent on your mobile number</string>
+    <string name="resend">Resend</string>
+    <string name="submit">Submit</string>
+    <string name="please_enter_old_password_or_new_password">Please enter new password</string>
+    <string name="enter_your_new_password">Enter your new password</string>
+    <string name="re_enter_your_new_password">Confirm your new password</string>
+    <string name="your_password_has_been">Your password has been</string>
+    <string name="changed_successfully">changed successfully</string>
+    <string name="please_upload_image">Please Upload Image</string>
+    <string name="previous_step">Previous Step</string>
+    <string name="gallery">Gallery</string>
+    <string name="camera">Camera</string>
+    <string name="avatar">Avatar</string>
+    <string name="please_complete_your_profile">Please complete your profile</string>
+    <string name="change_mobile_number">Change Mobile Number</string>
+    <string name="by_credit">Buy Credits</string>
+    <string name="city">City</string>
+    <string name="district">District</string>
+    <string name="nationality">Nationality</string>
+    <string name="marital_status">Marital Status</string>
+    <string name="kids_status">Kids Status</string>
+    <string name="hijob">Hijab</string>
+    <string name="education">Education</string>
+    <string name="spoken_languages">Languages</string>
+    <string name="smoke">Smoke</string>
+    <string name="please_choose_your_pet_problem">Choose Your Pet Problem</string>
+    <string name="certificate">Certificate</string>
+    <string name="about_me">About Me</string>
+    <string name="work_experience">Work Experience</string>
+    <string name="type_here">Type Here</string>
+    <string name="start_date">Start Date</string>
+    <string name="end_date">End Date</string>
+    <string name="still_working">Still Working</string>
+    <string name="add">Add</string>
+    <string name="allow_notification">Allow Notification</string>
+    <string name="hide_my_photo_and_email">Hide My Phone and Email</string>
+    <string name="application_permission">Application Permission</string>
+    <string name="_03_06_2017">03/06/2017</string>
+    <string name="_03_06_2018">03/06/2018</string>
+    <string name="previous">Previous</string>
+    <string name="business_preferences">Business Preferences</string>
+    <string name="washington_d_c_district_of_columbia">Washington, D.C. District of Columbia</string>
+    <string name="job_choice">Job Choice</string>
+    <string name="full_day">Full Day</string>
+    <string name="i_can_live_with_family">Stay With Family</string>
+    <string name="travel_situation">Travel Situation</string>
+    <string name="yes">Yes</string>
+    <string name="expected_fee">Expected Fee</string>
+    <string name="_10000">10000</string>
+    <string name="skills">Skills</string>
+    <string name="_0_3_years_baby_care_cleaning_garden">0–3 Years Baby Care,Cleaning</string>
+    <string name="allow_housemaid_to_access_your_location">Allow Housemaid to access your location</string>
+    <string name="while_using_the_app_or_enter_location">while using the app. Or enter location</string>
+    <string name="manually">manually.</string>
+    <string name="enable_location">Enable Location</string>
+    <string name="enter_manually">Enter Manually</string>
+    <string name="allow_location_access">Allow Location Access</string>
+    <string name="name_digits">abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ ÇĞİÖŞÜ çğöşü ğğĞĞççCCııIIiiİİööÖÖŞŞşşüüÜÜ 0123456789 !@#$%^*()":;,.='/\|{}[]-_+ &amp;</string>
+    <string name="india">India</string>
+    <string name="open_drawer">open</string>
+    <string name="close_drawer">close</string>
+    <string name="language">Language </string>
+
+    <string name="english">English</string>
+    <string name="_12_nov_2018_2_50_pm">12 Nov 2018, 2:50 pm</string>
+    <string name="favorite">Favourite</string>
+    <string name="message">Message</string>
+    <string name="share">Share</string>
+    <string name="jhon_doe">Jhon Doe</string>
+    <string name="lorem_ipsum_sit_amet_consectetur_adipiscing_do_elit_sed_do_eiusmod_tempor_incididunt_ut_labore_at_eiusmod_dolcre_magna_alique">Lorem Ipsum sit amet, consectetur adipiscing do elit,</string>
+    <string name="listings">Listings</string>
+    <string name="sector_65_noida">Sector 65, Noida</string>
+    <string name="i_want_baby_care">I Want Baby Care</string>
+    <string name="sign_up_underline">Sign Up</string>
+
+    <string-array name="month">
+        <item>Jan</item>
+        <item>Feb</item>
+        <item>Mar</item>
+        <item>Apr</item>
+        <item>May</item>
+        <item>Jun</item>
+        <item>Jul</item>
+        <item>Aug</item>
+        <item>Sep</item>
+        <item>Oct</item>
+        <item>Nov</item>
+        <item>Dec</item>
+    </string-array>
+
+    <string-array name="items">
+        <item>Single</item>
+        <item>Married</item>
+        <item>Divorced</item>
+        <item>Widow</item>
+        <item>Living separately</item>
+        <item>Unmarried</item>
+    </string-array>
+
+    <string-array name="workStatus">
+        <item>Working</item>
+        <item>Part time working</item>
+        <item>Not working</item>
+    </string-array>
+
+    <string-array name="workStatusFilter">
+
+        <item>Work Status</item>
+        <item>Working</item>
+        <item>Part time working</item>
+        <item>Not working</item>
+    </string-array>
+
+    <string-array name="drivingLicence">
+
+        <item>Yes, I am driving</item>
+        <item>Yes, I am not driving</item>
+        <item>No</item>
+    </string-array>
+
+    <string-array name="drivingLicenceFilter">
+        <item>Driving Licence</item>
+        <item>Yes, I am driving</item>
+        <item>Yes, I am not driving</item>
+        <item>No</item>
+    </string-array>
+
+    <string-array name="smoke">
+        <item>I smoke</item>
+        <item>I do not smoke</item>
+        <item>I smoke sometimes</item>
+    </string-array>
+
+    <string-array name="smokeFilter">
+        <item>Smoke</item>
+        <item>I smoke</item>
+        <item>I do not smoke</item>
+        <item>I smoke sometimes</item>
+    </string-array>
+
+    <string-array name="alcohol">
+        <item>I drink</item>
+        <item>I do not drink</item>
+        <item>I drink sometimes</item>
+    </string-array>
+
+    <string-array name="alcoholFilter">
+        <item>Alcohol</item>
+        <item>I drink</item>
+        <item>I do not drink</item>
+        <item>I drink sometimes</item>
+    </string-array>
+
+    <string-array name="maritalStatus">
+        <item>Single</item>
+        <item>Married</item>
+        <item>Divorced</item>
+        <item>Widow</item>
+        <item>Living separately</item>
+        <item>Unmarried</item>
+    </string-array>
+
+    <string-array name="maritalStatusFilter">
+        <item>Marital Status</item>
+        <item>Single</item>
+        <item>Married</item>
+        <item>Divorced</item>
+        <item>Widow</item>
+        <item>Living separately</item>
+        <item>Unmarried</item>
+    </string-array>
+
+    <string-array name="kidStatus">
+        <item>No</item>
+        <item>Yes, lives with me</item>
+        <item>Yes, lives separately</item>
+    </string-array>
+
+    <string-array name="kidStatusFilter">
+        <item>Kid Status</item>
+        <item>No</item>
+        <item>Yes, lives with me</item>
+        <item>Yes, lives separately</item>
+    </string-array>
+
+
+    <string-array name="experience">
+        <item>0–6 month</item>
+        <item>7–12 month</item>
+        <item>1 year</item>
+        <item>2 year</item>
+        <item>greater than 2 year</item>
+    </string-array>
+
+    <string-array name="experienceFilter">
+        <item>Experience</item>
+        <item>0–6 month</item>
+        <item>7–12 month</item>
+        <item>1 year</item>
+        <item>2 year</item>
+        <item>greater than 2 year</item>
+    </string-array>
+
+    <string-array name="hijab">
+        <item>Yes</item>
+        <item>No</item>
+        <item>Optional</item>
+    </string-array>
+
+    <string-array name="hijabFilter">
+        <item>Hijab</item>
+        <item>Yes</item>
+        <item>No</item>
+        <item>Optional</item>
+    </string-array>
+
+    <string-array name="Family">
+        <item>Yes</item>
+        <item>No</item>
+    </string-array>
+
+    <string-array name="FamilyFilter">
+        <item>Family</item>
+        <item>Yes</item>
+        <item>No</item>
+    </string-array>
+
+    <string-array name="TravelSituation">
+        <item>Yes</item>
+        <item>No matter</item>
+        <item>No</item>
+    </string-array>
+    <string-array name="amount">
+        <item>Currency</item>
+        <item>$</item>
+        <item>€</item>
+        <item>₺</item>
+    </string-array>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="age_range">Age Range</string>
+    <string name="min">Min.</string>
+    <string name="max">Max.</string>
+    <string name="ratings">Ratings</string>
+    <string name="search">Search</string>
+    <string name="decline">Decline</string>
+    <string name="accept">Accept</string>
+    <string name="state_where_i_can_work">State where I can work</string>
+    <string name="district_where_i_can_work">District where I can work</string>
+    <string name="city_where_i_can_work">City where I can work</string>
+    <string name="working_choices">Working choices</string>
+    <string name="country_where_i_can_work">Country where I can work</string>
+    <string name="please_complete_listing_details">Please complete listing details</string>
+    <string name="listing_title">Listing Title</string>
+    <string name="job_preferences">Job Preferences</string>
+    <string name="live_with_family">Live with family</string>
+    <string name="next_step">Next step</string>
+    <string name="description">Description</string>
+    <string name="free">Free</string>
+    <string name="_5_credit">5 credits</string>
+    <string name="first_photo_is_free_but_rest_with_credits">First photo is free. But rest with credits</string>
+    <string name="update">Update</string>
+    <string name="please_select_the_maid_you_want_to_suggest">Please select the maid you want to suggest</string>
+    <string name="please_complete_maid_profile">Please complete maid profile</string>
+    <string name="sorry">Sorry, No Match Found</string>
+    <string name="experience">Experience</string>
+    <string name="add_an_listing_is_25_credit">Add an listing is Credit</string>
+    <string name="your_current_credit">Your current credit: </string>
+    <string name="buy_credits">Buy credits</string>
+    <string name="cancel">Cancel</string>
+    <string name="add_maid">Add Maid</string>
+    <string name="listing_type">Listing Type</string>
+    <string name="working_type">Working Type</string>
+    <string name="job_category">Job Category</string>
+    <string name="skill_category">Skill Category</string>
+    <string name="travel_with_family">Travel with family</string>
+    <string name="min_fee">Min fee</string>
+    <string name="dash">-</string>
+    <string name="max_fee">Max fee</string>
+    <string name="your_current_credit_75">Your current credit</string>
+    <string name="your_listing_will_be_reviewed_by_our_editors">Your listing will be reviewed by our editors</string>
+    <string name="your_maid_will_be_reviewed_by_our_editors">Your maid will be reviewed by our editors</string>
+    <string name="and_your_listing_will_not_be_activated">and your listing will not be activated</string>
+    <string name="and_your_maid_will_not_be_activated">and your maid will not be activated</string>
+    <string name="if_it_violates_our_rules">if it violates our rules.</string>
+    <string name="after_the_listing_is_activated">After the listing is activated</string>
+    <string name="after_the_maid_is_activated">After the maid is activated</string>
+    <string name="_25_credits_will_be_deducted_from_your_account">credits will be deducted from your account</string>
+    <string name="add_listing">Add Listing</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="star">***************</string>
+    <string name="view">View</string>
+    <string name="no_maids">No maids.</string>
+    <string name="agency_name">Agency Name</string>
+    <string name="abc_agency">Abc Agency</string>
+    <string name="authorised_person">Authorised Person</string>
+    <string name="katharine_hepbum">Katharine Hepbum</string>
+    <string name="adsdfsds">ADSDFSDS</string>
+    <string name="_123456789">123456789</string>
+    <string name="turkey">Turkey</string>
+    <string name="up">UP</string>
+    <string name="company_phone">Company Phone</string>
+    <string name="x">X</string>
+    <string name="no_chat_found">No chat found.</string>
+    <string name="select_city">Select City</string>
+    <string name="tax_administration">Tax Administration</string>
+    <string name="tax_number">Tax Number</string>
+    <string name="date_of_birth">Date of birth</string>
+    <string name="select_district">Select District</string>
+    <string name="company_name">Company Name</string>
+    <string name="authorized_person">Authorized Person</string>
+    <string name="address">Address</string>
+    <string name="alcohol">Alcohol</string>
+    <string name="select_state">Select State</string>
+    <string name="get_my_current_location">Get my current location</string>
+    <string name="name">Name</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="country">Country</string>
+    <string name="gender">Gender</string>
+    <string name="job_information">Job Information</string>
+    <string name="city_to_work">City to Work</string>
+    <string name="district_to_work">District to Work</string>
+    <string name="baby_care">Baby Care</string>
+    <string name="lives_with_family">Lives with family</string>
+    <string name="not_matter">Not Matter</string>
+    <string name="maid_information_i_m_looking_for">Maid Information I\'m looking for</string>
+    <string name="turkish">Turkish</string>
+    <string name="single">Single</string>
+    <string name="kid_status">Kid Status</string>
+    <string name="no">No</string>
+    <string name="hijab_status">Hijab Status</string>
+    <string name="undergraduate">Undergraduate</string>
+    <string name="known_languages">Known Languages</string>
+    <string name="turkish_english">Turkish,English</string>
+    <string name="driving_license">Driving License</string>
+    <string name="smoking">Smoking</string>
+    <string name="alcohol_use">Alcohol Use</string>
+    <string name="pet_problem">Pet Problem</string>
+    <string name="description_of_the_job">Description of the job</string>
+    <string name="no_list_found_in_your_area">No list found in your area.</string>
+    <string name="search_job_list">Search Job List</string>
+    <string name="search_maid">Search Maid</string>
+    <string name="search_agency">Search Agency</string>
+    <string name="state">State</string>
+    <string name="clear_form">Clear Form</string>
+    <string name="no_data_found">No data found.</string>
+    <string name="john_doe">John Doe</string>
+    <string name="john_gmail_com">john@gmail.com</string>
+    <string name="_9977655456">9977655456</string>
+    <string name="maid_information_i_m_looking_fr">Maid information I\'m looking for</string>
+    <string name="work_status">Work Status</string>
+    <string name="driving_licence">Driving Licence</string>
+    <string name="choose_pet_problem">Choose Pet Problem</string>
+    <string name="new_york_city">New York City</string>
+    <string name="fee_rate">Fee Rate</string>
+    <string name="work_category">Work Category</string>
+    <string name="request_maid">Request Maid</string>
+    <string name="apply_to_this_listing">Apply to this listing</string>
+    <string name="agency_maid">Agency Maid</string>
+    <string name="suggest_maid">Suggest Maid</string>
+    <string name="invite">Invite</string>
+    <string name="fire_this_maid">Fire this maid</string>
+    <string name="request_live_conversation">Request Live Conversation</string>
+    <string name="view_this_user_job_listing">View This User Job Listing</string>
+    <string name="send_message">Send message</string>
+    <string name="watch_video">Watch video</string>
+    <string name="_5">5</string>
+    <string name="share_app_with_friends">Share app with friends</string>
+    <string name="apply_offer">Apply offer</string>
+    <string name="daily">Daily</string>
+    <string name="i_want_the_making_dinner_as_well_as_general_cleaning_needs">I want the making dinner as well as general cleaning needs.</string>
+    <string name="type_your_message">Type your message…</string>
+    <string name="your_listing_added_successfully">Your listing added successfully.</string>
+    <string name="please_write_why_you_apply_to_this_job">Please write why you apply to this job</string>
+    <string name="apply_to_this_job">Apply To This Job</string>
+    <string name="calling_you">Calling You.</string>
+    <string name="you_ll_be_charge_some_amount">You\'ll be charge some amount</string>
+    <string name="for_sending_message">for sending message.</string>
+    <string name="continue1">Continue</string>
+    <string name="suggesting_maid_is">Suggesting maid is</string>
+    <string name="have_not_you_registered_yet">Have not registered yet?</string>
+    <string name="if_you_want_upload_more_photos">If you want to upload more photos,</string>
+    <string name="please_go_edit_my_account"> please go edit profile.</string>
+    <string name="set_your_location">Set your location</string>
+    <string name="add_an">Add an listing is</string>
+    <string name="credits">Credit</string>
+    <string name="disable_quote">You are disabled by Admin. So you can not access all the functionality of Housemaid.</string>
+    <string name="i_accept">I accept</string>
+    <string name="terms_amp_conditions"><![CDATA[terms & conditions]]></string>
+    <string name="of_this_app">of the app</string>
+    <string name="atleast_16_years_old">You must be at least 16 to use housemaid</string>
+    <string name="hire_this_maid">Hire This Maid</string>
+    <string name="please_write_why_you_hire_this_maid">Please write why you hire this maid</string>
+    <string name="fire">Fire</string>
+    <string name="please_write_why_you_fire_this_maid">Please write why you fire this maid</string>
+    <string name="select_start_end_date">Please select start and end date</string>
+    <string name="fill_all_the_details">Please fill all the fields</string>
+    <string name="choose_corect_date">Please choose correct date</string>
+    <string name="complete_your_profile">Complete Your Profile</string>
+    <string name="error">Error :</string>
+    <string name="message_">Message :</string>
+    <string name="fails_">Fails</string>
+    <string name="please_fill_education_details">Please fill education details</string>
+    <string name="please_fill_certificate_details">Please fill certificate details</string>
+    <string name="Please_fill_about_yourself">Please fill about yourself</string>
+    <string name="please_fill_work_experience">Please fill your work experience</string>
+    <string name="please_select_education">Please select education</string>
+    <string name="please_select_your_language">Please select your language</string>
+    <string name="please_select_your_work_status">Please select your work status</string>
+    <string name="please_select_your_driving_licence">Please select driving licence status</string>
+    <string name="please_select_your_smoke_status">Please select your smoke status</string>
+    <string name="please_select_your_alcohol_status">Please select your alcohol status</string>
+    <string name="please_select_your_pet_problem">Please select your pet problem</string>
+    <string name="please_select_country">Please select country</string>
+    <string name="please_select_state">Please select state</string>
+    <string name="please_select_job_choice">Please select job choice</string>
+    <string name="please_select_working_choice">Please select working choice</string>
+    <string name="please_select_travel_status">Please select travel status</string>
+    <string name="please_select_live_with_family">Please select live with family status</string>
+    <string name="please_select_amount">Please select amount</string>
+    <string name="please_select_currency_type">Please select your currency type</string>
+    <string name="please_select_working_skills">Please select your working skills</string>
+    <string name="no_language">No Language</string>
+    <string name="mobile_already_exists">Mobile number already exists</string>
+    <string name="is_blocked">is Blocked</string>
+    <string name="you_are_blocked_by">You are Blocked by</string>
+    <string name="please_enter_a_message">please enter a message</string>
+    <string name="the_requent_has_been_sent">The Request has been sent</string>
+    <string name="registration_fails">Registration Fails</string>
+    <string name="invitation_sent_successfully">Invitation Sent Successfully</string>
+    <string name="no_response">No response</string>
+    <string name="no_agency">No Agency</string>
+    <string name="you_have_to_pay">You have to pay </string>
+    <string name="credit"> credits.</string>
+    <string name="hire_request_already_sent">Hire request has been already sent to this maid</string>
+    <string name="rating">Rating</string>
+    <string name="agency">Agency</string>
+    <string name="password_pattern">***************</string>
+    <string name="hijab">Hijab</string>
+    <string name="known_language">Known Language</string>
+    <string name="total_experience">Total Experience</string>
+    <string name="working_status">Working Status</string>
+    <string name="country_ies_where_i_can_work">Country(ies) Where I can Work</string>
+    <string name="state_s_where_i_can_work">State(s) Where I can Work</string>
+    <string name="district_s_where_i_can_work">District(s) Where I can Work</string>
+    <string name="city_ies_where_i_can_work">City(ies) Where I can Work</string>
+    <string name="i_can_travel_with_family">I Can Travel With Family</string>
+    <string name="my_messages">My Messages</string>
+    <string name="review_successfully_posted">Your Reviews Successfully Posted.</string>
+    <string name="no_skills">No Skills</string>
+    <string name="select_job_category">Select Job Category</string>
+    <string name="select_working_choice">Select Working Choice</string>
+    <string name="apply_to_this_agency">Apply to this Agency</string>
+    <string name="reject">Reject</string>
+    <string name="please_enter_company_name">Please enter company name</string>
+    <string name="please_enter_authorized_person_name">Please enter authorized person name</string>
+    <string name="please_select_country_name">Please select country name</string>
+    <string name="please_enter_address">Please enter address</string>
+    <string name="please_enter_tax_administration">Please enter tax administration</string>
+    <string name="please_enter_tax_number">Please enter tax number</string>
+    <string name="please_enter_company_phone">Please enter company phone</string>
+    <string name="please_choose_your_profile_picture">Please choose your Profile Image</string>
+    <string name="add_maids">Add Maids</string>
+    <string name="your_current_credits">Your current credits:</string>
+    <string name="add_an_maid_is">Add an maid is</string>
+    <string name="please_enter_nationality">Please enter nationality</string>
+    <string name="please_enter_education">Please enter education</string>
+    <string name="please_enter_language">Please enter language</string>
+    <string name="please_enter_pet_problem">Please enter pet problem</string>
+    <string name="complete_maid_profile">Complete Maid profile</string>
+    <string name="please_enter_country_name">Please enter country name</string>
+    <string name="please_enter_state_name">Please enter state name</string>
+    <string name="please_enter_dob">Please enter your dob</string>
+    <string name="please_select_your_gender">Please select your gender</string>
+    <string name="please_enter_your_language">Please enter your language</string>
+    <string name="please_enter_your_pet_problem">Please enter your pet problem</string>
+    <string name="add_maid_profile">Add Maid Profile</string>
+    <string name="please_select_profile_picture">Please select profile picture</string>
+    <string name="my_favorites">My Favourites</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="please_refresh">Please refresh</string>
+    <string name="profile_updated_successfully">Profile updated successfully.</string>
+    <string name="your_agency_has_been_already_highlighted">Your agency has been already highlighted.</string>
+    <string name="my_maids">My Maids</string>
+    <string name="maid_profiles">Maid Profiles</string>
+    <string name="removed_from_favorites">Removed from favourites</string>
+    <string name="added_to_favorites">Added to favourites</string>
+    <string name="network_error">Network Error</string>
+    <string name="connection_lost">Connection Lost</string>
+    <string name="server_error">Server Error</string>
+    <string name="please_select_your_dob">Please select your dob</string>
+    <string name="please_select_nationality">Please select nationality</string>
+    <string name="please_select_gender">Please select your gender</string>
+    <string name="please_select_your_marital_status">Please select your Marital Status</string>
+    <string name="please_select_your_kid_status">Please select your Kids Status</string>
+    <string name="please_select_hijab">Please select hijab</string>
+    <string name="please_choose_correct_date">Please choose correct date</string>
+    <string name="please_choose_a_valid_date">Please choose a valid date</string>
+    <string name="please_select_start_and_end_date">Please select start and end date</string>
+    <string name="please_write_why_you_want_to_apply_for_this_job">Please write why you want to apply for this job</string>
+    <string name="applied_successfully">Applied successfully</string>
+    <string name="your_call_request_has_been_rejected">Your Call request has been rejected</string>
+    <string name="no_job_listing_found">No job listing found.</string>
+    <string name="my_profile">My Profile</string>
+    <string name="agencies">Agencies</string>
+    <string name="agency_maids">Agency Maids</string>
+    <string name="reset_password">Reset Password</string>
+    <string name="verifiaction">Verification</string>
+    <string name="tap_again_to_exit">Tap again to exit</string>
+    <string name="otp_sent_successfully">OTP sent successfully</string>
+    <string name="no_maid_found">No maid found.</string>
+    <string name="set_location">Set Location</string>
+    <string name="please_enter_location">Please enter location</string>
+    <string name="sorry_unable_to_create_map">Sorry! unable to create maps</string>
+    <string name="no_location">No Location</string>
+    <string name="call_busy_please_call_after_sometime">Call busy! Please call after sometime</string>
+    <string name="is_calling_you">is Calling You</string>
+    <string name="favourites">Favourites</string>
+    <string name="notification">Notification</string>
+    <string name="past_bookings">Past Bookings</string>
+    <string name="payment_done_successfully">Payment done Successfully.</string>
+    <string name="please_grant_permission">Please Grant Permissions as application need these permissions.</string>
+    <string name="settings">Settings</string>
+    <string name="hide">Hide</string>
+    <string name="subscription">Subscription</string>
+    <string name="balance">Balance: --</string>
+    <string name="job_listing">Job Listing</string>
+    <string name="please_write_why_you_want_to_suggest">Please write why you want to suggest</string>
+    <string name="your_list_has_been_highlighted">Your list has been highlighted.</string>
+    <string name="waiting_for_approval">Waiting for Approval</string>
+    <string name="reviews_successfully_posted">Your Reviews Successfully Posted.</string>
+    <string name="searchother">Search...</string>
+    <string name="hire">Hire</string>
+    <string name="successful">Successful</string>
+    <string name="credits_will_be_deducted_from_your_account">credits will be deducted from your account</string>
+    <string name="buy_credit">Buy Credit</string>
+    <string name="return_to_main_screen">Return to Main Screen</string>
+    <string name="add_new_listing">Add New Listing</string>
+    <string name="select_listing_type">Select Listing Type</string>
+    <string name="callingdot">Connecting...</string>
+    <string name="basic_information">Basic Information</string>
+    <string name="please_wait">Please wait</string>
+    <string name="select_education">Select Education</string>
+    <string name="home">Home</string>
+    <string name="my_favourites">My Favourites</string>
+    <string name="my_listings">My Listings</string>
+    <string name="earn_buy_credit">Earn/Buy Credit</string>
+    <string name="buy_and_earn_credits">Buy and Earn Credits</string>
+    <string name="my_agency">My agency</string>
+    <string name="pay">Pay</string>
+    <string name="select_job">Select Job</string>
+    <string name="select_language">Select Language</string>
+    <string name="select_country">Select Country</string>
+    <string name="select_nationality">Select Nationality</string>
+    <string name="select_pet_problem">Select Pet Problem</string>
+    <string name="select_skills">Select Skills</string>
+    <string name="post_reviews">Post Reviews...</string>
+    <string name="post">Post</string>
+    <string name="pay_credits">Pay credits</string>
+    <string name="disconnectiong">Disconnecting...</string>
+    <string name="listing_details">Listing Details</string>
+    <string name="listing_info">Listing Information</string>
+    <string name="not_enough_credit">Sorry, You don\'t have enough credit.</string>
+
+</resources>

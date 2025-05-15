@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.housemaid.activities.agency.fromHome.MyMaidsActivity">
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:ignore="UselessParent">
+
+            <include
+                android:id="@+id/toolbar"
+                layout="@layout/toolbar_header" />
+
+            <com.housemaid.utils.MyTextView
+                android:id="@+id/tvSelectionText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/toolbar"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:gravity="center_horizontal"
+                android:text="@string/please_select_the_maid_you_want_to_suggest"
+                android:textColor="@color/colorDarkGrey"
+                android:textSize="17sp" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rvMyMaidsListing"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/tvSelectionText"
+                android:layout_marginTop="5dp"
+                tools:listitem="@layout/single_item_home_list_layout" />
+
+        </RelativeLayout>
+
+        <ProgressBar
+            android:id="@+id/progress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
+            android:visibility="gone" />
+
+        <com.housemaid.utils.MyTextView
+            android:id="@+id/tvNoData"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:drawableTop="@drawable/no_data"
+            android:gravity="center"
+            android:text="@string/no_list_found_in_your_area"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/_17sdp"
+            android:visibility="gone" />
+
+    </FrameLayout>
+</layout>

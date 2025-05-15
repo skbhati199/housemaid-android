@@ -1,0 +1,27 @@
+<resources>
+    <!--
+    TODO: Before you run your application, you need a Google Maps API key.
+
+    To get one, follow this link, follow the directions and press "Create" at the end:
+
+    https://console.developers.google.com/flows/enableapi?apiid=maps_android_backend&keyType=CLIENT_SIDE_ANDROID&r=D9:BE:9E:5D:13:0E:72:BB:2D:32:1D:5B:CC:DD:31:C9:CF:7C:BD:2A%3Bcom.example.fluper.digiparking.activities
+
+    You can also add your credentials to an existing key, using these values:
+
+    Package name:
+    D9:BE:9E:5D:13:0E:72:BB:2D:32:1D:5B:CC:DD:31:C9:CF:7C:BD:2A
+
+    SHA-1 certificate fingerprint:
+    D9:BE:9E:5D:13:0E:72:BB:2D:32:1D:5B:CC:DD:31:C9:CF:7C:BD:2A
+
+    Alternatively, follow the directions here:
+    https://developers.google.com/maps/documentation/android/start#get-key
+
+    Once you have your key (it starts with "AIza"), replace the "google_maps_key"
+    string in this file.
+    -->
+    <string name="google_maps_key" templateMergeStrategy="preserve"
+        translatable="false">AIzaSyDBTToIFHdsjtiZSm6aVDpcZyn2a9OopEI</string>
+    <!--<string name="google_maps_key" templateMergeStrategy="preserve"
+        translatable="false">AIzaSyDC7H5pB_gOKHhkRVgbCzMcztM3VeS7q0Q</string>-->
+</resources>

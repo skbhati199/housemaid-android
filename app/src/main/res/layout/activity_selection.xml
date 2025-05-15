@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.housemaid.activities.SelectionActivity">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/sign_in">
+
+            <android.support.v7.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="80dp"
+                android:background="@drawable/logo" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="300dp"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:id="@+id/btnJob"
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/btn_white"
+                    android:textColor="@color/colorPrimary">
+
+                    <com.housemaid.utils.MyBoldTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:background="@drawable/btn_white"
+                        android:drawablePadding="@dimen/_10sdp"
+                        android:drawableStart="@drawable/maid"
+                        android:text="@string/i_want_job"
+                        android:textAllCaps="false"
+                        android:paddingEnd="@dimen/_12sdp"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/btnMaid"
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/btn_white"
+                    android:textColor="@color/colorPrimary">
+
+                    <com.housemaid.utils.MyBoldTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:background="@drawable/btn_white"
+                        android:drawablePadding="@dimen/_10sdp"
+                        android:drawableStart="@drawable/want_maid"
+                        android:text="@string/i_want_maid"
+                        android:textAllCaps="false"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/btnAgency"
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/btn_white"
+                    android:textColor="@color/colorPrimary">
+
+                    <com.housemaid.utils.MyBoldTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:background="@drawable/btn_white"
+                        android:drawablePadding="@dimen/_10sdp"
+                        android:drawableStart="@drawable/agency"
+                        android:text="@string/i_am_agency"
+                        android:textAllCaps="false"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+        </RelativeLayout>
+
+        <ProgressBar
+            android:id="@+id/progress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="gone" />
+    </FrameLayout>
+</layout>

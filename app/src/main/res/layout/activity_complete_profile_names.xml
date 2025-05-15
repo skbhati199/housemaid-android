@@ -1,0 +1,410 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context="com.housemaid.activities.user.beforeHome.CompleteProfileNamesActivity">
+
+            <include
+                android:id="@+id/toolbar"
+                layout="@layout/toolbar_header" />
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/toolbar">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.housemaid.utils.MyTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="5dp"
+                        android:text="@string/please_complete_your_profile"
+                        android:textColor="@color/colorDarkGrey"
+                        android:textSize="15sp" />
+
+                    <ProgressBar
+                        android:id="@+id/progressBar"
+                        style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="32dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="30dp"
+                        android:layout_marginRight="20dp"
+                        android:progress="50"
+                        android:progressDrawable="@drawable/progress_layout" />
+
+                    <LinearLayout
+                        android:id="@+id/linear_container"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/progressBar"
+
+                        android:layout_marginTop="10dp"
+                        android:orientation="vertical">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:background="@color/colorDarkGrey">
+
+                            <com.housemaid.utils.MyTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="20dp"
+                                android:gravity="center_vertical"
+                                android:paddingTop="6dp"
+                                android:paddingBottom="6dp"
+                                android:text="@string/basic_information"
+                                android:textColor="@color/colorWhite"
+                                android:textSize="17sp" />
+
+                        </RelativeLayout>
+
+
+                        <RelativeLayout
+                            android:id="@+id/rlCountry"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginRight="20dp"
+                            android:background="@drawable/custom_text_view_grey"
+                            android:elevation="6dp"
+                            android:padding="7dp">
+
+                            <com.housemaid.utils.MyBoldTextView
+                                android:id="@+id/tvCountry"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/country"
+                                android:textColor="@color/colorDarkGrey"
+                                android:textSize="15sp"
+                                android:textStyle="bold"
+                                tools:ignore="RelativeOverlap" />
+
+                            <com.housemaid.utils.MyTextView
+                                android:id="@+id/tvCountryName"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/tvCountry"
+                                android:text=""
+                                android:textColor="@color/colorDarkGrey"
+                                android:textSize="15sp" />
+
+                            <android.support.v7.widget.AppCompatImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
+                                android:layout_centerVertical="true"
+                                android:src="@drawable/right_arrow" />
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/rlState"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginRight="20dp"
+                            android:background="@drawable/custom_text_view_grey"
+                            android:elevation="6dp"
+                            android:padding="7dp">
+
+                            <com.housemaid.utils.MyBoldTextView
+                                android:id="@+id/tvState"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/state"
+                                android:textColor="@color/colorDarkGrey"
+                                android:textSize="15sp"
+                                android:textStyle="bold"
+                                tools:ignore="RelativeOverlap" />
+
+                            <com.housemaid.utils.MyTextView
+                                android:id="@+id/tvStateName"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/tvState"
+                                android:text=""
+                                android:textColor="@color/colorDarkGrey"
+                                android:textSize="15sp" />
+
+                            <android.support.v7.widget.AppCompatImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
+                                android:layout_centerVertical="true"
+                                android:src="@drawable/right_arrow" />
+
+                        </RelativeLayout>
+
+
+                        <com.housemaid.utils.MyTextView
+                            android:id="@+id/tv_dob"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginRight="20dp"
+                            android:background="@drawable/custom_text_view_grey"
+                            android:drawableStart="@drawable/calendar"
+                            android:drawablePadding="10dp"
+                            android:elevation="6dp"
+                            android:gravity="center_vertical"
+                            android:hint="@string/date_of_birth"
+                            android:inputType="number"
+                            android:paddingStart="18dp"
+                            android:paddingTop="14dp"
+                            android:paddingBottom="10dp"
+                            android:textColor="@color/colorDarkGrey"
+                            android:textSize="15sp"
+                            tools:ignore="RtlSymmetry" />
+
+                        <LinearLayout
+                            android:id="@+id/gender_linear_layout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginRight="20dp"
+                            android:background="@drawable/custom_text_view_grey"
+                            android:baselineAligned="false"
+                            android:elevation="6dp"
+                            android:orientation="horizontal"
+                            android:weightSum="2">
+
+
+                            <RelativeLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1">
+
+                                <com.housemaid.utils.MyTextView
+                                    android:id="@+id/tv_male"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:drawableStart="@drawable/male_grey"
+                                    android:drawablePadding="12dp"
+                                    android:gravity="center_vertical"
+                                    android:paddingStart="40dp"
+                                    android:paddingTop="14dp"
+                                    android:paddingBottom="10dp"
+                                    android:text="@string/male"
+                                    android:textSize="15sp"
+                                    tools:ignore="RtlSymmetry" />
+
+
+                                <com.housemaid.utils.MyTextView
+                                    android:id="@+id/tv_male_color"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/custom_text_view_blue"
+                                    android:drawableStart="@drawable/male_white"
+                                    android:drawablePadding="10dp"
+                                    android:gravity="center_vertical"
+                                    android:paddingStart="40dp"
+                                    android:paddingTop="15dp"
+                                    android:paddingBottom="13dp"
+                                    android:text="@string/male"
+                                    android:textColor="@color/colorWhite"
+                                    android:textSize="15sp"
+                                    android:visibility="gone"
+                                    tools:ignore="RtlSymmetry" />
+
+
+                            </RelativeLayout>
+
+
+                            <RelativeLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1">
+
+                                <com.housemaid.utils.MyTextView
+                                    android:id="@+id/tv_female"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:drawableStart="@drawable/female_grey"
+                                    android:drawablePadding="7dp"
+                                    android:gravity="center_vertical"
+                                    android:paddingStart="30dp"
+                                    android:paddingTop="14dp"
+                                    android:paddingBottom="10dp"
+                                    android:text="@string/female"
+                                    android:textSize="15sp"
+                                    tools:ignore="RtlSymmetry" />
+
+                                <com.housemaid.utils.MyTextView
+                                    android:id="@+id/tv_female_color"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/custom_text_view_blue"
+                                    android:drawableStart="@drawable/female_white"
+                                    android:drawablePadding="10dp"
+                                    android:gravity="center_vertical"
+                                    android:paddingStart="30dp"
+                                    android:paddingTop="15dp"
+                                    android:paddingBottom="13dp"
+                                    android:text="@string/female"
+                                    android:textColor="@color/colorWhite"
+                                    android:textSize="15sp"
+                                    android:visibility="gone"
+                                    tools:ignore="RtlSymmetry" />
+
+
+                            </RelativeLayout>
+
+                        </LinearLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/rlMaritalStatus"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginRight="20dp"
+                            android:layout_marginBottom="10dp"
+                            android:background="@drawable/custom_text_view_grey"
+                            android:elevation="6dp">
+
+                            <Spinner
+                                android:id="@+id/spinnerMaritalStatus"
+                                android:layout_width="match_parent"
+                                android:layout_height="50dp"
+                                android:background="@null"
+                                android:elevation="10dp"
+                                android:paddingStart="10dp"
+                                android:paddingEnd="10dp"
+                                android:spinnerMode="dropdown"
+                                android:textColor="@color/colorGrey"
+                                android:textSize="15sp"
+                                tools:ignore="RtlSymmetry" />
+
+                            <android.support.v7.widget.AppCompatImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginEnd="10dp"
+                                android:padding="7dp"
+                                android:rotation="90"
+                                android:src="@drawable/right_arrow" />
+                        </RelativeLayout>
+                    </LinearLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/relative_application_permission"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/linear_container"
+                        android:layout_marginTop="10dp"
+                        android:background="@color/colorDarkGrey">
+
+                        <com.housemaid.utils.MyTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="20dp"
+                            android:gravity="center_vertical"
+                            android:paddingTop="6dp"
+                            android:paddingBottom="6dp"
+                            android:text="@string/application_permission"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="17sp" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/rlNotification"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/relative_application_permission"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="20dp">
+
+                        <com.housemaid.utils.MyTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/allow_notification"
+                            android:textColor="@color/colorDarkGrey"
+                            android:textSize="15sp"
+                            tools:ignore="RelativeOverlap" />
+
+                        <android.support.v7.widget.SwitchCompat
+                            android:id="@+id/switchNotification"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:buttonTint="@color/colorPrimary"
+                            android:checked="true" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/rlHidePhoto"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/rlNotification"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="20dp">
+
+                        <com.housemaid.utils.MyTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/hide_my_photo_and_email"
+                            android:textColor="@color/colorDarkGrey"
+                            android:textSize="15sp"
+                            tools:ignore="RelativeOverlap" />
+
+                        <android.support.v7.widget.SwitchCompat
+                            android:id="@+id/switchHidePhoto"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:buttonTint="@color/colorPrimary"
+                            android:checked="false" />
+                    </RelativeLayout>
+
+                    <com.housemaid.utils.MyButton
+                        android:id="@+id/btnSubmit"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_below="@+id/rlHidePhoto"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="30dp"
+                        android:layout_marginEnd="20dp"
+                        android:layout_marginBottom="20dp"
+                        android:background="@drawable/btn_blue"
+                        android:text="@string/submit"
+                        android:textAllCaps="false"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textSize="17sp"
+                        android:textStyle="bold" />
+
+
+                </RelativeLayout>
+            </ScrollView>
+        </RelativeLayout>
+
+        <ProgressBar
+            android:id="@+id/progress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="gone" />
+    </FrameLayout>
+</layout>

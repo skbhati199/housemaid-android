@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+<FrameLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        tools:context="com.housemaid.activities.SignUpActivity">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <android.support.v7.widget.AppCompatImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/sign_up"/>
+
+                <android.support.v7.widget.AppCompatImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="40dp"
+                    android:background="@drawable/logo" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="30dp"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="200dp"
+                    android:orientation="vertical">
+
+                    <com.housemaid.utils.MyTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:text="@string/user_name"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textSize="15sp" />
+
+
+                    <com.housemaid.utils.MyEditText
+                        android:id="@+id/etUserName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:background="@drawable/edittext_white"
+                        android:digits="@string/name_digits"
+                        android:inputType="text|textCapWords"
+                        android:paddingEnd="20dp"
+                        android:paddingStart="20dp"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textSize="15sp" />
+
+                    <com.housemaid.utils.MyTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="10dp"
+                        android:text="@string/mobile_number"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textSize="15sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:background="@drawable/edittext_white"
+                        android:orientation="horizontal">
+
+                        <com.hbb20.CountryCodePicker
+                            android:id="@+id/countryCodePicker"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="8dp"
+                            android:padding="3dp"
+                            android:layout_marginTop="1dp"
+                            app:ccpDialog_keyboardAutoPopup="false"
+                            app:ccpDialog_searchEditTextTint="@color/colorPrimary"
+                            app:ccp_contentColor="@color/colorPrimaryDark"
+                            app:ccp_showArrow="false"
+                            app:ccp_showFlag="false"
+                            app:ccp_defaultNameCode="TR"
+                            app:ccp_showNameCode="false"
+                            app:ccp_textSize="15sp">
+
+                        </com.hbb20.CountryCodePicker>
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="5dp"
+                            android:background="@color/colorPrimaryDark" />
+
+                        <com.housemaid.utils.MyEditText
+                            android:id="@+id/etMobileNumber"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginEnd="20dp"
+                            android:layout_marginStart="10dp"
+                            android:background="@null"
+                            android:inputType="number"
+                            android:maxLength="12"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:textColorHint="@color/colorPrimaryDark"
+                            android:textSize="15sp" />
+
+                    </LinearLayout>
+
+                    <com.housemaid.utils.MyTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="10dp"
+                        android:text="@string/email_id"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textSize="15sp" />
+
+                    <com.housemaid.utils.MyEditText
+                        android:id="@+id/etEmailID"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:background="@drawable/edittext_white"
+                        android:inputType="textEmailAddress"
+                        android:paddingEnd="20dp"
+                        android:paddingStart="20dp"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textSize="15sp" />
+
+                    <com.housemaid.utils.MyTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="10dp"
+                        android:text="@string/password_character"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textSize="15sp" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <com.housemaid.utils.MyEditText
+                            android:id="@+id/etPassword"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:background="@drawable/edittext_white"
+                            android:inputType="textPassword"
+                            android:paddingEnd="60dp"
+                            android:paddingStart="20dp"
+                            android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890
+                            ._!@#$%^*()-=+|\{}[]:;',.?/*+"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:textSize="15sp" />
+
+
+                        <com.housemaid.utils.MyTextView
+                            android:id="@+id/tvShow"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginEnd="20dp"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginTop="3dp"
+                            android:padding="5dp"
+                            android:text="Show"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:textSize="15sp" />
+
+                    </RelativeLayout>
+
+                    <com.housemaid.utils.MyTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="10dp"
+                        android:text="@string/confirm_password"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textSize="15sp" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <com.housemaid.utils.MyEditText
+                            android:id="@+id/etConfirmPassword"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:background="@drawable/edittext_white"
+                            android:inputType="textPassword"
+                            android:paddingEnd="60dp"
+                            android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890
+                            ._!@#$%^*()-=+|\{}[]:;',.?/*+"
+                            android:paddingStart="20dp"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:textSize="15sp" />
+
+                        <com.housemaid.utils.MyTextView
+                            android:id="@+id/tvConfirmShow"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginEnd="20dp"
+                            android:layout_marginStart="20dp"
+                            android:padding="5dp"
+                            android:text="@string/show"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:textSize="15sp" />
+
+                    </RelativeLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:orientation="horizontal">
+
+                        <CheckBox
+                            android:id="@+id/checkbox"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:button="@drawable/custom_checkbox" />
+
+                        <com.housemaid.utils.MyTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:text="@string/i_accept"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:textSize="15sp" />
+
+                        <com.housemaid.utils.MyBoldTextView
+                            android:id="@+id/tvTerms"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:text="@string/terms_amp_conditions"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:textSize="15sp" />
+
+                        <com.housemaid.utils.MyTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:text="@string/of_this_app"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:textSize="15sp" />
+
+                    </LinearLayout>
+
+                    <com.housemaid.utils.MyButton
+                        android:id="@+id/btnCreateAccount"
+                        android:layout_width="match_parent"
+                        android:layout_height="55dp"
+                        android:layout_marginTop="20dp"
+                        android:background="@drawable/btn_white"
+                        android:text="@string/create_account"
+                        android:textAllCaps="false"
+                        android:gravity="center"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginBottom="30dp"
+                        android:layout_marginTop="40dp"
+                        android:orientation="horizontal">
+
+                        <com.housemaid.utils.MyTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/already_have_account"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:textSize="15sp" />
+
+                        <com.housemaid.utils.MyBoldTextView
+                            android:id="@+id/tvLogin"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:text="@string/login"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:textSize="15sp" />
+
+
+                    </LinearLayout>
+                </LinearLayout>
+            </RelativeLayout>
+        </ScrollView>
+    </RelativeLayout>
+    <ProgressBar
+        android:id="@+id/progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        style="@style/AppTheme"
+        android:visibility="gone"
+        />
+</FrameLayout>
+</layout>

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <android.support.v4.widget.DrawerLayout
+        android:id="@+id/drawerLayout"
+        style="@style/MyTransTheme"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        tools:context="com.housemaid.activities.HomeActivity">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <include
+                android:id="@+id/toolbar"
+                layout="@layout/toolbar_header" />
+
+            <RelativeLayout
+                android:id="@+id/rlSearch"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_below="@+id/toolbar">
+
+                <android.support.v7.widget.AppCompatImageView
+                    android:layout_width="30dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="20dp"
+                    android:src="@drawable/search_grey" />
+
+                <AutoCompleteTextView
+                    android:id="@+id/tvSearchMaid"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="60dp"
+                    android:layout_marginEnd="30dp"
+                    android:background="@android:color/transparent"
+                    android:hint="@string/search"
+                    android:imeOptions="actionDone"
+                    android:inputType="text"
+                    android:padding="5dp"
+                    android:textColor="@color/colorDarkGrey"
+                    android:textSize="17sp" />
+            </RelativeLayout>
+
+            <com.housemaid.utils.MyTextView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/rlSearch"
+                android:background="@color/colorGrey" />
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/rlSearch">
+
+                <RelativeLayout
+                    android:id="@+id/fragmentContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <android.support.v4.widget.SwipeRefreshLayout
+                        android:id="@+id/swipe_refresh_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+
+                        <android.support.v7.widget.RecyclerView
+                            android:id="@+id/rvHomeListing"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                        </android.support.v7.widget.RecyclerView>
+
+                    </android.support.v4.widget.SwipeRefreshLayout>
+
+                </RelativeLayout>
+
+                <ProgressBar
+                    android:id="@+id/progress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:visibility="gone" />
+
+                <com.housemaid.utils.MyTextView
+                    android:id="@+id/tvNoData"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:drawableTop="@drawable/no_data"
+                    android:gravity="center"
+                    android:text="@string/no_list_found_in_your_area"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/_17sdp"
+                    android:visibility="gone" />
+            </FrameLayout>
+
+        </RelativeLayout>
+
+        <android.support.design.widget.NavigationView
+            android:id="@+id/navigation_view"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:fitsSystemWindows="true">
+
+            <include
+                android:id="@+id/sidebar_content"
+                layout="@layout/sidbar_home_content" />
+
+        </android.support.design.widget.NavigationView>
+    </android.support.v4.widget.DrawerLayout>
+
+</layout>

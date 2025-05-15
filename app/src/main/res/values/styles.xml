@@ -1,0 +1,57 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="BaseTheme" parent="Theme.AppCompat.Light.NoActionBar">
+
+
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimarys</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="windowActionModeOverlay">true</item>
+
+
+        <!--<item name="windowActionBar">false</item>-->
+        <!--<item name="windowActionModeOverlay">true</item>-->
+    </style>
+
+    <style name="AppTheme" parent="BaseTheme">
+
+    </style>
+
+    <style name="MyTransTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorGrey</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="rating_bar" parent="@android:style/Widget.RatingBar">
+        <item name="android:progressDrawable">@drawable/rating_bar_selector</item>
+        <item name="android:minHeight">15.5dp</item>
+        <item name="android:maxHeight">17.5dp</item>
+    </style>
+
+    <style name="rating_bar_big" parent="@android:style/Widget.Holo.RatingBar">
+        <item name="android:progressDrawable">@drawable/rating_bar_selector</item>
+        <item name="android:minHeight">57dp</item>
+        <item name="android:maxHeight">57dp</item>
+    </style>
+    <style name="AppThemeRatingBar" parent="Base.Widget.AppCompat.RatingBar">
+        <item name="android:colorControlNormal">@color/colorGrey</item>
+        <item name="android:numStars">5</item>
+        <item name="android:color">@color/colorYellow</item>
+    </style>
+
+
+    <style name="MyCustomTabLayout" parent="Widget.Design.TabLayout">
+        <item name="tabTextAppearance">@style/MyCustomTextAppearance</item>
+    </style>
+
+    <style name="MyCustomTextAppearance" parent="TextAppearance.Design.Tab">
+        <item name="textAllCaps">false</item>
+    </style>
+
+
+</resources>

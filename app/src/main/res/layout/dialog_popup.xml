@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:background="@android:color/transparent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="@dimen/_5sdp"
+        android:layout_margin="@dimen/_5sdp"
+        android:background="@color/colorWhite"
+        app:cardElevation="@dimen/_10sdp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:elevation="@dimen/_100sdp"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <LinearLayout
+                android:id="@+id/delete_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <android.support.v7.widget.AppCompatImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/_10sdp"
+                    android:visibility="gone"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/image"/>
+                <com.housemaid.utils.MyTextView
+                    android:id="@+id/tvRequestMaid"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="start"
+                    android:paddingRight="@dimen/_10sdp"
+                    android:paddingLeft="@dimen/_10sdp"
+                    android:paddingTop="@dimen/_5sdp"
+                    android:visibility="gone"
+                    android:paddingBottom="@dimen/_5sdp"
+                    android:text="@string/request_maid"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="@dimen/_12sdp" />
+                <com.housemaid.utils.MyTextView
+                    android:id="@+id/tvApplyListing"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="start"
+                    android:paddingRight="@dimen/_10sdp"
+                    android:paddingLeft="@dimen/_10sdp"
+                    android:paddingTop="@dimen/_5sdp"
+                    android:visibility="gone"
+                    android:paddingBottom="@dimen/_5sdp"
+                    android:text="@string/apply_to_this_listing"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="@dimen/_12sdp" />
+                <com.housemaid.utils.MyTextView
+                    android:id="@+id/tvHire"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="start"
+                    android:paddingRight="@dimen/_10sdp"
+                    android:paddingLeft="@dimen/_10sdp"
+                    android:paddingTop="@dimen/_5sdp"
+                    android:visibility="gone"
+                    android:paddingBottom="@dimen/_5sdp"
+                    android:text="@string/hire"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="@dimen/_12sdp" />
+                <com.housemaid.utils.MyTextView
+                    android:id="@+id/tvApplyThisAgency"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="start"
+                    android:paddingRight="@dimen/_10sdp"
+                    android:paddingLeft="@dimen/_10sdp"
+                    android:paddingTop="@dimen/_5sdp"
+                    android:visibility="gone"
+                    android:paddingBottom="@dimen/_5sdp"
+                    android:text="@string/apply_to_this_agency"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="@dimen/_12sdp" />
+
+                <com.housemaid.utils.MyTextView
+                    android:id="@+id/tvAgencyMaid"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="start"
+                    android:paddingRight="@dimen/_10sdp"
+                    android:paddingLeft="@dimen/_10sdp"
+                    android:paddingTop="@dimen/_5sdp"
+                    android:paddingBottom="@dimen/_5sdp"
+                    android:text="@string/agency_maid"
+                    android:visibility="gone"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="@dimen/_12sdp" />
+
+                <com.housemaid.utils.MyTextView
+                    android:id="@+id/tvSuggestMaid"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="start"
+                    android:paddingRight="@dimen/_10sdp"
+                    android:paddingLeft="@dimen/_10sdp"
+                    android:paddingTop="@dimen/_5sdp"
+                    android:paddingBottom="@dimen/_5sdp"
+                    android:text="@string/suggest_maid"
+                    android:visibility="gone"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="@dimen/_12sdp" />
+                <com.housemaid.utils.MyTextView
+                    android:id="@+id/tvInvite"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="start"
+                    android:paddingRight="@dimen/_10sdp"
+                    android:paddingLeft="@dimen/_10sdp"
+                    android:paddingTop="@dimen/_5sdp"
+                    android:paddingBottom="@dimen/_5sdp"
+                    android:text="@string/invite"
+                    android:visibility="gone"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="@dimen/_12sdp" />
+                <com.housemaid.utils.MyTextView
+                    android:id="@+id/tvFire"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="start"
+                    android:paddingRight="@dimen/_10sdp"
+                    android:paddingLeft="@dimen/_10sdp"
+                    android:paddingTop="@dimen/_5sdp"
+                    android:paddingBottom="@dimen/_5sdp"
+                    android:text="@string/fire_this_maid"
+                    android:visibility="gone"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="@dimen/_12sdp" />
+                <com.housemaid.utils.MyTextView
+                    android:id="@+id/tvLiveConversation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:paddingRight="@dimen/_10sdp"
+                    android:paddingLeft="@dimen/_10sdp"
+                    android:paddingTop="@dimen/_5sdp"
+                    android:paddingBottom="@dimen/_5sdp"
+                    android:visibility="gone"
+                    android:text="@string/request_live_conversation"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="@dimen/_12sdp" />
+                <com.housemaid.utils.MyTextView
+                    android:id="@+id/tvViewUserListing"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:paddingRight="@dimen/_10sdp"
+                    android:paddingLeft="@dimen/_10sdp"
+                    android:paddingTop="@dimen/_5sdp"
+                    android:paddingBottom="@dimen/_5sdp"
+                    android:visibility="gone"
+                    android:text="@string/view_this_user_job_listing"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="@dimen/_12sdp" />
+                <com.housemaid.utils.MyTextView
+                    android:id="@+id/tvSendMessage"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:paddingRight="@dimen/_10sdp"
+                    android:paddingLeft="@dimen/_10sdp"
+                    android:paddingTop="@dimen/_5sdp"
+                    android:paddingBottom="@dimen/_5sdp"
+                    android:visibility="gone"
+                    android:text="@string/send_message"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="@dimen/_12sdp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+</LinearLayout>
+
+

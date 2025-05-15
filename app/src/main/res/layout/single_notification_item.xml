@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cardViewNotification"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="20dp"
+        android:padding="5dp"
+        app:cardBackgroundColor="@color/colorWhite"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="20dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/imageCard"
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_weight="2.5"
+                    app:cardCornerRadius="10dp">
+
+                    <android.support.v7.widget.AppCompatImageView
+                        android:id="@+id/civProfilePic"
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/user" />
+                </android.support.v7.widget.CardView>
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_weight="1">
+
+                    <com.housemaid.utils.MyBoldTextView
+                        android:id="@+id/tvName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:gravity="start"
+                        android:padding="@dimen/_1sdp"
+                        android:text="Satyam Bhatia"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/_10sdp"
+                        android:textStyle="bold" />
+
+                    <com.housemaid.utils.MyBoldTextView
+                        android:id="@+id/tvNotificationType"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tvName"
+                        android:gravity="start"
+                        android:padding="@dimen/_1sdp"
+                        android:text="Satyam Bhatia"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/_10sdp"
+                        android:textStyle="bold" />
+
+                    <com.housemaid.utils.MyTextView
+                        android:id="@+id/tvNotificationMessage"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tvNotificationType"
+                        android:gravity="start"
+                        android:padding="@dimen/_1sdp"
+                        android:text="@string/lorem_ipsum_sit_amet_consectetur_adipiscing_do_elit_sed_do_eiusmod_tempor_incididunt_ut_labore_at_eiusmod_dolcre_magna_alique"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/_10sdp" />
+
+
+                    <com.housemaid.utils.MyTextView
+                        android:id="@+id/tvTime"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tvNotificationMessage"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginTop="@dimen/_4sdp"
+                        android:layout_marginRight="@dimen/_5sdp"
+                        android:layout_marginBottom="@dimen/_2sdp"
+                        android:paddingBottom="@dimen/_2sdp"
+                        android:text="@string/_12_nov_2018_2_50_pm"
+                        android:textColor="@color/colorGrey"
+                        android:textSize="@dimen/_9sdp"
+                        android:visibility="visible"
+
+                        />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layoutButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_2sdp"
+                android:layout_marginEnd="@dimen/_2sdp"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:orientation="horizontal"
+                android:visibility="gone"
+                android:weightSum="2">
+
+                <com.housemaid.utils.MyButton
+                    android:id="@+id/btnAccept"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:layout_weight="1"
+                    android:background="@color/colorWhite"
+                    android:text="@string/accept"
+                    android:textAllCaps="false"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/_10sdp" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="@dimen/_12sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:background="@color/colorPrimary" />
+
+                <com.housemaid.utils.MyButton
+                    android:layout_width="0dp"
+                    android:id="@+id/btnReject"
+                    android:layout_height="@dimen/_20sdp"
+                    android:layout_weight="1"
+                    android:background="@color/colorWhite"
+                    android:text="@string/reject"
+                    android:textAllCaps="false"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/_10sdp" />
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+
+</layout>

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <android.support.v7.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="match_parent"
+        android:layout_height="140dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        app:cardBackgroundColor="@color/colorWhite"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="20dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/layoutSingleItem"
+                android:layout_width="match_parent"
+                android:layout_height="130dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="6dp"
+                android:orientation="horizontal"
+                android:weightSum="5">
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="2dp"
+                    android:layout_marginStart="2dp"
+                    android:layout_weight="2"
+                    app:cardCornerRadius="10dp">
+
+                    <android.support.v7.widget.AppCompatImageView
+                        android:id="@+id/ivProfilePic"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/user" />
+                </android.support.v7.widget.CardView>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_weight="3"
+                    android:orientation="vertical"
+                    >
+
+                    <!--android:text="@{userBean.name}"-->
+                    <com.housemaid.utils.MyTextView
+                        android:id="@+id/tvPersonName"
+                        android:layout_marginTop="30dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Seller Name 01"
+                        android:textColor="@color/colorDarkGrey"
+                        android:textSize="15sp" />
+
+
+                    <com.housemaid.utils.MyTextView
+                        android:id="@+id/tvOrderid"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="20dp"
+                        android:layout_marginTop="3dp"
+                        android:ellipsize="end"
+                        android:text="Order ID: #012484215 "
+                        android:textColor="@color/colorGrey"
+                        android:textSize="12sp" />
+
+
+                    <com.housemaid.utils.MyTextView
+                        android:id="@+id/tvEndDate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="20dp"
+                        android:layout_marginTop="3dp"
+                        android:ellipsize="end"
+                        android:text="@string/_12_nov_2018_2_50_pm"
+                        android:textColor="@color/colorGrey"
+                        android:textSize="12sp" />
+
+
+
+                </LinearLayout>
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+
+    </android.support.v7.widget.CardView>
+
+</layout>

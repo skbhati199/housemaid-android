@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.housemaid.activities.user.fromHome.UserProfileActivity">
+
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/toolbar_header" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/toolbar">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="200dp">
+
+            <android.support.v4.view.ViewPager
+                android:id="@+id/viewPager"
+                android:layout_width="match_parent"
+                android:layout_height="200dp" />
+
+        <android.support.design.widget.TabLayout
+            android:id="@+id/tabDots"
+            android:layout_alignParentBottom="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:tabBackground="@drawable/tab_selector"
+            app:tabGravity="center"
+            app:tabIndicatorHeight="0dp"/>
+    </RelativeLayout>
+
+
+        <com.housemaid.utils.MyTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorAccent"
+            android:gravity="center_vertical"
+            android:paddingBottom="6dp"
+            android:paddingStart="25dp"
+            android:paddingTop="6dp"
+            android:text="@string/basic_information"
+            android:textColor="@color/colorWhite"
+            android:textSize="17sp"
+            tools:ignore="RtlSymmetry" />
+
+
+        <RelativeLayout
+            android:id="@+id/rlAgency"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp">
+
+            <com.housemaid.utils.MyBoldTextView
+                android:id="@+id/tv_name_header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:text="@string/name"
+                android:textColor="@color/colorDarkGrey"
+                android:textSize="13sp" />
+
+
+            <com.housemaid.utils.MyTextView
+                android:id="@+id/tvName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_name_header"
+                android:layout_marginStart="10dp"
+                android:text="@string/john_doe"
+                android:textColor="@color/colorDarkGrey"
+                android:textSize="15sp" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorGrey" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp">
+
+            <com.housemaid.utils.MyBoldTextView
+                android:id="@+id/tv_email_header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:text="@string/email_id"
+                android:textColor="@color/colorDarkGrey"
+                android:textSize="13sp" />
+
+
+            <com.housemaid.utils.MyTextView
+                android:id="@+id/tvAuthorisedPerson"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_email_header"
+                android:layout_marginStart="10dp"
+                android:text="@string/john_gmail_com"
+                android:textColor="@color/colorDarkGrey"
+                android:textSize="15sp" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorGrey" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp">
+
+            <com.housemaid.utils.MyBoldTextView
+                android:id="@+id/tv_phone_number_header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:text="@string/phone_number"
+                android:textColor="@color/colorDarkGrey"
+                android:textSize="13sp"
+                android:layout_marginEnd="80dp"/>
+
+
+            <com.housemaid.utils.MyTextView
+                android:id="@+id/tvPhoneNumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_phone_number_header"
+                android:layout_marginStart="10dp"
+                android:textColor="@color/colorDarkGrey"
+                android:textSize="15sp"
+                android:layout_marginEnd="80dp"/>
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorGrey" />
+
+
+
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp">
+
+            <com.housemaid.utils.MyBoldTextView
+                android:id="@+id/tv_CountryName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:text="@string/country"
+                android:textColor="@color/colorDarkGrey"
+                android:textSize="13sp" />
+
+
+            <com.housemaid.utils.MyTextView
+                android:id="@+id/tvCountry"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_CountryName"
+                android:layout_marginStart="10dp"
+                android:textColor="@color/colorDarkGrey"
+                android:textSize="15sp" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorGrey" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp">
+
+            <com.housemaid.utils.MyBoldTextView
+                android:id="@+id/tv_statename"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:text="@string/state"
+                android:textColor="@color/colorDarkGrey"
+                android:textSize="13sp" />
+
+
+            <com.housemaid.utils.MyTextView
+                android:id="@+id/tvState"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_statename"
+                android:layout_marginStart="10dp"
+                android:textColor="@color/colorDarkGrey"
+                android:textSize="15sp" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorGrey" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp">
+
+                <com.housemaid.utils.MyBoldTextView
+                    android:id="@+id/tv_birth_header"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:text="@string/date_of_birth"
+                    android:textColor="@color/colorDarkGrey"
+                    android:textSize="13sp" />
+
+
+                <com.housemaid.utils.MyTextView
+                    android:id="@+id/tvBirthDate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_birth_header"
+                    android:layout_marginStart="10dp"
+                    android:textColor="@color/colorDarkGrey"
+                    android:textSize="15sp" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorGrey" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp">
+
+                <com.housemaid.utils.MyBoldTextView
+                    android:id="@+id/tv_marital_header"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:text="@string/marital_status"
+                    android:textColor="@color/colorDarkGrey"
+                    android:textSize="13sp" />
+
+
+                <com.housemaid.utils.MyTextView
+                    android:id="@+id/tvMaritalStatus"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_marital_header"
+                    android:layout_marginStart="10dp"
+                    android:textColor="@color/colorDarkGrey"
+                    android:textSize="15sp" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorGrey" />
+
+        </LinearLayout>
+        </ScrollView>
+    </RelativeLayout>
+</layout>

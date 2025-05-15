@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.housemaid.activities.PastBookingsActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include layout="@layout/toolbar_header"
+            android:id="@+id/toolbar"/>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rvPastBookings"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        </android.support.v7.widget.RecyclerView>
+
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center"/>
+
+    <com.housemaid.utils.MyTextView
+        android:id="@+id/tvNoData"
+        android:drawableTop="@drawable/no_data"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/_17sdp"
+        android:text="No Booking."
+        android:textColor="@color/colorPrimary"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:visibility="gone"/>
+    </FrameLayout>
+</layout>
