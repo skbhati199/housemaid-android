@@ -344,7 +344,7 @@ public class FavouriteJobListingProfileActivity extends BaseActivity implements 
         binding.tvDob.setText(userDetailModel.getUserDetailModel().getDob());
 
         Glide.with(this).load(imageModelArrayList.get(0).getImageModel().getBig()).error(R.drawable.avatar)
-                .fit().centerCrop().into(binding.ivProfilePicBig);
+                .centerCrop().into(binding.ivProfilePicBig);
 
         binding.tvCity.setText(userDetailModel.getCity_name());
         binding.tvDistrict.setText(userDetailModel.getDistrict_name());

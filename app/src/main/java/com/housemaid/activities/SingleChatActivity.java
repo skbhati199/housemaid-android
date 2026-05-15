@@ -633,7 +633,7 @@ public class SingleChatActivity extends BaseActivity implements View.OnClickList
 
                     } else {
                         binding.progress.setVisibility(View.GONE);
-                        Toast.makeText(getContext(), response.errorBody().toString()
+                        Toast.makeText(SingleChatActivity.this, response.errorBody().toString()
                                 , Toast.LENGTH_LONG).show();
                     }
                 } else {
@@ -641,9 +641,9 @@ public class SingleChatActivity extends BaseActivity implements View.OnClickList
                     try {
                         if (response.code() == 401) {
                             SharedPreference sharedPreference = SharedPreference.getInstance
-                                    (getContext());
+                                    (SingleChatActivity.this);
                             sharedPreference.deletePreference();
-                            Intent signInIntent = new Intent(getContext(), SelectionActivity.class);
+                            Intent signInIntent = new Intent(SingleChatActivity.this, SelectionActivity.class);
                             startActivity(signInIntent);
 
                         } else {

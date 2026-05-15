@@ -196,20 +196,20 @@ public class NotificationAdapter extends RecyclerView.Adapter<NotificationAdapte
 
                     } else {
 
-                        Toast.makeText(getContext(), response.errorBody().toString(), Toast.LENGTH_LONG).show();
+                        Toast.makeText(context, response.errorBody().toString(), Toast.LENGTH_LONG).show();
                     }
                 } else {
 
                     try {
                         if (response.code() == 401) {
                             SharedPreference sharedPreference = SharedPreference.getInstance
-                                    (getContext());
+                                    (context);
                             sharedPreference.deletePreference();
-                            Intent signInIntent = new Intent(getContext(), SelectionActivity.class);
+                            Intent signInIntent = new Intent(context, SelectionActivity.class);
                             context.startActivity(signInIntent);
 
                         } else {
-                            Toast.makeText(getContext(), ""
+                            Toast.makeText(context, ""
                                     + response.errorBody().string(), Toast.LENGTH_LONG).show();
                             Log.d("TEST", "Error : " + response.errorBody().string()
                                     + "message : " + response.message());

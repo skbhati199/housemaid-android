@@ -32,8 +32,7 @@ public class ZoomPhotoActivity extends BaseActivity {
 
         images = getIntent().getStringExtra("images");
 
-        Picasso
-                .get()
+        Glide.with(this)
                 .load(images)
                 .error(R.drawable.avatar)
                 .into(binding.imageView);

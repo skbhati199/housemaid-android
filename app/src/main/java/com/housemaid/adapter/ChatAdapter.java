@@ -145,7 +145,6 @@ public class ChatAdapter extends RecyclerView.Adapter<ChatAdapter.MyViewHolder> 
             } else holder.tvTime.setText(date);
 
             Glide.with(context).load(image)
-                    .fit()
                     .error(R.drawable.user)
                     .into(holder.ivProfilePic);
 

@@ -271,7 +271,6 @@ public class LiveConversationActivity extends BaseActivity {
 
         Glide.with(this)
                 .load(profileToCaller)
-                .fit()
                 .error(R.drawable.user_c)
                 .into(ivProfilePic);
 
@@ -301,7 +300,6 @@ public class LiveConversationActivity extends BaseActivity {
 
         Glide.with(this)
                 .load(profileCaller)
-                .fit()
                 .error(R.drawable.user_c)
                 .into(ivProfilePic);
 

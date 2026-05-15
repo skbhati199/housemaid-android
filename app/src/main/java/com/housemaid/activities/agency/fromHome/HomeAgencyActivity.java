@@ -603,7 +603,6 @@ public class HomeAgencyActivity extends BaseActivity implements View.OnClickList
                                     .getUserImagesModel().get(0).getImageModel().getBig()));
                             Glide.with(HomeAgencyActivity.this).load(signUpModel.getUserImagesModel().get(0).getImageModel()
                                     .getSmall())
-                                    .fit()
                                     .error(R.drawable.avatar)
                                     .into(binding.sidebarContent.civProfilePic);
                             binding.sidebarContent.tvEmail.setText(signUpModel.getEmail());

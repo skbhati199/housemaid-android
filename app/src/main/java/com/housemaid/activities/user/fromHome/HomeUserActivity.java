@@ -597,7 +597,7 @@ public class HomeUserActivity extends BaseActivity implements View.OnClickListen
 
                             Glide.with(HomeUserActivity.this).load(signUpModel.getUserImagesModel().get(0).getImageModel()
                                     .getSmall())
-                                    .fit().centerCrop()
+                                    .centerCrop()
                                     .error(R.drawable.avatar)
                                     .into(binding.sidebarContent.civProfilePic);
                         } else

@@ -146,7 +146,6 @@ public class MaidHomeListAdapter extends RecyclerView.Adapter<MaidHomeListAdapte
             Glide.with(context).load(jobDetail.getUserDetailModel().getUserImagesModel().get(0)
                     .getImageModel()
                     .getBig())
-                    .fit()
                     .error(R.drawable.avatar)
                     .into(holder.ivProfilePic);
         }

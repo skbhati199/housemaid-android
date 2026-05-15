@@ -119,7 +119,6 @@ public class MyFavoritesAdapter extends RecyclerView.Adapter<MyFavoritesAdapter.
                 .getUserDetailModel().getUserImagesModel().size() > 0) {
             Glide.with(context).load(favouriteListing.get(position).getJob_post_detail()
                     .getUserDetailModel().getUserImagesModel().get(0).getImageModel().getSmall())
-                    .fit()
                     .centerCrop()
                     .error(R.drawable.avatar).
                     into(holder.ivProfilePic);

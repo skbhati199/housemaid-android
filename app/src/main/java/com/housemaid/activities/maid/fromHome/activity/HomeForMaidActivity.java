@@ -584,9 +584,9 @@ public class HomeForMaidActivity extends BaseActivity implements View.OnClickLis
                         binding.sidebarContent.tvEmail.setText(signUpModel.getEmail());
                         if (!signUpModel.getUserImagesModel().isEmpty() && !signUpModel.getUserImagesModel().get(0).getImageModel()
                                 .getSmall().isEmpty()) {
-                            Glide.with(this).load(signUpModel.getUserImagesModel().get(0).getImageModel()
+                            Glide.with(HomeForMaidActivity.this).load(signUpModel.getUserImagesModel().get(0).getImageModel()
                                     .getSmall())
-                                    .fit().centerCrop()
+                                    .centerCrop()
                                     .error(R.drawable.avatar)
                                     .into(binding.sidebarContent.civProfilePic);
                         } else

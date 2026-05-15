@@ -12,6 +12,7 @@ import android.widget.AdapterView;
 import android.widget.ImageView;
 
 // AQuery removed - use Glide for image loading
+import com.bumptech.glide.Glide;
 import com.housemaid.R;
 import com.housemaid.activities.FullScreenImageSlider;
 import com.housemaid.activities.ZoomPhotoActivity;
@@ -56,8 +57,7 @@ public class ViewPageAdapter extends PagerAdapter {
 
         });*/
 
-        AQuery aQuery = new AQuery(imageView);
-        aQuery.id(imageView).image(imagesList.get(position));
+        Glide.with(context).load(imagesList.get(position)).into(imageView);
         Log.d("MyViewPagerAdapter", imagesList.get(position));
 
 

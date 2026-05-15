@@ -126,7 +126,6 @@ public class MyFavoritesMaidAdapter extends RecyclerView.Adapter<MyFavoritesMaid
 
             Glide.with(context).load(favouriteListing.get(position).getMaidImageModel()
                     .get(0).getImageModel().getSmall())
-                    .fit()
                     .error(R.drawable.user).
                     into(holder.ivProfilePic);
         } else holder.ivProfilePic.setImageResource(R.drawable.user);
