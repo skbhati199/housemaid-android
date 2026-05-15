@@ -161,7 +161,7 @@ public class SignInActivity extends BaseActivity implements View.OnClickListener
                     assert registerApi != null;
                     String message = registerApi.message;
 
-                    if (message != null) {
+                    if (message != null && "1".equals(registerApi.getStatus()) && registerApi.signUpModel != null) {
                         RegisterApi registerApi1 = response.body();
                         assert registerApi1 != null;
                         signUpModel = registerApi1.signUpModel;
@@ -170,19 +170,19 @@ public class SignInActivity extends BaseActivity implements View.OnClickListener
                         sharedPreference.putString("login_otp", signUpModel.getOtp());
                         sharedPreference.putString("user_id", String.valueOf(signUpModel.getId()));
 
-                        if (signUpModel.getDisable_enable_status().equals("0")) {
+                        if ("0".equals(signUpModel.getDisable_enable_status())) {
                             sharedPreference.putInteger("disable_key", 1);
                         } else sharedPreference.putInteger("disable_key", 0);
 
 
-                        if (signUpModel.getOtp_verified().equals("0")) {
+                        if ("0".equals(signUpModel.getOtp_verified())) {
                             startActivity(new Intent(SignInActivity.this,
                                     ChangePasswordOTPActivity.class)
                                     .putExtra("key", 3)
                             .putExtra("user_id", signUpModel.getId()));
                             finish();
 
-                        } else if (signUpModel.getComplete_profile().equals("0")) {
+                        } else if ("0".equals(signUpModel.getComplete_profile())) {
                             if (sharedPreference.getInteger("entry_key", 0) == 1) {
                                 if (signUpModel.getStep_for_maid_profile() == 0) {
                                     startActivity(new Intent(SignInActivity.this,
@@ -212,8 +212,8 @@ public class SignInActivity extends BaseActivity implements View.OnClickListener
                                 finishAffinity();
                             }
 
-                        } else if (signUpModel.getComplete_profile().equals("1") &&
-                                (signUpModel.getOtp_verified().equals("1"))) {
+                        } else if ("1".equals(signUpModel.getComplete_profile()) &&
+                                ("1".equals(signUpModel.getOtp_verified()))) {
 
                             if (signUpModel.getLocation_text() != null) {
 
@@ -243,9 +243,11 @@ public class SignInActivity extends BaseActivity implements View.OnClickListener
                                 finishAffinity();
                             }
                         }
-                    } else
-                        Toast.makeText(SignInActivity.this, response.errorBody().toString(),
+                    } else {
+                        Toast.makeText(SignInActivity.this,
+                                message != null ? message : "Login failed",
                                 Toast.LENGTH_LONG).show();
+                    }
                     binding.progress.setVisibility(View.GONE);
                     binding.tvForgotPassword.setEnabled(true);
                     binding.btnLogin.setEnabled(true);
@@ -258,12 +260,17 @@ public class SignInActivity extends BaseActivity implements View.OnClickListener
 
 
                     try {
-                        Toast.makeText(SignInActivity.this,
-                                new Gson().fromJson(response.errorBody().string(), ErrorResponse.class).getMessage(),
-                                Toast.LENGTH_SHORT).show();
-                        /*Log.d("TEST", "Error : " + response.errorBody().string() +
-                                "message : " + response.message());*/
-
+                        String errorBody = response.errorBody().string();
+                        try {
+                            ErrorResponse err = new Gson().fromJson(errorBody, ErrorResponse.class);
+                            Toast.makeText(SignInActivity.this,
+                                    err != null && err.getMessage() != null ? err.getMessage() : "Login failed",
+                                    Toast.LENGTH_SHORT).show();
+                        } catch (Exception jsonEx) {
+                            Toast.makeText(SignInActivity.this,
+                                    "Login failed: " + response.code(),
+                                    Toast.LENGTH_SHORT).show();
+                        }
 
                     } catch (IOException e) {
                         e.printStackTrace();

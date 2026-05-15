@@ -178,18 +178,20 @@ public class SignUpActivity extends BaseActivity implements View.OnClickListener
             public void onResponse(Call<RegisterApi> call, Response<RegisterApi> response) {
                 if (response.isSuccessful()) {
                     RegisterApi registerApi = response.body();
+                    assert registerApi != null;
                     String message = registerApi.message;
-                    if (message != null) {
 
-                        RegisterApi registerApi1 = response.body();
-                        SignUpModel signUpModel = registerApi1.signUpModel;
+                    if (message != null && "1".equals(registerApi.getStatus())
+                            && registerApi.signUpModel != null) {
+
+                        SignUpModel signUpModel = registerApi.signUpModel;
                         sharedPreference.putString("user_id", String.valueOf(signUpModel.getId()));
                         sharedPreference.putString("opt_verified", signUpModel.getOtp_verified());
                         sharedPreference.putString("otp", signUpModel.getOtp());
                         sharedPreference.putString("signUp_token", signUpModel.getRemember_token());
                         sharedPreference.putString("start_key", "1");
 
-                        if (signUpModel.getDisable_enable_status().equals("0")) {
+                        if ("0".equals(signUpModel.getDisable_enable_status())) {
                             sharedPreference.putInteger("disable_key", 1);
                         } else sharedPreference.putInteger("disable_key", 0);
 
@@ -198,31 +200,32 @@ public class SignUpActivity extends BaseActivity implements View.OnClickListener
 
                         finish();
 
-                    } else
-                        Toast.makeText(SignUpActivity.this, response.errorBody().toString(),
+                    } else {
+                        Toast.makeText(SignUpActivity.this,
+                                message != null ? message : "Registration failed",
                                 Toast.LENGTH_LONG).show();
+                    }
 
                     binding.progress.setVisibility(View.GONE);
                     binding.btnCreateAccount.setClickable(true);
                     binding.tvLogin.setClickable(true);
 
                 } else {
+                    binding.progress.setVisibility(View.GONE);
+                    binding.btnCreateAccount.setClickable(true);
+                    binding.tvLogin.setClickable(true);
+
                     try {
-                        binding.progress.setVisibility(View.GONE);
-                        binding.btnCreateAccount.setClickable(true);
-                        binding.tvLogin.setClickable(true);
-
-                        if (response.code() == 400) {
-                            binding.progress.setVisibility(View.GONE);
-
-                            Toast.makeText(SignUpActivity.this, new Gson().fromJson(response.errorBody().string(),
-                                    ErrorResponse.class).getMessage(),
+                        String errorBody = response.errorBody().string();
+                        try {
+                            ErrorResponse err = new Gson().fromJson(errorBody, ErrorResponse.class);
+                            Toast.makeText(SignUpActivity.this,
+                                    err != null && err.getMessage() != null ? err.getMessage() : "Registration failed",
                                     Toast.LENGTH_SHORT).show();
-                        } else {
-                            Toast.makeText(SignUpActivity.this, response.errorBody().toString(),
+                        } catch (Exception jsonEx) {
+                            Toast.makeText(SignUpActivity.this,
+                                    "Registration failed: " + response.code(),
                                     Toast.LENGTH_SHORT).show();
-                            Log.d("TEST", "Error : " + response.errorBody().string() + "message : "
-                                    + response.message());
                         }
                     } catch (IOException e) {
                         e.printStackTrace();

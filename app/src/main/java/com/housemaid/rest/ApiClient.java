@@ -16,7 +16,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class ApiClient {
 
 
-    public static final String BASE_URL = "https://a447-2405-201-6824-3043-f02e-c116-97da-4089.ngrok-free.app/";
+    public static final String BASE_URL = "https://0d80-2405-201-6824-3043-f02e-c116-97da-4089.ngrok-free.app/";
     private static Retrofit retrofit = null;
 
 
@@ -38,6 +38,8 @@ public class ApiClient {
         // add logging as last interceptor only in Development Mode.
         if (BuildConfig.DEBUG) {
             httpClient.addInterceptor(logging);
+            httpClient.addInterceptor(new com.chuckerteam.chucker.api.ChuckerInterceptor.Builder(com.housemaid.AppController.getInstance())
+                    .build());
         }
 
 
