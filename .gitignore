@@ -1,9 +1,41 @@
 *.iml
 .gradle
 /local.properties
-/.idea/workspace.xml
+/.idea/caches
 /.idea/libraries
+/.idea/modules.xml
+/.idea/workspace.xml
+/.idea/navEditor.xml
+/.idea/assetWizardSettings.xml
 .DS_Store
 /build
 /captures
 .externalNativeBuild
+.cxx
+local.properties
+
+# Android Studio / IntelliJ
+*.ipr
+*.iws
+out/
+
+# Gradle
+.gradle/
+build/
+
+# Log files
+*.log
+
+# Built artifacts
+*.apk
+*.aar
+*.ap_
+*.dex
+*.class
+
+# Generated files
+bin/
+gen/
+
+# Submodules
+# Note: Do NOT ignore /backend since it is a git submodule tracked via .gitmodules
