@@ -16,7 +16,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class ApiClient {
 
 
-    public static final String BASE_URL = "http://13.58.98.218/Maid/api/";
+    public static final String BASE_URL = "https://a447-2405-201-6824-3043-f02e-c116-97da-4089.ngrok-free.app/";
     private static Retrofit retrofit = null;
 
 

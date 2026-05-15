@@ -47,7 +47,12 @@ public class SignUpActivity extends BaseActivity implements View.OnClickListener
     public void init() {
         super.init();
         sharedPreference = SharedPreference.getInstance(this);
-        refreshedToken = null /* TODO: use FirebaseMessaging.getInstance().getToken() */;
+        FirebaseMessaging.getInstance().getToken().addOnSuccessListener(token -> {
+            refreshedToken = token;
+        }).addOnFailureListener(ex -> {
+            refreshedToken = "dummy_token_fallback";
+            Log.w("TOKEN", "Firebase failed, using fallback: " + ex.getMessage());
+        });
     }
 
     @Override

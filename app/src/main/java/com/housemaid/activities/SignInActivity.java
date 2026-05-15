@@ -58,8 +58,10 @@ public class SignInActivity extends BaseActivity implements View.OnClickListener
         FirebaseMessaging.getInstance().getToken().addOnSuccessListener(this, token -> {
             refreshedToken = token;
             Log.d("TOKEN: ", ""+refreshedToken);
-        }).addOnFailureListener(this,
-                ex->ex.printStackTrace());
+        }).addOnFailureListener(this, ex -> {
+            refreshedToken = "dummy_token_fallback";
+            Log.w("TOKEN", "Firebase failed, using fallback: " + ex.getMessage());
+        });
 
 
         sharedPreference = SharedPreference.getInstance(this);
@@ -119,7 +121,10 @@ public class SignInActivity extends BaseActivity implements View.OnClickListener
                 binding.tvSignUp.setEnabled(false);
                 binding.tvForgotPassword.setEnabled(false);
 
-                registerUsertoServer(binding.etMobileNumber.getText().toString().trim(),
+                String countryCode = binding.countryCodePicker.getSelectedCountryCodeWithPlus();
+                String mobileNumber = binding.etMobileNumber.getText().toString().trim();
+                
+                registerUsertoServer(countryCode + mobileNumber,
                         binding.etPassword.getText().toString(),
                         refreshedToken,
                         Constants.userType(this));

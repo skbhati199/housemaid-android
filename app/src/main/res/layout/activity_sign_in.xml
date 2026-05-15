@@ -47,18 +47,50 @@
                 android:textSize="15sp" />
 
 
-            <com.housemaid.utils.MyEditText
-                android:id="@+id/etMobileNumber"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:background="@drawable/edittext_white"
-                android:inputType="number"
-                android:paddingEnd="20dp"
-                android:paddingStart="20dp"
-                android:maxLength="12"
-                android:textColor="@color/colorPrimaryDark"
-                android:textSize="15sp" />
+                android:orientation="horizontal">
+
+                <com.hbb20.CountryCodePicker
+                    android:id="@+id/countryCodePicker"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="1dp"
+                    android:padding="3dp"
+                    app:ccpDialog_keyboardAutoPopup="false"
+                    app:ccpDialog_searchEditTextTint="@color/colorPrimary"
+                    app:ccp_contentColor="@color/colorPrimaryDark"
+                    app:ccp_defaultNameCode="TR"
+                    app:ccp_showArrow="false"
+                    app:ccp_showFlag="true"
+                    app:ccp_showNameCode="false"
+                    app:ccp_textSize="15sp" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="5dp"
+                    android:background="@color/colorPrimaryDark" />
+
+                <com.housemaid.utils.MyEditText
+                    android:id="@+id/etMobileNumber"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginStart="10dp"
+                    android:background="@null"
+                    android:inputType="number"
+                    android:maxLength="12"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textColorHint="@color/colorPrimaryDark"
+                    android:textSize="15sp" />
+
+            </LinearLayout>
 
             <com.housemaid.utils.MyTextView
                 android:layout_width="wrap_content"

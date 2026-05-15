@@ -91,7 +91,7 @@
                             app:ccpDialog_searchEditTextTint="@color/colorPrimary"
                             app:ccp_contentColor="@color/colorPrimaryDark"
                             app:ccp_showArrow="false"
-                            app:ccp_showFlag="false"
+                            app:ccp_showFlag="true"
                             app:ccp_defaultNameCode="TR"
                             app:ccp_showNameCode="false"
                             app:ccp_textSize="15sp">
