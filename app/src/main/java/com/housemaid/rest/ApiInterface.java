@@ -438,7 +438,7 @@ public interface ApiInterface {
     Call<ServerResponseCountryList> get_multicity_list(@Field("district_id[]") ArrayList<String> district_id);
 
     @FormUrlEncoded
-    @POST("update_user_location")
+    @POST("auth/update_user_location")
     Call<RegisterApi> updateLocation(@Header("timezone") String timezone,
                                      @Header("locale") String locale,
                                      @Header("accessToken") String accessToken,
