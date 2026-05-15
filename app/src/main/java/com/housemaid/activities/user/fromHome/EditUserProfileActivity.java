@@ -161,7 +161,7 @@ public class EditUserProfileActivity extends BaseActivity implements View.OnClic
                         .getBig());
             }
 
-            Glide.with(itemView.getContext()).load(signUpModel.getUserImagesModel().get(0).getImageModel().getBig())
+            Glide.with(this).load(signUpModel.getUserImagesModel().get(0).getImageModel().getBig())
                     .error(R.drawable.user).into(binding.ivProfilePicBig);
         }
         imageAdapter = new ImageAdapter(EditUserProfileActivity.this, imageList, bigImageList
@@ -215,60 +215,82 @@ public class EditUserProfileActivity extends BaseActivity implements View.OnClic
     @Override
     public void onClick(View v) {
 
-        switch (v.getId()) {
-            case R.id.ivChoosePhoto:
+        if (v.getId() == R.id.ivChoosePhoto) {
+
                 if (position <= bigImageList.size() - 1) {
                     openDialog(onFileChoose);
                 }
-                break;
+                
 
-            case R.id.ivProfilePicBig:
+            
+} else if (v.getId() == R.id.ivProfilePicBig) {
+
                 if (position <= bigImageList.size() - 1) {
                     openDialog(onFileChoose);
                 }
-                break;
+                
 
-            case R.id.btnSubmit:
+            
+} else if (v.getId() == R.id.btnSubmit) {
+
                 setImageInPart();
-                break;
-            case R.id.ivBack:
+                
+            
+} else if (v.getId() == R.id.ivBack) {
+
                 onBackPressed();
-                break;
+                
 
             //Choose Image Dialog Clicks
-            case R.id.btnGallery:
-                openGallery();
-                break;
-            case R.id.btnCamera:
-                openCamera();
-                break;
-            case R.id.btnAvatar:
-                openAvatars();
-                break;
+            
+} else if (v.getId() == R.id.btnGallery) {
 
-            case R.id.rlCountry:
+                openGallery();
+                
+            
+} else if (v.getId() == R.id.btnCamera) {
+
+                openCamera();
+                
+            
+} else if (v.getId() == R.id.btnAvatar) {
+
+                openAvatars();
+                
+
+            
+} else if (v.getId() == R.id.rlCountry) {
+
                 if (ValidationUtils.isOnline(binding.relativeLayout, this)) {
                     startActivityForResult(new Intent(this,
                             CountryListActivity.class), 512);
                 }
-                break;
+                
 
-            case R.id.rlState:
+            
+} else if (v.getId() == R.id.rlState) {
+
                 if (binding.tvCountryName.getText().length() == 0) {
                     Toast.makeText(this, "Please select Country!", Toast.LENGTH_SHORT).show();
                 } else startActivityForResult(new Intent(this,
                         StateListActivity.class), 520);
-                break;
+                
 
-            case R.id.rlMaritalStatus:
+            
+} else if (v.getId() == R.id.rlMaritalStatus) {
+
                 binding.spinnerMaritalStatus.performClick();
-                break;
+                
 
-            case R.id.tv_dob:
+            
+} else if (v.getId() == R.id.tv_dob) {
+
                 onSelectDate();
-                break;
+                
 
-            case R.id.tv_male:
+            
+} else if (v.getId() == R.id.tv_male) {
+
                 count++;
                 if (count % 2 == 1) {
                     binding.tvFemaleColor.setVisibility(View.GONE);
@@ -278,17 +300,21 @@ public class EditUserProfileActivity extends BaseActivity implements View.OnClic
                     if (count2 % 2 == 1)
                         count2++;
                     binding.tvFemaleColor.setVisibility(View.GONE);
-                    break;
+                    
                 }
 
-            case R.id.tv_male_color:
+            
+} else if (v.getId() == R.id.tv_male_color) {
+
                 count++;
                 if (count % 2 == 0) {
                     binding.tvMaleColor.setVisibility(View.GONE);
-                    break;
+                    
                 }
 
-            case R.id.tv_female:
+            
+} else if (v.getId() == R.id.tv_female) {
+
                 count2++;
                 if (count2 % 2 == 1) {
                     binding.tvMaleColor.setVisibility(View.GONE);
@@ -299,17 +325,20 @@ public class EditUserProfileActivity extends BaseActivity implements View.OnClic
                         count++;
                         binding.tvMaleColor.setVisibility(View.GONE);
                     }
-                    break;
+                    
                 }
 
-            case R.id.tv_female_color:
+            
+} else if (v.getId() == R.id.tv_female_color) {
+
                 count2++;
                 if (count2 % 2 == 0) {
                     count++;
                     binding.tvFemaleColor.setVisibility(View.GONE);
-                    break;
+                    
                 }
-        }
+        
+}
 
     }
 

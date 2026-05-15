@@ -81,13 +81,13 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.MyViewHolder
 
         if (i == 0) {
             if (!imageList.get(position).isEmpty()) {
-                Glide.with(itemView.getContext()).load(imageList.get(position))
+                Glide.with(context).load(imageList.get(position))
                         .error(R.drawable.user).into(holder.ivProfilePic);
             } else holder.ivProfilePic.setImageResource(R.drawable.user);
         }
         if (position <= imageList.size() - 1) {
             if (!imageList.get(position).isEmpty()) {
-                Glide.with(itemView.getContext()).load(imageList.get(position))
+                Glide.with(context).load(imageList.get(position))
                         .error(R.drawable.user).into(holder.ivProfilePic);
             } else holder.ivProfilePic.setImageResource(R.drawable.user);
 
@@ -103,7 +103,7 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.MyViewHolder
                     ((EditUserProfileActivity) context).updateList(position, imageIdList);
 
                     if (!bigImageList.get(position).isEmpty()) {
-                        Glide.with(itemView.getContext()).load(bigImageList.get(position))
+                        Glide.with(context).load(bigImageList.get(position))
                                 .error(R.drawable.user).into(binding.ivProfilePicBig);
                     } else binding.ivProfilePicBig.setImageResource(R.drawable.user);
 
@@ -256,7 +256,7 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.MyViewHolder
                         notifyDataSetChanged();
                         if (position <= imageList.size() - 1) {
                             if (!imageList.get(position).isEmpty()) {
-                                Glide.with(itemView.getContext()).load(imageList.get(position))
+                                Glide.with(context).load(imageList.get(position))
                                         .error(R.drawable.avatar).into(holder.ivProfilePic);
                             } else holder.ivProfilePic.setImageResource(R.drawable.user);
 

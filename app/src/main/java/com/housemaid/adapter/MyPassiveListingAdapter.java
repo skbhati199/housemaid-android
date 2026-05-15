@@ -87,10 +87,10 @@ public class MyPassiveListingAdapter extends RecyclerView.Adapter<MyPassiveListi
         holder.tvLanguage.setText(languages);
 
         if (jobListing.get(position).getUserDetailModel().getUserImageModel().size() > 0) {
-            /*Glide.with(itemView.getContext()).load(jobListing.get(position).getUserDetailModel().getUserImagesModel()
+            /*Glide.with(context).load(jobListing.get(position).getUserDetailModel().getUserImagesModel()
                     .get(0).getImageModel().getBig())
                     .error(R.drawable.user).into(holder.ivProfilePic);*/
-            Glide.with(itemView.getContext()).load(jobListing.get(position).getImage().getSmall())
+            Glide.with(context).load(jobListing.get(position).getImage().getSmall())
                     .error(R.drawable.user).into(holder.ivProfilePic);
         } else {
             holder.ivProfilePic.setImageResource(R.drawable.user);
@@ -111,16 +111,16 @@ public class MyPassiveListingAdapter extends RecyclerView.Adapter<MyPassiveListi
                 popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
                     @Override
                     public boolean onMenuItemClick(MenuItem item) {
-                        switch (item.getItemId()) {
+                        if (item.getItemId() == R.id.delete_item) {
 
-                            case R.id.delete_item:
                                 binding.progress.setVisibility(View.VISIBLE);
                                 deleteJobPost(accessToken,
                                         String.valueOf(jobListing.get(holder.getAdapterPosition()).getId()),
                                         holder.getAdapterPosition());
                                 return true;
 
-                        }
+                        
+}
 
                         return false;
                     }

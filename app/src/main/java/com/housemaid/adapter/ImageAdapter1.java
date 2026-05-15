@@ -81,13 +81,13 @@ public class ImageAdapter1 extends RecyclerView.Adapter<ImageAdapter1.MyViewHold
 
         if (i == 0) {
             if (!imageList.get(position).isEmpty()) {
-                Glide.with(itemView.getContext()).load(imageList.get(position))
+                Glide.with(context).load(imageList.get(position))
                         .error(R.drawable.user).into(holder.ivProfilePic);
             } else holder.ivProfilePic.setImageResource(R.drawable.user);
         }
         if (position <= imageList.size() - 1) {
             if (!imageList.get(position).isEmpty()) {
-                Glide.with(itemView.getContext()).load(imageList.get(position))
+                Glide.with(context).load(imageList.get(position))
                         .error(R.drawable.user).into(holder.ivProfilePic);
             } else holder.ivProfilePic.setImageResource(R.drawable.user);
 
@@ -103,7 +103,7 @@ public class ImageAdapter1 extends RecyclerView.Adapter<ImageAdapter1.MyViewHold
                 if (holder.getAdapterPosition() <= bigImageList.size() - 1) {
                     ((EditAgencyPofileActivity) context).updateList(holder.getAdapterPosition(), imageIdList);
                     if (!bigImageList.get(holder.getAdapterPosition()).isEmpty()) {
-                        Glide.with(itemView.getContext()).load(bigImageList.get(holder.getAdapterPosition()))
+                        Glide.with(context).load(bigImageList.get(holder.getAdapterPosition()))
                                 .error(R.drawable.user).into(binding.ivProfilePicBig);
                     } else binding.ivProfilePicBig.setImageResource(R.drawable.user);
 
@@ -260,7 +260,7 @@ public class ImageAdapter1 extends RecyclerView.Adapter<ImageAdapter1.MyViewHold
                         notifyDataSetChanged();
                         if (position <= imageList.size() - 1) {
                             if (!imageList.get(position).isEmpty()) {
-                                Glide.with(itemView.getContext()).load(imageList.get(position))
+                                Glide.with(context).load(imageList.get(position))
                                         .error(R.drawable.user).into(holder.ivProfilePic);
                             } else holder.ivProfilePic.setImageResource(R.drawable.user);
 

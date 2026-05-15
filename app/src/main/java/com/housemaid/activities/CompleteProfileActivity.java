@@ -255,32 +255,42 @@ public class CompleteProfileActivity extends BaseActivity implements View.OnClic
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.ivChoosePhoto:
+        if (v.getId() == R.id.ivChoosePhoto) {
+
                 openDialog();
                 // Toast.makeText ( this, "fdgdfgfgfdgfdg", Toast.LENGTH_SHORT ).show ();
-                break;
+                
 
-            case R.id.ivProfilePicBig:
+            
+} else if (v.getId() == R.id.ivProfilePicBig) {
+
                 openDialog();
-                break;
+                
 
-            case R.id.btnNext:
+            
+} else if (v.getId() == R.id.btnNext) {
+
                 openNextActivity();
-                break;
+                
 
-            case R.id.btnSubmit:
+            
+} else if (v.getId() == R.id.btnSubmit) {
+
                 if (imagePath != null) {
                     setImagePart();
                 } else Toast.makeText(this, R.string.please_select_profile_picture,
                         Toast.LENGTH_SHORT).show();
-                break;
+                
             //Choose Image Dialog Clicks
-            case R.id.btnGallery:
-                openGallery();
-                break;
+            
+} else if (v.getId() == R.id.btnGallery) {
 
-            case R.id.btnCamera:
+                openGallery();
+                
+
+            
+} else if (v.getId() == R.id.btnCamera) {
+
                 if (checkPermissionForCamera()) {
                     openCamera();
                 } else {
@@ -290,12 +300,15 @@ public class CompleteProfileActivity extends BaseActivity implements View.OnClic
                         e.printStackTrace();
                     }
                 }
-                break;
+                
 
-            case R.id.btnAvatar:
+            
+} else if (v.getId() == R.id.btnAvatar) {
+
                 openAvatars();
-                break;
-        }
+                
+        
+}
     }
 
     private void openNextActivity() {

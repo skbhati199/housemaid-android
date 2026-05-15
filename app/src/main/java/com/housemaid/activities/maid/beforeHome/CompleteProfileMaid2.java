@@ -101,13 +101,14 @@ public class CompleteProfileMaid2 extends BaseActivity implements View.OnClickLi
 
     @Override
     public void onClick(View v) {
-        switch (v.getId ()) {
+        if (v.getId () == R.id.ivBack) {
 
-            case R.id.ivBack:
                 onBackPressed();
-                break;
+                
 
-            case R.id.btnNext:
+            
+} else if (v.getId () == R.id.btnNext) {
+
                 if (binding.tvEducation.getText ().toString ().trim ().isEmpty ()) {
                     Toast.makeText ( this, getString(R.string.please_select_education),
                             Toast.LENGTH_SHORT ).show ();
@@ -132,44 +133,59 @@ public class CompleteProfileMaid2 extends BaseActivity implements View.OnClickLi
                 }else {
                     openNextActivity ();
                 }
-                break;
+                
 
-            case R.id.rlEducation:
+            
+} else if (v.getId () == R.id.rlEducation) {
+
                 Intent educationIntent = new Intent ( this, EducationListActivity.class );
                 educationIntent.putExtra("educationIdList", educationIdList);
                 educationIntent.putExtra("educationNameList", educationNameList);
                 startActivityForResult (educationIntent , 524 );
-                break;
+                
 
-            case R.id.rlLanguage:
+            
+} else if (v.getId () == R.id.rlLanguage) {
+
                 Intent languageIntent = new Intent ( this, LanguageListActivity.class );
                 languageIntent.putExtra("languageIdList", languageIdList);
                 languageIntent.putExtra("languageNameList", languageNameList);
                 startActivityForResult (languageIntent , 526 );
-                break;
+                
 
-            case R.id.rlPetProblem:
+            
+} else if (v.getId () == R.id.rlPetProblem) {
+
                 Intent petIntent = new Intent ( this, PetProblemListActivity.class );
                 petIntent.putExtra("petProblemList", petProblemList);
                 petIntent.putExtra("petProblemIdList", petProblemIdList);
                 startActivityForResult (petIntent , 528 );
-                break;
-            case R.id.rlWorkStatus:
+                
+            
+} else if (v.getId () == R.id.rlWorkStatus) {
+
                 binding.spinnerWorkStatus.performClick ();
-                break;
+                
 
-            case R.id.rlAlcohol:
+            
+} else if (v.getId () == R.id.rlAlcohol) {
+
                 binding.spinnerAlcohol.performClick ();
-                break;
+                
 
-            case R.id.rlSmoke:
+            
+} else if (v.getId () == R.id.rlSmoke) {
+
                 binding.spinnerSmoke.performClick ();
-                break;
+                
 
-            case R.id.rlDrivingLicence:
+            
+} else if (v.getId () == R.id.rlDrivingLicence) {
+
                 binding.spinnerDrivingLicence.performClick();
-                break;
-        }
+                
+        
+}
 
     }
 

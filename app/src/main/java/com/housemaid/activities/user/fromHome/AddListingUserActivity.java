@@ -83,28 +83,35 @@ public class AddListingUserActivity extends BaseActivity implements View.OnClick
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.btnBuyCredit:
+        if (v.getId() == R.id.btnBuyCredit) {
+
                 startActivity(new Intent(this, UpgradeMemberShipActivity.class));
                 finish();
-                break;
-            case R.id.btnAddListing:
+                
+            
+} else if (v.getId() == R.id.btnAddListing) {
+
                 if (totalCredits < 3){
                     Toast.makeText(this, getString(R.string.not_enough_credit), Toast.LENGTH_LONG).show();
                 }else {
                     startActivity(new Intent(AddListingUserActivity.this, AddListingPhotoActivity.class));
                 }
-                break;
-            case R.id.btnCancel:
-                onBackPressed();
-                finish();
-                break;
-            case R.id.ivBack:
-                onBackPressed();
-                finish();
-                break;
+                
+            
+} else if (v.getId() == R.id.btnCancel) {
 
-        }
+                onBackPressed();
+                finish();
+                
+            
+} else if (v.getId() == R.id.ivBack) {
+
+                onBackPressed();
+                finish();
+                
+
+        
+}
     }
 
     private void getCreditListing(final String accessToken, final String key) {

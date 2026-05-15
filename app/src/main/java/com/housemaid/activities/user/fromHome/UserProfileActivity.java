@@ -17,7 +17,7 @@ import com.housemaid.adapter.ViewPagerAdapter;
 import com.housemaid.databinding.ActivityUserProfileBinding;
 import com.housemaid.model.SignUpModel;
 import com.bumptech.glide.Glide;
-import com.squareup.picasso.Target;
+
 
 import java.net.MalformedURLException;
 import java.net.URI;
@@ -84,12 +84,13 @@ public class UserProfileActivity extends BaseActivity implements View.OnClickLis
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()){
-            case R.id.ivBack:
+        if (v.getId() == R.id.ivBack) {
+
                 onBackPressed();
                 finish();
-                break;
-        }
+                
+        
+}
 
     }
 }

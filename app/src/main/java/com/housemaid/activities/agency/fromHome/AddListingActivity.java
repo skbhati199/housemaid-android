@@ -61,20 +61,25 @@ public class AddListingActivity extends BaseActivity implements View.OnClickList
 
     @Override
     public void onClick(View v) {
-        switch (v.getId ()) {
-            case R.id.btnAddMaid:
+        if (v.getId () == R.id.btnAddMaid) {
+
                 startActivity ( new Intent ( getApplicationContext (), AddMaidFirstActivity.class ) );
                 finish ();
-                break;
-                case R.id.btnBuyCredit:
+                
+                
+} else if (v.getId () == R.id.btnBuyCredit) {
+
                 startActivity ( new Intent ( getApplicationContext (), UpgradeMemberShipActivity.class ) );
                 finish ();
-                break;
-            case R.id.ivBack:
+                
+            
+} else if (v.getId () == R.id.ivBack) {
+
                 onBackPressed ();
                 finish ();
-                break;
-        }
+                
+        
+}
 
     }
     private void getTotalCredits(String accessToken) {

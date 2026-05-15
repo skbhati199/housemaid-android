@@ -44,14 +44,17 @@ public class MyListingsActivity extends BaseActivity implements View.OnClickList
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.ivBack:
+        if (v.getId() == R.id.ivBack) {
+
                 onBackPressed();
-                break;
-            case R.id.ivAdd:
+                
+            
+} else if (v.getId() == R.id.ivAdd) {
+
                 startActivity(new Intent(this, AddListingUserActivity.class));
-                break;
-        }
+                
+        
+}
     }
 
     private void setFragmentOnViewPager() {

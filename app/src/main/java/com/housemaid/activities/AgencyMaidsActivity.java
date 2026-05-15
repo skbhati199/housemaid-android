@@ -63,14 +63,14 @@ public class AgencyMaidsActivity extends BaseActivity implements View.OnClickLis
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()) {
+        if (v.getId() == R.id.ivBack) {
 
-            case R.id.ivBack:
                 onBackPressed();
                 finish();
-                break;
+                
 
-        }
+        
+}
 
     }
 

@@ -64,11 +64,12 @@ public class NotificationActivity extends BaseActivity implements View.OnClickLi
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.ivBack:
+        if (v.getId() == R.id.ivBack) {
+
                 onBackPressed();
-                break;
-        }
+                
+        
+}
     }
 
     private void getNotificationList(String accessToken) {

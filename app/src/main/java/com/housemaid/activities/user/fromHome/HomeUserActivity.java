@@ -272,87 +272,116 @@ public class HomeUserActivity extends BaseActivity implements View.OnClickListen
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.ivMenu:
-                openDrawerLayout();
-                break;
+        if (v.getId() == R.id.ivMenu) {
 
-            case R.id.ivFilter:
+                openDrawerLayout();
+                
+
+            
+} else if (v.getId() == R.id.ivFilter) {
+
                 Intent intentFilter = new Intent(this, FilterActivity.class);
                 intentFilter.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
                 startActivity(intentFilter);
-                break;
+                
 
-            case R.id.ivNotification:
+            
+} else if (v.getId() == R.id.ivNotification) {
+
                 startActivity(new Intent(this, NotificationActivity.class));
-                break;
+                
 
-            case R.id.ivBack:
+            
+} else if (v.getId() == R.id.ivBack) {
+
                 super.onBackPressed();
-                break;
+                
 
-            case R.id.ivEdit:
+            
+} else if (v.getId() == R.id.ivEdit) {
+
                 Intent intent1 = new Intent(this, EditUserProfileActivity.class);
                 intent1.putExtra("userProfile", signUpModel);
                 startActivity(intent1);
                 binding.drawerLayout.closeDrawers();
-                break;
+                
 
-            case R.id.civProfilePic:
+            
+} else if (v.getId() == R.id.civProfilePic) {
+
                 Intent intent = new Intent(this, UserProfileActivity.class);
                 intent.putExtra("userProfile", signUpModel);
                 startActivity(intent);
                 binding.drawerLayout.closeDrawers();
-                break;
+                
 
-            case R.id.tvTitle:
+            
+} else if (v.getId() == R.id.tvTitle) {
+
                 startActivity(new Intent(this, EnterLocationActivity.class));
                 binding.drawerLayout.closeDrawers();
-                break;
+                
 
-            case R.id.tvHome:
+            
+} else if (v.getId() == R.id.tvHome) {
+
                 binding.progress.setVisibility(View.VISIBLE);
                 getMaidList(accessToken);
                 binding.drawerLayout.closeDrawers();
-                break;
+                
 
-            case R.id.tvMyFavorites:
+            
+} else if (v.getId() == R.id.tvMyFavorites) {
+
                 startActivity(new Intent(this, MyFavoritesListingActivity.class));
                 binding.drawerLayout.closeDrawers();
-                break;
+                
 
-            case R.id.layoutMessages:
+            
+} else if (v.getId() == R.id.layoutMessages) {
+
                 startActivity(new Intent(this, ChatActivity.class));
                 binding.drawerLayout.closeDrawers();
-                break;
+                
 
-            case R.id.tvMyListings:
+            
+} else if (v.getId() == R.id.tvMyListings) {
+
                 binding.drawerLayout.closeDrawers();
                 startActivity(new Intent(this, MyListingsActivity.class));
-                break;
+                
 
-            case R.id.tvAgenciess:
+            
+} else if (v.getId() == R.id.tvAgenciess) {
+
                 startActivity(new Intent(this, AgencyActivity.class));
                 binding.drawerLayout.closeDrawers();
-                break;
+                
 
-            case R.id.tvPastBookings:
+            
+} else if (v.getId() == R.id.tvPastBookings) {
+
                 startActivity(new Intent(this, PastBookingsActivity.class));
                 binding.drawerLayout.closeDrawers();
-                break;
+                
 
-            case R.id.tvSettings:
+            
+} else if (v.getId() == R.id.tvSettings) {
+
                 Intent intent2 = new Intent(this, SettingsActivity.class);
                 intent2.putExtra("userProfile", signUpModel);
                 startActivity(intent2);
                 binding.drawerLayout.closeDrawers();
-                break;
+                
 
-            case R.id.tvBuyCredit:
+            
+} else if (v.getId() == R.id.tvBuyCredit) {
+
                 startActivity(new Intent(this, UpgradeMemberShipActivity.class));
                 binding.drawerLayout.closeDrawers();
-                break;
-        }
+                
+        
+}
     }
 
     @Override
@@ -566,7 +595,7 @@ public class HomeUserActivity extends BaseActivity implements View.OnClickListen
                             sharedPreference.putString("user_pic", String.valueOf(signUpModel
                                     .getUserImagesModel().get(0).getImageModel().getBig()));
 
-                            Glide.with(itemView.getContext()).load(signUpModel.getUserImagesModel().get(0).getImageModel()
+                            Glide.with(HomeUserActivity.this).load(signUpModel.getUserImagesModel().get(0).getImageModel()
                                     .getSmall())
                                     .fit().centerCrop()
                                     .error(R.drawable.avatar)

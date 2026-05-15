@@ -65,11 +65,12 @@ public class WorkingchoicesListActivity extends BaseActivity implements View.OnC
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.btnSubmit:
+        if (v.getId() == R.id.btnSubmit) {
+
                 sendWorkingList();
-                break;
-        }
+                
+        
+}
     }
 
     private void sendWorkingList() {

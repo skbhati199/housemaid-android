@@ -117,7 +117,7 @@ public class MyFavoritesAdapter extends RecyclerView.Adapter<MyFavoritesAdapter.
 
         if (favouriteListing.get(position).getJob_post_detail()
                 .getUserDetailModel().getUserImagesModel().size() > 0) {
-            Glide.with(itemView.getContext()).load(favouriteListing.get(position).getJob_post_detail()
+            Glide.with(context).load(favouriteListing.get(position).getJob_post_detail()
                     .getUserDetailModel().getUserImagesModel().get(0).getImageModel().getSmall())
                     .fit()
                     .centerCrop()

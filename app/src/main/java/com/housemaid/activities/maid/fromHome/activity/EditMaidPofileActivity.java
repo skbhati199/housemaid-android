@@ -266,7 +266,7 @@ public class EditMaidPofileActivity extends BaseActivity implements View.OnClick
                 bigImageList.add(maidDetailModel.getUserImagesModel().get(i - 1).getImageModel()
                         .getBig());
             }
-            Glide.with(itemView.getContext()).load(maidDetailModel.getUserImagesModel().get(0).getImageModel().getBig())
+            Glide.with(this).load(maidDetailModel.getUserImagesModel().get(0).getImageModel().getBig())
                     .error(R.drawable.user).into(binding.ivProfilePicBig);
 
         }
@@ -599,74 +599,103 @@ public class EditMaidPofileActivity extends BaseActivity implements View.OnClick
     @Override
     public void onClick(View v) {
 
-        switch (v.getId()) {
+        if (v.getId() == R.id.ivBack) {
 
-            case R.id.ivBack:
                 onBackPressed();
-                break;
-            case R.id.ivChoosePhoto:
-                if (position <= bigImageList.size() - 1) {
-                    openDialog();
-                }
-                break;
-            case R.id.ivProfilePicBig:
-                if (position <= bigImageList.size() - 1) {
-                    openDialog();
-                }
-                break;
-            //Choose Image Dialog Clicks
-            case R.id.btnGallery:
-                openGallery();
-                break;
-            case R.id.btnCamera:
-                openCamera();
-                break;
-            case R.id.btnAvatar:
-                openAvatars();
-                break;
+                
+            
+} else if (v.getId() == R.id.ivChoosePhoto) {
 
-            case R.id.btnAdd1:
+                if (position <= bigImageList.size() - 1) {
+                    openDialog();
+                }
+                
+            
+} else if (v.getId() == R.id.ivProfilePicBig) {
+
+                if (position <= bigImageList.size() - 1) {
+                    openDialog();
+                }
+                
+            //Choose Image Dialog Clicks
+            
+} else if (v.getId() == R.id.btnGallery) {
+
+                openGallery();
+                
+            
+} else if (v.getId() == R.id.btnCamera) {
+
+                openCamera();
+                
+            
+} else if (v.getId() == R.id.btnAvatar) {
+
+                openAvatars();
+                
+
+            
+} else if (v.getId() == R.id.btnAdd1) {
+
                 checkState = 2;
                 binding.llAdd1.setVisibility(View.GONE);
                 binding.llExperience2.setVisibility(View.VISIBLE);
-                break;
+                
 
-            case R.id.btnAdd2:
+            
+} else if (v.getId() == R.id.btnAdd2) {
+
                 checkState = 3;
                 binding.btnAdd2.setVisibility(View.GONE);
                 binding.llAdd2.setVisibility(View.GONE);
                 binding.llExperience3.setVisibility(View.VISIBLE);
-                break;
+                
 
-            case R.id.rlNationality:
+            
+} else if (v.getId() == R.id.rlNationality) {
+
                 startActivityForResult(new Intent(this, NationalityListActivity.class), 522);
-                break;
+                
 
-            case R.id.rlCountry:
+            
+} else if (v.getId() == R.id.rlCountry) {
+
                 startActivityForResult(new Intent(this, CountryListActivity.class), 512);
-                break;
+                
 
-            case R.id.rlState:
+            
+} else if (v.getId() == R.id.rlState) {
+
                 startActivityForResult(new Intent(this, StateListActivity.class), 520);
-                break;
+                
 
-            case R.id.rlMaritalStatus:
+            
+} else if (v.getId() == R.id.rlMaritalStatus) {
+
                 binding.spinnerMaritalStatus.performClick();
-                break;
+                
 
-            case R.id.rlKidsStatus:
+            
+} else if (v.getId() == R.id.rlKidsStatus) {
+
                 binding.spinnerKidStatus.performClick();
-                break;
+                
 
-            case R.id.rlHijob:
+            
+} else if (v.getId() == R.id.rlHijob) {
+
                 binding.spinnerHijab.performClick();
-                break;
+                
 
-            case R.id.tv_dob:
+            
+} else if (v.getId() == R.id.tv_dob) {
+
                 onSelectDate();
-                break;
+                
 
-            case R.id.tv_male:
+            
+} else if (v.getId() == R.id.tv_male) {
+
                 count++;
                 if (count % 2 == 1) {
                     binding.tvFemaleColor.setVisibility(View.GONE);
@@ -676,17 +705,21 @@ public class EditMaidPofileActivity extends BaseActivity implements View.OnClick
                     if (count2 % 2 == 1)
                         count2++;
                     binding.tvFemaleColor.setVisibility(View.GONE);
-                    break;
+                    
                 }
 
-            case R.id.tv_male_color:
+            
+} else if (v.getId() == R.id.tv_male_color) {
+
                 count++;
                 if (count % 2 == 0) {
                     binding.tvMaleColor.setVisibility(View.GONE);
-                    break;
+                    
                 }
 
-            case R.id.tv_female:
+            
+} else if (v.getId() == R.id.tv_female) {
+
                 count2++;
                 if (count2 % 2 == 1) {
                     binding.tvMaleColor.setVisibility(View.GONE);
@@ -697,81 +730,117 @@ public class EditMaidPofileActivity extends BaseActivity implements View.OnClick
                         count++;
                         binding.tvMaleColor.setVisibility(View.GONE);
                     }
-                    break;
+                    
                 }
 
-            case R.id.tv_female_color:
+            
+} else if (v.getId() == R.id.tv_female_color) {
+
                 count2++;
                 if (count2 % 2 == 0) {
                     count++;
                     binding.tvFemaleColor.setVisibility(View.GONE);
-                    break;
+                    
                 }
 
 
-            case R.id.rlEducation:
+            
+} else if (v.getId() == R.id.rlEducation) {
+
                 startActivityForResult(new Intent(this, EducationListActivity.class), 524);
-                break;
+                
 
-            case R.id.btnSubmit:
+            
+} else if (v.getId() == R.id.btnSubmit) {
+
                 updateProfile();
-                break;
+                
 
-            case R.id.rlLanguage:
+            
+} else if (v.getId() == R.id.rlLanguage) {
+
                 startActivityForResult(new Intent(this, LanguageListActivity.class), 526);
-                break;
+                
 
-            case R.id.rlPetProblem:
+            
+} else if (v.getId() == R.id.rlPetProblem) {
+
                 startActivityForResult(new Intent(this, PetProblemListActivity.class), 528);
-                break;
+                
 
-            case R.id.rlWorkStatus:
+            
+} else if (v.getId() == R.id.rlWorkStatus) {
+
                 binding.spinnerWorkStatus.performClick();
-                break;
+                
 
-            case R.id.rlAlcohol:
+            
+} else if (v.getId() == R.id.rlAlcohol) {
+
                 binding.spinnerAlcohol.performClick();
-                break;
+                
 
-            case R.id.rlSmoke:
+            
+} else if (v.getId() == R.id.rlSmoke) {
+
                 binding.spinnerSmoke.performClick();
-                break;
-            case R.id.rlCountryWork:
+                
+            
+} else if (v.getId() == R.id.rlCountryWork) {
+
                 startActivityForResult(new Intent(this, CountryListActivity.class), 530);
-                break;
+                
 
-            case R.id.rlStateWork:
+            
+} else if (v.getId() == R.id.rlStateWork) {
+
                 startActivityForResult(new Intent(this, StateListActivity.class), 532);
-                break;
+                
 
-            case R.id.rlDistrict:
+            
+} else if (v.getId() == R.id.rlDistrict) {
+
                 startActivityForResult(new Intent(this, DistrictListActivity.class), 534);
-                break;
+                
 
-            case R.id.rlCity:
+            
+} else if (v.getId() == R.id.rlCity) {
+
                 startActivityForResult(new Intent(this, CitylistActivity.class), 536);
-                break;
+                
 
-            case R.id.rlJobChoice:
+            
+} else if (v.getId() == R.id.rlJobChoice) {
+
                 startActivityForResult(new Intent(this, JobChoiceListActivity.class), 538);
 
-                break;
-            case R.id.rlSkills:
+                
+            
+} else if (v.getId() == R.id.rlSkills) {
+
                 startActivityForResult(new Intent(this, SkillsListActivity.class), 540);
-                break;
-            case R.id.rlWorkingChoices:
+                
+            
+} else if (v.getId() == R.id.rlWorkingChoices) {
+
                 startActivityForResult(new Intent(this, WorkingchoicesListActivity.class), 542);
-                break;
+                
 
-            case R.id.rlLiveFamily:
+            
+} else if (v.getId() == R.id.rlLiveFamily) {
+
                 binding.spinnerFamily.performClick();
-                break;
+                
 
-            case R.id.rlTravelSituation:
+            
+} else if (v.getId() == R.id.rlTravelSituation) {
+
                 binding.spinnerTravelSituation.performClick();
-                break;
+                
 
-            case R.id.tvStartDate:
+            
+} else if (v.getId() == R.id.tvStartDate) {
+
                 getSelectedDate(new DatePickerDialog.OnDateSetListener() {
                     @Override
                     public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
@@ -782,9 +851,11 @@ public class EditMaidPofileActivity extends BaseActivity implements View.OnClick
 
                     }
                 });
-                break;
+                
 
-            case R.id.tvEndDate:
+            
+} else if (v.getId() == R.id.tvEndDate) {
+
                 getSelectedDate(new DatePickerDialog.OnDateSetListener() {
                     @Override
                     public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
@@ -797,9 +868,11 @@ public class EditMaidPofileActivity extends BaseActivity implements View.OnClick
 
                     }
                 });
-                break;
+                
 
-            case R.id.tvStartDate2:
+            
+} else if (v.getId() == R.id.tvStartDate2) {
+
                 getSelectedDate(new DatePickerDialog.OnDateSetListener() {
                     @Override
                     public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
@@ -810,9 +883,11 @@ public class EditMaidPofileActivity extends BaseActivity implements View.OnClick
 
                     }
                 });
-                break;
+                
 
-            case R.id.tvEndDate2:
+            
+} else if (v.getId() == R.id.tvEndDate2) {
+
                 getSelectedDate(new DatePickerDialog.OnDateSetListener() {
                     @Override
                     public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
@@ -825,9 +900,11 @@ public class EditMaidPofileActivity extends BaseActivity implements View.OnClick
 
                     }
                 });
-                break;
+                
 
-            case R.id.tvStartDate3:
+            
+} else if (v.getId() == R.id.tvStartDate3) {
+
                 getSelectedDate(new DatePickerDialog.OnDateSetListener() {
                     @Override
                     public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
@@ -838,9 +915,11 @@ public class EditMaidPofileActivity extends BaseActivity implements View.OnClick
 
                     }
                 });
-                break;
+                
 
-            case R.id.tvEndDate3:
+            
+} else if (v.getId() == R.id.tvEndDate3) {
+
                 getSelectedDate(new DatePickerDialog.OnDateSetListener() {
                     @Override
                     public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
@@ -853,9 +932,10 @@ public class EditMaidPofileActivity extends BaseActivity implements View.OnClick
 
                     }
                 });
-                break;
+                
 
-        }
+        
+}
 
     }
 

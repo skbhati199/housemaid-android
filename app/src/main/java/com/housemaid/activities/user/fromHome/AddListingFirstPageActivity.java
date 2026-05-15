@@ -104,32 +104,39 @@ public class AddListingFirstPageActivity extends BaseActivity implements View.On
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()) {
+        if (v.getId() == R.id.rlListingType) {
 
-            case R.id.rlListingType:
                 startActivityForResult(new Intent(this, ListingTypeListActivity.class), 546);
-                break;
+                
 
-            case R.id.rlCountry:
+            
+} else if (v.getId() == R.id.rlCountry) {
+
                 startActivityForResult(new Intent(this, CountryListActivity.class), 530);
-                break;
+                
 
-            case R.id.rlState:
+            
+} else if (v.getId() == R.id.rlState) {
+
                 if (binding.tvCountry.getText().length() == 0) {
                     Toast.makeText(this, "Please select Country!", Toast.LENGTH_SHORT).show();
                 } else startActivityForResult(new Intent(this, StateListActivity.class), 532);
 
-                break;
+                
 
-            case R.id.rlDistrict:
+            
+} else if (v.getId() == R.id.rlDistrict) {
+
 
                 if (binding.tvState.getText().length() == 0) {
                     Toast.makeText(this, "Please select State! ", Toast.LENGTH_SHORT).show();
                 } else
                     startActivityForResult(new Intent(this, DistrictSingleListActivity.class), 550);
-                break;
+                
 
-            case R.id.rlCity:
+            
+} else if (v.getId() == R.id.rlCity) {
+
 
                 if (binding.tvState.getText().length() == 0) {
                     Toast.makeText(this, "Please select State! ", Toast.LENGTH_SHORT).show();
@@ -138,34 +145,48 @@ public class AddListingFirstPageActivity extends BaseActivity implements View.On
                     intent.putExtra("districtId",districtid);
                     startActivityForResult(intent, 552);
                 }
-                break;
+                
 
-            case R.id.rlWorkingType:
+            
+} else if (v.getId() == R.id.rlWorkingType) {
+
                 startActivityForResult(new Intent(this, WorkingchoiceSingleListActivity.class), 554);
-                break;
+                
 
-            case R.id.rlJobCategory:
+            
+} else if (v.getId() == R.id.rlJobCategory) {
+
                 startActivityForResult(new Intent(this, JobCategorySingleActivity.class), 556);
-                break;
+                
 
-            case R.id.rlLiveFamily:
+            
+} else if (v.getId() == R.id.rlLiveFamily) {
+
                 binding.spinnerFamily.performClick();
-                break;
+                
 
-            case R.id.rlTravelSituation:
+            
+} else if (v.getId() == R.id.rlTravelSituation) {
+
                 binding.spinnerTravelSituation.performClick();
-                break;
+                
 
-            case R.id.etCurrency:
+            
+} else if (v.getId() == R.id.etCurrency) {
+
                 binding.etCurrency.performClick();
-                break;
+                
 
-            case R.id.ivBack:
+            
+} else if (v.getId() == R.id.ivBack) {
+
                 onBackPressed();
                 finish();
-                break;
+                
 
-            case R.id.btnNext:
+            
+} else if (v.getId() == R.id.btnNext) {
+
 
                 if (binding.tvListingType.getText().toString().trim().isEmpty()) {
                     Toast.makeText(this, "Please enter listing type", Toast.LENGTH_SHORT).show();
@@ -217,8 +238,9 @@ public class AddListingFirstPageActivity extends BaseActivity implements View.On
                         finish();
                     }
                 }
-                break;
-        }
+                
+        
+}
     }
 
     private void showAmountSituation() {

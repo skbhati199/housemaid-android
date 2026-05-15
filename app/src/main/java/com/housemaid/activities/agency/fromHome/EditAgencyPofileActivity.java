@@ -144,7 +144,7 @@ public class EditAgencyPofileActivity extends BaseActivity implements View.OnCli
                 imageList.add(signUpModel.getUserImagesModel().get(i - 1).getImageModel().getSmall());
                 bigImageList.add(signUpModel.getUserImagesModel().get(i - 1).getImageModel().getBig());
             }
-            Glide.with(itemView.getContext()).load(signUpModel.getUserImagesModel().get(0).getImageModel().getBig())
+            Glide.with(this).load(signUpModel.getUserImagesModel().get(0).getImageModel().getBig())
                     .error(R.drawable.avatar).into(binding.ivProfilePicBig);
 
         } else binding.ivProfilePicBig.setImageResource(R.drawable.user);
@@ -173,48 +173,65 @@ public class EditAgencyPofileActivity extends BaseActivity implements View.OnCli
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.ivChoosePhoto:
-                if (position <= bigImageList.size() - 1) {
-                    openDialog();
-                }
-                break;
-            case R.id.ivProfilePicBig:
-                if (position <= bigImageList.size() - 1) {
-                    openDialog();
-                }
-                break;
+        if (v.getId() == R.id.ivChoosePhoto) {
 
-            case R.id.rlCountry:
+                if (position <= bigImageList.size() - 1) {
+                    openDialog();
+                }
+                
+            
+} else if (v.getId() == R.id.ivProfilePicBig) {
+
+                if (position <= bigImageList.size() - 1) {
+                    openDialog();
+                }
+                
+
+            
+} else if (v.getId() == R.id.rlCountry) {
+
                 startActivityForResult(new Intent(this, CountryListActivity.class),
                         512);
-                break;
-            case R.id.rlState:
+                
+            
+} else if (v.getId() == R.id.rlState) {
+
                 if (binding.tvCountryName.getText().length() == 0) {
                     Toast.makeText(this, R.string.please_select_country, Toast.LENGTH_SHORT)
                             .show();
                 } else startActivityForResult(new Intent(this, StateListActivity.class)
                         , 520);
-                break;
+                
 
-            case R.id.btnGallery:
+            
+} else if (v.getId() == R.id.btnGallery) {
+
                 openGallery();
-                break;
-            case R.id.btnCamera:
+                
+            
+} else if (v.getId() == R.id.btnCamera) {
+
                 openCamera();
-                break;
-            case R.id.btnAvatar:
+                
+            
+} else if (v.getId() == R.id.btnAvatar) {
+
                 openAvatars();
-                break;
+                
 
-            case R.id.btnSubmit:
+            
+} else if (v.getId() == R.id.btnSubmit) {
+
                 setImageInPart();
-                break;
+                
 
-            case R.id.ivBack:
+            
+} else if (v.getId() == R.id.ivBack) {
+
                 onBackPressed();
-                break;
-        }
+                
+        
+}
     }
 
     @Override

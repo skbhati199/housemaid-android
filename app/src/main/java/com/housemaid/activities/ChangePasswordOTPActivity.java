@@ -133,21 +133,28 @@ public class ChangePasswordOTPActivity extends BaseActivity implements View.OnCl
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.ivBack:
+        if (v.getId() == R.id.ivBack) {
+
                 onBackPressed();
-                break;
-            case R.id.btnSubmit:
+                
+            
+} else if (v.getId() == R.id.btnSubmit) {
+
                 openChangePassword();
-                break;
-            case R.id.btnChangeMobile:
+                
+            
+} else if (v.getId() == R.id.btnChangeMobile) {
+
                 openChangeNumber();
-                break;
-            case R.id.btnResend:
+                
+            
+} else if (v.getId() == R.id.btnResend) {
+
                 resendOTP();
                 startSmsRetriever();
-                break;
-        }
+                
+        
+}
     }
 
     @Override

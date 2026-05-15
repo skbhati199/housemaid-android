@@ -117,13 +117,14 @@ public class CompleteProfileMaid3 extends BaseActivity implements View.OnClickLi
     @Override
 
     public void onClick(View v) {
-        switch (v.getId ()) {
+        if (v.getId () == R.id.ivBack) {
 
-            case R.id.ivBack:
                 onBackPressed();
-                break;
+                
 
-            case R.id.btnNext:
+            
+} else if (v.getId () == R.id.btnNext) {
+
                 if (binding.tvCountry.getText ().toString ().trim ().isEmpty ()) {
                     Toast.makeText ( this, getString(R.string.please_select_country),
                             Toast.LENGTH_SHORT ).show ();
@@ -155,60 +156,79 @@ public class CompleteProfileMaid3 extends BaseActivity implements View.OnClickLi
                     openNextActivity ();
                 }
 
-                break;
+                
 
-            case R.id.rlCountry:
+            
+} else if (v.getId () == R.id.rlCountry) {
+
                 startActivityForResult(new Intent(this, CountryListActivity.class), 530);
-                break;
+                
 
-            case R.id.rlState:
+            
+} else if (v.getId () == R.id.rlState) {
+
                 startActivityForResult(new Intent(this, StateListActivity.class), 532);
-                break;
+                
 
-            case R.id.rlDistrict:
+            
+} else if (v.getId () == R.id.rlDistrict) {
+
                 Intent districtIntent = new Intent ( this, DistrictListActivity.class );
                 districtIntent.putExtra("districtIDList", districtIDList);
                 districtIntent.putExtra("districtList", districtList);
                 startActivityForResult (districtIntent , 534 );
-                break;
+                
 
-            case R.id.rlCity:
+            
+} else if (v.getId () == R.id.rlCity) {
+
                 Intent cityIntent = new Intent ( this, CitylistActivity.class );
                 cityIntent.putExtra("districtIDList", districtIDList);
                 cityIntent.putExtra("cityIdList", cityIdList);
                 cityIntent.putExtra("cityList", cityList);
                 startActivityForResult (cityIntent , 536 );
-                break;
+                
 
-            case R.id.rlJobChoice:
+            
+} else if (v.getId () == R.id.rlJobChoice) {
+
                 Intent jobIntent = new Intent ( this, JobChoiceListActivity.class );
                 jobIntent.putExtra("joChoiceIdList", joChoiceIdList);
                 jobIntent.putExtra("jobChoiceList", jobChoiceList);
                 startActivityForResult (jobIntent , 538 );
-                break;
+                
 
-            case R.id.rlSkills:
+            
+} else if (v.getId () == R.id.rlSkills) {
+
                 Intent skillsIntent = new Intent ( this, SkillsListActivity.class );
                 skillsIntent.putExtra("skillsIdList", skillsIdList);
                 skillsIntent.putExtra("skillsList", skillsList);
                 startActivityForResult (skillsIntent , 540 );
-                break;
+                
 
-            case R.id.rlWorkingChoices:
+            
+} else if (v.getId () == R.id.rlWorkingChoices) {
+
                 Intent workingIntent = new Intent ( this, WorkingchoicesListActivity.class );
                 workingIntent.putExtra("workingIdList", workingIdList);
                 workingIntent.putExtra("workingList", workingList);
                 startActivityForResult (workingIntent , 542 );
-                break;
+                
 
-            case R.id.rlLiveFamily:
+            
+} else if (v.getId () == R.id.rlLiveFamily) {
+
                 binding.spinnerFamily.performClick ();
-                break;
+                
 
-            case R.id.rlTravelSituation:
+            
+} else if (v.getId () == R.id.rlTravelSituation) {
+
                 binding.spinnerTravelSituation.performClick ();
-                break;
-        }
+                
+        
+}
     }
 
     @Override

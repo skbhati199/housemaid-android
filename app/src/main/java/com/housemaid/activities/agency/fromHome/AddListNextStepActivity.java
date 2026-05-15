@@ -166,71 +166,97 @@ public class AddListNextStepActivity extends BaseActivity implements View.OnClic
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.ivBack:
+        if (v.getId() == R.id.ivBack) {
+
                 onBackPressed();
                 finish();
-                break;
+                
 
-            case R.id.rlNationality:
+            
+} else if (v.getId() == R.id.rlNationality) {
+
                 startActivityForResult(new Intent(this, NationalityListActivity.class),
                         522);
-                break;
+                
 
-            case R.id.rlMaritalStatus:
+            
+} else if (v.getId() == R.id.rlMaritalStatus) {
+
                 binding.spinnerMaritalStatus.performClick();
-                break;
+                
 
-            case R.id.rlKidsStatus:
+            
+} else if (v.getId() == R.id.rlKidsStatus) {
+
                 binding.spinnerKidStatus.performClick();
-                break;
+                
 
-            case R.id.rlHijob:
+            
+} else if (v.getId() == R.id.rlHijob) {
+
                 binding.spinnerHijab.performClick();
-                break;
+                
 
-            case R.id.rlDrivingLicence:
+            
+} else if (v.getId() == R.id.rlDrivingLicence) {
+
                 binding.spinnerDrivingLicence.performClick();
-                break;
+                
 
-            case R.id.rlExperience:
+            
+} else if (v.getId() == R.id.rlExperience) {
+
                 binding.spinnerExperience.performClick();
-                break;
+                
 
-            case R.id.rlEducation:
+            
+} else if (v.getId() == R.id.rlEducation) {
+
                 Intent educationIntent = new Intent ( this, EducationListActivity.class );
                 educationIntent.putExtra("educationIdList", educationIdList);
                 educationIntent.putExtra("educationNameList", educationNameList);
                 startActivityForResult (educationIntent , 524 );
-                break;
+                
 
-            case R.id.rlLanguage:
+            
+} else if (v.getId() == R.id.rlLanguage) {
+
                 Intent languageIntent = new Intent ( this, LanguageListActivity.class );
                 languageIntent.putExtra("languageIdList", languageIdList);
                 languageIntent.putExtra("languageNameList", languageNameList);
                 startActivityForResult (languageIntent , 526 );
-                break;
+                
 
-            case R.id.rlPetProblem:
+            
+} else if (v.getId() == R.id.rlPetProblem) {
+
                 Intent petIntent = new Intent ( this, PetProblemListActivity.class );
                 petIntent.putExtra("petProblemList", petProblemList);
                 petIntent.putExtra("petProblemIdList", petProblemIdList);
                 startActivityForResult (petIntent , 528 );
-                break;
+                
 
-            case R.id.rlAlcohol:
+            
+} else if (v.getId() == R.id.rlAlcohol) {
+
                 binding.spinnerAlcohol.performClick();
-                break;
+                
 
-            case R.id.rlSmoke:
+            
+} else if (v.getId() == R.id.rlSmoke) {
+
                 binding.spinnerSmoke.performClick();
-                break;
+                
 
-            case R.id.rlWorkStatus:
+            
+} else if (v.getId() == R.id.rlWorkStatus) {
+
                 binding.spinnerWorkStatus.performClick();
-                break;
+                
 
-            case R.id.btnSubmit:
+            
+} else if (v.getId() == R.id.btnSubmit) {
+
 
                 if (binding.tvNationality.getText ().toString ().trim ().isEmpty ()) {
                     Toast.makeText(this, R.string.please_enter_nationality, Toast.LENGTH_SHORT).show();
@@ -250,8 +276,9 @@ public class AddListNextStepActivity extends BaseActivity implements View.OnClic
                     setValueInHashMap();
                 }
         }
-                break;
-        }
+                
+        
+}
 
     }
 

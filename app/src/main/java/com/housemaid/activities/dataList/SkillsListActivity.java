@@ -61,11 +61,12 @@ public class SkillsListActivity extends BaseActivity implements View.OnClickList
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.btnSubmit:
+        if (v.getId() == R.id.btnSubmit) {
+
                 senSkillsList();
-                break;
-        }
+                
+        
+}
     }
 
     private void senSkillsList() {

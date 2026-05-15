@@ -87,8 +87,8 @@ public class EducationAdapter extends RecyclerView.Adapter<EducationAdapter.MyVi
 
         @Override
         public void onClick(View v) {
-            switch (v.getId()) {
-                case R.id.relativeLayout:
+            if (v.getId() == R.id.relativeLayout) {
+
                     String currentItem = items.get(getAdapterPosition()).getName();
                     int currentId = items.get(getAdapterPosition()).getId();
                     items.get(getAdapterPosition()).checked = !items.get(getAdapterPosition()).checked;
@@ -102,8 +102,9 @@ public class EducationAdapter extends RecyclerView.Adapter<EducationAdapter.MyVi
 
                     }
                     notifyDataSetChanged();
-                    break;
-            }
+                    
+            
+}
         }
     }
 }

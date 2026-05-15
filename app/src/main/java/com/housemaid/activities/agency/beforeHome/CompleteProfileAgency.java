@@ -79,18 +79,22 @@ public class CompleteProfileAgency extends BaseActivity implements View.OnClickL
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.rlCountry:
+        if (v.getId() == R.id.rlCountry) {
+
                 startActivityForResult(new Intent(this, CountryListActivity.class),
                         512);
-                break;
-            case R.id.rlState:
+                
+            
+} else if (v.getId() == R.id.rlState) {
+
                 if (binding.tvCountryName.getText().length() == 0) {
                     Toast.makeText(this, R.string.please_select_country, Toast.LENGTH_SHORT).show();
                 } else startActivityForResult(new Intent(this, StateListActivity.class),
                         520);
-                break;
-            case R.id.btnSubmit:
+                
+            
+} else if (v.getId() == R.id.btnSubmit) {
+
                 if (binding.etCompanyName.getText().toString().trim().isEmpty()) {
                     Toast.makeText(this, R.string.please_enter_company_name, Toast.LENGTH_SHORT).show();
                 } else if (binding.etAutherizedPerson.getText().toString().trim().isEmpty()) {
@@ -110,8 +114,9 @@ public class CompleteProfileAgency extends BaseActivity implements View.OnClickL
                 } else {
                     setImageInPart();
                 }
-                break;
-        }
+                
+        
+}
     }
 
     @Override

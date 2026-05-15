@@ -240,11 +240,13 @@ public class SingleChatActivity extends BaseActivity implements View.OnClickList
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.ivMore:
+        if (v.getId() == R.id.ivMore) {
+
                 openPopUp(v);
-                break;
-            case R.id.ivBack:
+                
+            
+} else if (v.getId() == R.id.ivBack) {
+
                 sharedPreference.putString("running", "no");
                 if (from == 1) {
                     if (entry_key == 1) startActivity(new Intent(this, HomeForMaidActivity.class));
@@ -253,16 +255,19 @@ public class SingleChatActivity extends BaseActivity implements View.OnClickList
                     else startActivity(new Intent(this, HomeAgencyActivity.class));
                 } else
                     onBackPressed();
-                break;
-            case R.id.sendButton:
+                
+            
+} else if (v.getId() == R.id.sendButton) {
+
                 if (TextUtils.isEmpty(binding.messageArea.messageArea.getText().toString().trim()))
                     Toast.makeText(this, R.string.please_enter_a_message, Toast.LENGTH_SHORT).show();
                 else {
                     userMessage = binding.messageArea.messageArea.getText().toString();
                     onSendButtonClick();
                 }
-                break;
-        }
+                
+        
+}
     }
 
     @Override
@@ -304,24 +309,31 @@ public class SingleChatActivity extends BaseActivity implements View.OnClickList
         popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
             @Override
             public boolean onMenuItemClick(MenuItem item) {
-                switch (item.getItemId()) {
-                    case R.id.profile_item:
+                if (item.getItemId() == R.id.profile_item) {
+
                         binding.progress.setVisibility(View.VISIBLE);
                         getUserDetails(accessToken, Integer.parseInt(recieverID));
-                        break;
-                    case R.id.block_item:
+                        
+                    
+} else if (item.getItemId() == R.id.block_item) {
+
                         onBlockUser();
-                        break;
-                    case R.id.unblock_item:
+                        
+                    
+} else if (item.getItemId() == R.id.unblock_item) {
+
                         onUnBlockUser();
-                        break;
-                    case R.id.delete_item:
+                        
+                    
+} else if (item.getItemId() == R.id.delete_item) {
+
                         delState = 1;
                         binding.progress.setVisibility(View.VISIBLE);
                         onDeleteChat();
-                        break;
+                        
 
-                }
+                
+}
                 return false;
             }
         });

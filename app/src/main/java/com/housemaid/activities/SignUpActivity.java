@@ -62,26 +62,35 @@ public class SignUpActivity extends BaseActivity implements View.OnClickListener
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.btnCreateAccount:
+        if (v.getId() == R.id.btnCreateAccount) {
+
                 openVerification();
-                break;
-            case R.id.tvLogin:
+                
+            
+} else if (v.getId() == R.id.tvLogin) {
+
                 opensignIn();
                 finish();
-                break;
-            case R.id.tvShow:
+                
+            
+} else if (v.getId() == R.id.tvShow) {
+
                 showPassword();
-                break;
-            case R.id.tvConfirmShow:
+                
+            
+} else if (v.getId() == R.id.tvConfirmShow) {
+
                 showConfirmPassword();
-                break;
-            case R.id.tvTerms:
+                
+            
+} else if (v.getId() == R.id.tvTerms) {
+
                 Intent intent = new Intent(this, SettingWebViewActivity.class);
                 intent.putExtra("key_for_page", "terms");
                 startActivity(intent);
-                break;
-        }
+                
+        
+}
     }
 
     private void opensignIn() {

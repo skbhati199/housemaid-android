@@ -92,8 +92,8 @@ public class MyFavoritesListingActivity extends BaseActivity implements View.OnC
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.ivBack:
+        if (v.getId() == R.id.ivBack) {
+
                 onBackPressed();
                 if (sharedPreference.getInteger("entry_key", 0) == 1) {
                     startActivity(new Intent(this, HomeForMaidActivity.class));
@@ -101,8 +101,9 @@ public class MyFavoritesListingActivity extends BaseActivity implements View.OnC
                 if (sharedPreference.getInteger("entry_key", 0) == 2) {
                     startActivity(new Intent(this, HomeUserActivity.class));
                 }
-                break;
-        }
+                
+        
+}
     }
 
     @Override

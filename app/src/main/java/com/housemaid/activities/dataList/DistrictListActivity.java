@@ -70,11 +70,12 @@ public class DistrictListActivity extends BaseActivity implements View.OnClickLi
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.btnSubmit:
+        if (v.getId() == R.id.btnSubmit) {
+
                 sendCountryList();
-                break;
-        }
+                
+        
+}
 
     }
 

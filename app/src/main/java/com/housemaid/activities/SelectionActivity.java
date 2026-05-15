@@ -54,17 +54,22 @@ public class SelectionActivity extends BaseActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.btnJob:
+        if (v.getId() == R.id.btnJob) {
+
                 openMaidPanel();
-                break;
-            case R.id.btnMaid:
+                
+            
+} else if (v.getId() == R.id.btnMaid) {
+
                 openUserPanel();
-                break;
-            case R.id.btnAgency:
+                
+            
+} else if (v.getId() == R.id.btnAgency) {
+
                 openAgencyPanel();
-                break;
-        }
+                
+        
+}
     }
 
     private void openMaidPanel() {
@@ -95,9 +100,7 @@ public class SelectionActivity extends BaseActivity implements View.OnClickListe
                 .checkSelfPermission(this,
                         Manifest.permission.CAMERA) + ContextCompat
                 .checkSelfPermission(this,
-                        Manifest.permission.RECORD_AUDIO) + ContextCompat
-                .checkSelfPermission(this,
-                        Manifest.permission.CAPTURE_VIDEO_OUTPUT)
+                        Manifest.permission.RECORD_AUDIO)
                 != PackageManager.PERMISSION_GRANTED) {
 
             if (ActivityCompat.shouldShowRequestPermissionRationale
@@ -107,9 +110,7 @@ public class SelectionActivity extends BaseActivity implements View.OnClickListe
                     ActivityCompat.shouldShowRequestPermissionRationale
                             (this, Manifest.permission.CAMERA) ||
                     ActivityCompat.shouldShowRequestPermissionRationale
-                            (this, Manifest.permission.RECORD_AUDIO) ||
-                    ActivityCompat.shouldShowRequestPermissionRationale
-                            (this, Manifest.permission.CAPTURE_VIDEO_OUTPUT)) {
+                            (this, Manifest.permission.RECORD_AUDIO)) {
 
 
             } else {
@@ -119,8 +120,7 @@ public class SelectionActivity extends BaseActivity implements View.OnClickListe
                                     .ACCESS_FINE_LOCATION,
                                     Manifest.permission.READ_EXTERNAL_STORAGE,
                                     Manifest.permission.CAMERA,
-                                    Manifest.permission.RECORD_AUDIO,
-                                    Manifest.permission.CAPTURE_VIDEO_OUTPUT},
+                                    Manifest.permission.RECORD_AUDIO},
                             PERMISSIONS_MULTIPLE_REQUEST);
                 }
             }
@@ -159,8 +159,7 @@ public class SelectionActivity extends BaseActivity implements View.OnClickListe
                                                             .ACCESS_FINE_LOCATION,
                                                             Manifest.permission.READ_EXTERNAL_STORAGE,
                                                             Manifest.permission.CAMERA,
-                                                            Manifest.permission.RECORD_AUDIO,
-                                                            Manifest.permission.CAPTURE_VIDEO_OUTPUT},
+                                                            Manifest.permission.RECORD_AUDIO},
                                                     PERMISSIONS_MULTIPLE_REQUEST);
                                         }
                                     }

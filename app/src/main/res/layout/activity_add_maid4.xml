@@ -417,7 +417,7 @@
                                 android:layout_margin="5dp"
                                 android:layout_weight="1"
                                 android:background="@drawable/custom_text_view_grey"
-                                android:drawableEnd="@drawable/ccp_down_arrow"
+                                android:drawableEnd="@android:drawable/arrow_down_float"
                                 android:gravity="center_vertical"
                                 android:inputType="text"
                                 android:digits="@string/name_digits"

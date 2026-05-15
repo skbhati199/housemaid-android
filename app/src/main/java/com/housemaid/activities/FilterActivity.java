@@ -215,14 +215,15 @@ public class FilterActivity extends BaseActivity implements View.OnClickListener
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()) {
+        if (v.getId() == R.id.ivBack) {
 
-            case R.id.ivBack:
 
                 onBackPressed();
-                break;
+                
 
-            case R.id.btnSearchMaid:
+            
+} else if (v.getId() == R.id.btnSearchMaid) {
+
 
                 binding.scrollView.smoothScrollTo(0, 0);
                 if (sharedPreference.getInteger("entry_key", 0) == 2) {
@@ -243,9 +244,11 @@ public class FilterActivity extends BaseActivity implements View.OnClickListener
                 binding.rlAgeRange.setVisibility(View.VISIBLE);
                 binding.llMaidFilter.setVisibility(View.VISIBLE);
                 filterfor = 1;
-                break;
+                
 
-            case R.id.btnSearchUser:
+            
+} else if (v.getId() == R.id.btnSearchUser) {
+
 
                 binding.scrollView.smoothScrollTo(0, 0);
                 if (sharedPreference.getInteger("entry_key", 0) == 1) {
@@ -268,9 +271,11 @@ public class FilterActivity extends BaseActivity implements View.OnClickListener
                 binding.rlExperience.setVisibility(View.VISIBLE);
                 binding.viewExperience.setVisibility(View.VISIBLE);
                 filterfor = 2;
-                break;
+                
 
-            case R.id.btnSearchAgency:
+            
+} else if (v.getId() == R.id.btnSearchAgency) {
+
 
                 if (sharedPreference.getInteger("entry_key", 0) == 1) {
                     binding.btnSearchUser.setBackground(getResources().getDrawable(R.drawable.btn_white));
@@ -286,102 +291,142 @@ public class FilterActivity extends BaseActivity implements View.OnClickListener
                 binding.rlAgeRange.setVisibility(View.GONE);
                 binding.rlRating.setVisibility(View.GONE);
                 filterfor = 3;
-                break;
+                
 
-            case R.id.rlNationality:
+            
+} else if (v.getId() == R.id.rlNationality) {
+
                 startActivityForResult(new Intent(this, NationalityListActivity.class),
                         522);
-                break;
+                
 
-            case R.id.rlCountry:
+            
+} else if (v.getId() == R.id.rlCountry) {
+
                 startActivityForResult(new Intent(this, CountryListActivity.class),
                         512);
-                break;
+                
 
-            case R.id.rlState:
+            
+} else if (v.getId() == R.id.rlState) {
+
                 startActivityForResult(new Intent(this, StateListActivity.class),
                         520);
-                break;
+                
 
-            case R.id.rlDistrict:
+            
+} else if (v.getId() == R.id.rlDistrict) {
+
                 startActivityForResult(new Intent(this, DistrictSingleListActivity.class),
                         550);
-                break;
+                
 
-            case R.id.rlCity:
+            
+} else if (v.getId() == R.id.rlCity) {
+
                 startActivityForResult(new Intent(this, CitylistSingleActivity.class),
                         552);
-                break;
+                
 
-            case R.id.rlEducation:
+            
+} else if (v.getId() == R.id.rlEducation) {
+
                 Intent educationIntent = new Intent(this, EducationListActivity.class);
                 educationIntent.putExtra("educationIdList", educationIdList);
                 educationIntent.putExtra("educationNameList", educationNameList);
                 startActivityForResult(educationIntent, 524);
-                break;
+                
 
-            case R.id.rlLanguages:
+            
+} else if (v.getId() == R.id.rlLanguages) {
+
                 Intent languageIntent = new Intent(this, LanguageListActivity.class);
                 languageIntent.putExtra("languageIdList", languageIdList);
                 languageIntent.putExtra("languageNameList", languageNameList);
                 startActivityForResult(languageIntent, 526);
-                break;
+                
 
-            case R.id.rlWorkType:
+            
+} else if (v.getId() == R.id.rlWorkType) {
+
                 startActivityForResult(new Intent(this, WorkingchoiceSingleListActivity
                                 .class),
                         554);
-                break;
+                
 
-            case R.id.rlJobChoice:
+            
+} else if (v.getId() == R.id.rlJobChoice) {
+
                 Intent jobIntent = new Intent(this, JobChoiceListActivity.class);
                 jobIntent.putExtra("joChoiceIdList", joChoiceIdList);
                 jobIntent.putExtra("jobChoiceList", jobChoiceList);
                 startActivityForResult(jobIntent, 538);
-                break;
+                
 
 
-            case R.id.rlMaritalStatus:
+            
+} else if (v.getId() == R.id.rlMaritalStatus) {
+
                 binding.spinnerMaritalStatus.performClick();
-                break;
+                
 
-            case R.id.rlDrivingLicence:
+            
+} else if (v.getId() == R.id.rlDrivingLicence) {
+
                 binding.spinnerDrivingLicence.performClick();
-                break;
+                
 
-            case R.id.rlKidsStatus:
+            
+} else if (v.getId() == R.id.rlKidsStatus) {
+
                 binding.spinnerKidStatus.performClick();
-                break;
+                
 
-            case R.id.rlHijob:
+            
+} else if (v.getId() == R.id.rlHijob) {
+
                 binding.spinnerHijab.performClick();
-                break;
+                
 
-            case R.id.rlWorkStatus:
+            
+} else if (v.getId() == R.id.rlWorkStatus) {
+
                 binding.spinnerWorkStatus.performClick();
-                break;
+                
 
-            case R.id.rlAlcohol:
+            
+} else if (v.getId() == R.id.rlAlcohol) {
+
                 binding.spinnerAlcohol.performClick();
-                break;
+                
 
-            case R.id.rlSmoke:
+            
+} else if (v.getId() == R.id.rlSmoke) {
+
                 binding.spinnerSmoke.performClick();
-                break;
+                
 
-            case R.id.etCurrency:
+            
+} else if (v.getId() == R.id.etCurrency) {
+
                 binding.etCurrency.performClick();
-                break;
+                
 
-            case R.id.rlLiveFamily:
+            
+} else if (v.getId() == R.id.rlLiveFamily) {
+
                 binding.spinnerFamily.performClick();
-                break;
+                
 
-            case R.id.rlExperience:
+            
+} else if (v.getId() == R.id.rlExperience) {
+
                 binding.spinnerExperience.performClick();
-                break;
+                
 
-            case R.id.btnFilter:
+            
+} else if (v.getId() == R.id.btnFilter) {
+
 
                 String minFee = binding.etMinRate.getText().toString().trim();
                 String maxFee = binding.etMaxRate.getText().toString().trim();
@@ -411,13 +456,16 @@ public class FilterActivity extends BaseActivity implements View.OnClickListener
                     } else getFilterMaidData();
 
                 }
-                break;
+                
 
-            case R.id.btnClearForm:
+            
+} else if (v.getId() == R.id.btnClearForm) {
+
                 clearAllFilter();
-                break;
+                
 
-        }
+        
+}
     }
 
     private void clearAllFilter() {

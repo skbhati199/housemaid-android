@@ -60,11 +60,12 @@ public class ChangePasswordActivity extends BaseActivity implements View.OnClick
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.btnSubmit:
+        if (v.getId() == R.id.btnSubmit) {
+
                 openPopup();
-                break;
-        }
+                
+        
+}
     }
 
     private void openPopup() {

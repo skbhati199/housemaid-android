@@ -102,9 +102,8 @@ public class PastBookingsAdapter extends RecyclerView.Adapter<PastBookingsAdapte
 
         if (pastBookingDetail.getMaidBookedImageModel() != null && pastBookingDetail.getMaidBookedImageModel().size() > 0) {
 
-            Glide.with(itemView.getContext()).load(pastBookingDetail.getMaidBookedImageModel().get(0).getImageModel().getSmall())
-                    .error(R.drawable.avatar)
-                    .fit().centerCrop().into(holder.ivPic);
+            Glide.with(context).load(pastBookingDetail.getMaidBookedImageModel().get(0).getImageModel().getSmall())
+                    .centerCrop().into(holder.ivPic);
         } else holder.ivPic.setImageResource(R.drawable.user );
 
         holder.tvName.setText(pastBookingDetail.getName());
@@ -124,15 +123,16 @@ public class PastBookingsAdapter extends RecyclerView.Adapter<PastBookingsAdapte
                 popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
                     @Override
                     public boolean onMenuItemClick(MenuItem item) {
-                        switch (item.getItemId()) {
-                            case R.id.completed_item:
+                        if (item.getItemId() == R.id.completed_item) {
+
                                 completePostBooking(accessToken,
                                         String.valueOf(pastBookingDetail.getMaid_id()),
                                         holder);
                                 binding.progress.setVisibility(View.VISIBLE);
-                                break;
+                                
 
-                        }
+                        
+}
                         return false;
                     }
                 });
@@ -172,9 +172,8 @@ public class PastBookingsAdapter extends RecyclerView.Adapter<PastBookingsAdapte
 
                 if (pastBookingDetail.getMaidBookedImageModel() != null && pastBookingDetail.getMaidBookedImageModel().size() > 0) {
 
-                    Glide.with(itemView.getContext()).load(pastBookingDetail.getMaidBookedImageModel().get(0).getImageModel().getSmall())
-                            .error(R.drawable.avatar)
-                            .fit().centerCrop().into(civProfile);
+                    Glide.with(context).load(pastBookingDetail.getMaidBookedImageModel().get(0).getImageModel().getSmall())
+                            .centerCrop().into(civProfile);
                 } else holder.ivPic.setImageResource(R.drawable.user);
 
                 dialog.findViewById(R.id.btnCancel).setOnClickListener(new View.OnClickListener() {

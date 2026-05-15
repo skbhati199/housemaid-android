@@ -218,99 +218,132 @@ public class HomeAgencyActivity extends BaseActivity implements View.OnClickList
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.ivMenu:
+        if (v.getId() == R.id.ivMenu) {
+
                 openDrawerLayout();
-                break;
+                
 
-            case R.id.ivFilter:
+            
+} else if (v.getId() == R.id.ivFilter) {
+
                 startActivity(new Intent(this, FilterActivity.class));
-                break;
+                
 
-            case R.id.ivNotification:
+            
+} else if (v.getId() == R.id.ivNotification) {
+
                 startActivity(new Intent(this, NotificationActivity.class));
-                break;
+                
 
-            case R.id.ivBack:
+            
+} else if (v.getId() == R.id.ivBack) {
+
                 super.onBackPressed();
-                break;
+                
 
-            case R.id.tvTitle:
+            
+} else if (v.getId() == R.id.tvTitle) {
+
                 startActivity(new Intent(this, EnterLocationActivity.class));
-                break;
+                
 
 
-            case R.id.ivEdit:
+            
+} else if (v.getId() == R.id.ivEdit) {
+
                 Intent intent1 = new Intent(this, EditAgencyPofileActivity.class);
                 intent1.putExtra("agencyProfile", signUpModel);
                 startActivity(intent1);
-                break;
+                
 
-            case R.id.civProfilePic:
+            
+} else if (v.getId() == R.id.civProfilePic) {
+
                 Intent intent = new Intent(this, AgencyProfileActivity.class);
                 intent.putExtra("agencyProfile", signUpModel);
                 startActivity(intent);
-                break;
+                
 
-            case R.id.tvHome:
+            
+} else if (v.getId() == R.id.tvHome) {
+
                 binding.progress.setVisibility(View.VISIBLE);
                 getJobListing(accessToken);
                 binding.drawerLayout.closeDrawers();
-                break;
+                
 
-            case R.id.tvMyFavorites:
+            
+} else if (v.getId() == R.id.tvMyFavorites) {
+
                 startActivity(new Intent(this, AgencyFavouritesActivity.class));
                 binding.drawerLayout.closeDrawers();
-                break;
+                
 
-            case R.id.layoutMessages:
+            
+} else if (v.getId() == R.id.layoutMessages) {
+
                 startActivity(new Intent(this, ChatActivity.class));
                 binding.drawerLayout.closeDrawers();
-                break;
+                
 
-            case R.id.tvMyMaids:
+            
+} else if (v.getId() == R.id.tvMyMaids) {
+
                 startActivity(new Intent(this, MyMaidsActivity.class));
                 sharedPreference.putInteger("popup_key", 1);
                 binding.drawerLayout.closeDrawers();
-                break;
+                
 
-            case R.id.tvMaidProfile:
+            
+} else if (v.getId() == R.id.tvMaidProfile) {
+
                 Intent intent3 = new Intent(this, OtherMaidsProfileActivity.class);
                 intent3.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
                 startActivity(intent3);
                 sharedPreference.putInteger("popup_key", 2);
                 binding.drawerLayout.closeDrawers();
-                break;
+                
 
-            case R.id.tvAgenciess:
+            
+} else if (v.getId() == R.id.tvAgenciess) {
+
                 startActivity(new Intent(this, AgencyActivity.class));
                 binding.drawerLayout.closeDrawers();
-                break;
+                
 
-            case R.id.tvHighlight:
+            
+} else if (v.getId() == R.id.tvHighlight) {
+
                 if (signUpModel.getHighlight_profile().equals("1")) {
                     Toast.makeText(HomeAgencyActivity.this, R.string.your_agency_has_been_already_highlighted,
                             Toast.LENGTH_SHORT).show();
                 } else getCreditListing(accessToken, "12", "8");
-                break;
+                
 
-            case R.id.tvPastBookings:
+            
+} else if (v.getId() == R.id.tvPastBookings) {
+
                 startActivity(new Intent(this, PastBookingsActivity.class));
                 binding.drawerLayout.closeDrawers();
-                break;
+                
 
-            case R.id.tvSettings:
+            
+} else if (v.getId() == R.id.tvSettings) {
+
                 Intent intent2 = new Intent(this, SettingsActivity.class);
                 intent2.putExtra("userProfile", signUpModel);
                 startActivity(intent2);
                 binding.drawerLayout.closeDrawers();
-                break;
+                
 
-            case R.id.tvBuyCredit:
+            
+} else if (v.getId() == R.id.tvBuyCredit) {
+
                 startActivity(new Intent(this, UpgradeMemberShipActivity.class));
                 binding.drawerLayout.closeDrawers();
-                break;
-        }
+                
+        
+}
     }
 
     @Override
@@ -568,7 +601,7 @@ public class HomeAgencyActivity extends BaseActivity implements View.OnClickList
                                 !signUpModel.getUserImagesModel().get(0).getImageModel().getSmall().isEmpty()) {
                             sharedPreference.putString("agency_pic", String.valueOf(signUpModel
                                     .getUserImagesModel().get(0).getImageModel().getBig()));
-                            Glide.with(itemView.getContext()).load(signUpModel.getUserImagesModel().get(0).getImageModel()
+                            Glide.with(HomeAgencyActivity.this).load(signUpModel.getUserImagesModel().get(0).getImageModel()
                                     .getSmall())
                                     .fit()
                                     .error(R.drawable.avatar)

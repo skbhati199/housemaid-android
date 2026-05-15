@@ -97,20 +97,26 @@ public class AddMaidFirstActivity extends BaseActivity implements View.OnClickLi
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.ivChoosePhoto:
-                openDialog();
-                break;
+        if (v.getId() == R.id.ivChoosePhoto) {
 
-            case R.id.btnCancel:
+                openDialog();
+                
+
+            
+} else if (v.getId() == R.id.btnCancel) {
+
                 onBackPressed();
-                break;
+                
 
-            case R.id.ivProfilePicBig:
+            
+} else if (v.getId() == R.id.ivProfilePicBig) {
+
                 openDialog();
-                break;
+                
 
-            case R.id.btnNext:
+            
+} else if (v.getId() == R.id.btnNext) {
+
                 if (imagePath != null) {
                     if (ValidationUtils.userNameEmpty(binding.etUserName.getText().toString().trim(), this)
                             && ValidationUtils.mobileMatch(binding.etMobileNumber.getText().toString().trim(), this)
@@ -121,13 +127,17 @@ public class AddMaidFirstActivity extends BaseActivity implements View.OnClickLi
 
                 } else Toast.makeText(this, R.string.please_select_profile_picture,
                         Toast.LENGTH_SHORT).show();
-                break;
+                
             //Choose Image Dialog Clicks
-            case R.id.btnGallery:
-                openGallery();
-                break;
+            
+} else if (v.getId() == R.id.btnGallery) {
 
-            case R.id.btnCamera:
+                openGallery();
+                
+
+            
+} else if (v.getId() == R.id.btnCamera) {
+
                 if (checkPermissionForCamera()) {
                     openCamera();
                 } else {
@@ -137,11 +147,14 @@ public class AddMaidFirstActivity extends BaseActivity implements View.OnClickLi
                         e.printStackTrace();
                     }
                 }
-                break;
-            case R.id.btnAvatar:
+                
+            
+} else if (v.getId() == R.id.btnAvatar) {
+
                 openAvatars();
-                break;
-        }
+                
+        
+}
     }
 
     public void requestPermissionForCamera() throws Exception {

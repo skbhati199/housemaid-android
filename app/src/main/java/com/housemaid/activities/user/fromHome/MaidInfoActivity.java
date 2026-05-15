@@ -180,44 +180,57 @@ public class MaidInfoActivity extends BaseActivity implements View.OnClickListen
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()) {
+        if (v.getId() == R.id.ivBack) {
 
-            case R.id.ivBack:
                 onBackPressed();
-                break;
-            case R.id.ivAdd:
+                
+            
+} else if (v.getId() == R.id.ivAdd) {
+
                 callPopUpNoti(binding.toolbar.ivAdd);
-                break;
-            case R.id.btnViewPhoneNumber:
+                
+            
+} else if (v.getId() == R.id.btnViewPhoneNumber) {
+
                 binding.progress.setVisibility(View.VISIBLE);
                 getCreditListing(accessToken, "3", "1", "");
-                break;
-            case R.id.btnViewEmail:
+                
+            
+} else if (v.getId() == R.id.btnViewEmail) {
+
                 binding.progress.setVisibility(View.VISIBLE);
                 getCreditListing(accessToken, "3", "2", "");
-                break;
+                
 
-            case R.id.tvInvite:
+            
+} else if (v.getId() == R.id.tvInvite) {
+
                 binding.progress.setVisibility(View.VISIBLE);
                 popupWindowMenuClick(accessToken, String.valueOf(maidInformation.getId()),
                         reasonToFire, progressBar, dialog);
-                break;
+                
 
-            case R.id.tvFire:
+            
+} else if (v.getId() == R.id.tvFire) {
+
                 openFireDialog();
                 pw.dismiss();
-                break;
+                
 
-            case R.id.tvHire:
+            
+} else if (v.getId() == R.id.tvHire) {
+
                 if (maidInformation.getIs_hired())
                     Toast.makeText(this, R.string.hire_request_already_sent,
                             Toast.LENGTH_SHORT).show();
                 else openHireDialog();
 
                 pw.dismiss();
-                break;
+                
 
-            case R.id.tvLiveConversation:
+            
+} else if (v.getId() == R.id.tvLiveConversation) {
+
                 if (maidInformation.getPaidStatusModel().getCall_status().equals("1")) {
 
                     sendNotification(accessToken, String.valueOf(maidInformation.getId()),
@@ -229,14 +242,17 @@ public class MaidInfoActivity extends BaseActivity implements View.OnClickListen
                     pw.dismiss();
                 }
 
-                break;
+                
 
-            case R.id.viewPager:
+            
+} else if (v.getId() == R.id.viewPager) {
+
                 startActivity(new Intent(this, ZoomPhotoActivity.class)
                                 .putStringArrayListExtra("images", images));
-                break;
+                
 
-        }
+        
+}
     }
 
     private void callDialogForMoreThenImages(final String key, final String fromWhere) {

@@ -143,7 +143,7 @@ public class MaidHomeListAdapter extends RecyclerView.Adapter<MaidHomeListAdapte
 
 
         if (jobDetail.getUserDetailModel().getUserImageModel().size() > 0) {
-            Glide.with(itemView.getContext()).load(jobDetail.getUserDetailModel().getUserImagesModel().get(0)
+            Glide.with(context).load(jobDetail.getUserDetailModel().getUserImagesModel().get(0)
                     .getImageModel()
                     .getBig())
                     .fit()

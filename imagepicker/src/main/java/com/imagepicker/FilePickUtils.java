@@ -455,7 +455,7 @@ public class FilePickUtils implements LifeCycleCallBackManager {
                 case CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE:
                     size = 1;
                     CropImage.ActivityResult result = CropImage.getActivityResult(data);
-                    Uri resultUri = result.getUri();
+                    Uri resultUri = result.getUriContent();
                     performImageProcessing(resultUri.toString(),
                             FileType.IMG_FILE);
                     break;

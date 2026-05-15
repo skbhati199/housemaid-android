@@ -98,35 +98,47 @@ public class AddMaidActivity2 extends BaseActivity implements View.OnClickListen
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.rlNationality:
+        if (v.getId() == R.id.rlNationality) {
+
                 startActivityForResult(new Intent(this, NationalityListActivity.class),
                         522);
-                break;
+                
 
-            case R.id.rlCountry:
+            
+} else if (v.getId() == R.id.rlCountry) {
+
                 startActivityForResult(new Intent(this, CountryListActivity.class),
                         512);
-                break;
+                
 
-            case R.id.rlState:
+            
+} else if (v.getId() == R.id.rlState) {
+
                 startActivityForResult(new Intent(this, StateListActivity.class),
                         520);
-                break;
+                
 
-            case R.id.rlMaritalStatus:
+            
+} else if (v.getId() == R.id.rlMaritalStatus) {
+
                 binding.spinnerMaritalStatus.performClick();
-                break;
+                
 
-            case R.id.rlKidsStatus:
+            
+} else if (v.getId() == R.id.rlKidsStatus) {
+
                 binding.spinnerKidStatus.performClick();
-                break;
+                
 
-            case R.id.rlHijob:
+            
+} else if (v.getId() == R.id.rlHijob) {
+
                 binding.spinnerHijab.performClick();
-                break;
+                
 
-            case R.id.btnNext:
+            
+} else if (v.getId() == R.id.btnNext) {
+
                 if (binding.tvCountry.getText().toString().trim().isEmpty()) {
                     Toast.makeText(this, R.string.please_enter_country_name, Toast.LENGTH_SHORT)
                             .show();
@@ -143,13 +155,17 @@ public class AddMaidActivity2 extends BaseActivity implements View.OnClickListen
                     openNextActivity();
                 }
 
-                break;
+                
 
-            case R.id.tv_dob:
+            
+} else if (v.getId() == R.id.tv_dob) {
+
                 onSelectDate();
-                break;
+                
 
-            case R.id.tv_male:
+            
+} else if (v.getId() == R.id.tv_male) {
+
                 count++;
                 if (count % 2 == 1) {
                     binding.tvMaleColor.setVisibility(View.VISIBLE);
@@ -157,17 +173,21 @@ public class AddMaidActivity2 extends BaseActivity implements View.OnClickListen
                     if (count2 % 2 == 1)
                         count2++;
                     binding.tvFemaleColor.setVisibility(View.GONE);
-                    break;
+                    
                 }
 
-            case R.id.tv_male_color:
+            
+} else if (v.getId() == R.id.tv_male_color) {
+
                 count++;
                 if (count % 2 == 0) {
                     binding.tvMaleColor.setVisibility(View.GONE);
-                    break;
+                    
                 }
 
-            case R.id.tv_female:
+            
+} else if (v.getId() == R.id.tv_female) {
+
                 count2++;
                 if (count2 % 2 == 1) {
                     binding.tvFemaleColor.setVisibility(View.VISIBLE);
@@ -176,17 +196,20 @@ public class AddMaidActivity2 extends BaseActivity implements View.OnClickListen
                         count++;
                         binding.tvMaleColor.setVisibility(View.GONE);
                     }
-                    break;
+                    
                 }
 
-            case R.id.tv_female_color:
+            
+} else if (v.getId() == R.id.tv_female_color) {
+
                 count2++;
                 if (count2 % 2 == 0) {
                     count++;
                     binding.tvFemaleColor.setVisibility(View.GONE);
-                    break;
+                    
                 }
-        }
+        
+}
     }
 
     @Override

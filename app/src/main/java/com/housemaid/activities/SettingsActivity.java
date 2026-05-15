@@ -67,33 +67,42 @@ public class SettingsActivity extends BaseActivity implements View.OnClickListen
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.ivBack:
+        if (v.getId() == R.id.ivBack) {
+
                 onBackPressed();
-                break;
-            case R.id.tvAboutUs:
+                
+            
+} else if (v.getId() == R.id.tvAboutUs) {
+
                 Intent intent = new Intent(this, SettingWebViewActivity.class);
                 intent.putExtra("key_for_page", "about");
                 startActivity(intent);
-                break;
-            case R.id.tvHelp:
+                
+            
+} else if (v.getId() == R.id.tvHelp) {
+
                 Intent intent1 = new Intent(this, SettingWebViewActivity.class);
                 intent1.putExtra("key_for_page", "help");
                 startActivity(intent1);
-                break;
-            case R.id.tvContactUs:
+                
+            
+} else if (v.getId() == R.id.tvContactUs) {
+
                 Intent intent2 = new Intent(this, SettingWebViewActivity.class);
                 intent2.putExtra("key_for_page", "contact");
                 startActivity(intent2);
-                break;
+                
 
-            case R.id.tvLogout:
+            
+} else if (v.getId() == R.id.tvLogout) {
+
                 sharedPreference.deletePreference();
                 binding.progress.setVisibility(View.VISIBLE);
                 logoutFromServer(accessToken);
 
-                break;
-        }
+                
+        
+}
     }
 
     @Override

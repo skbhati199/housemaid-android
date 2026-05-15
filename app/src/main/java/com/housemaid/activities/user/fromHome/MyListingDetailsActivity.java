@@ -55,7 +55,7 @@ public class MyListingDetailsActivity extends BaseActivity implements View.OnCli
         }
         //LOAD IMAGE HERE
         if (imgUrl != null) {
-            /*Glide.with(itemView.getContext()).load(imgUrl)
+            /*Glide.with(this).load(imgUrl)
                     .error(R.drawable.user).into(binding.profilePic);*/
             Glide.with(this).load(imgUrl).error(R.drawable.user).into(binding.profilePic);
 
@@ -91,10 +91,11 @@ public class MyListingDetailsActivity extends BaseActivity implements View.OnCli
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.ivBack:
+        if (v.getId() == R.id.ivBack) {
+
                 finish();
-                break;
-        }
+                
+        
+}
     }
 }

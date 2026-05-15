@@ -149,33 +149,44 @@ public class FavouriteJobListingProfileActivity extends BaseActivity implements 
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()) {
+        if (v.getId() == R.id.ivBack) {
 
-            case R.id.ivBack:
                 onBackPressed();
-                break;
-            case R.id.ivAdd:
+                
+            
+} else if (v.getId() == R.id.ivAdd) {
+
                 callPopUpNoti(binding.toolbar.ivAdd);
-                break;
-            case R.id.tvSuggestMaid:
+                
+            
+} else if (v.getId() == R.id.tvSuggestMaid) {
+
                 openCreditDialog();
                 pw.dismiss();
-                break;
+                
 
-            case R.id.btnViewPhoneNumber:
+            
+} else if (v.getId() == R.id.btnViewPhoneNumber) {
+
                 binding.progress.setVisibility(View.VISIBLE);
                 getCreditListing(accessToken, "3", "1", "");
-                break;
-            case R.id.btnViewEmail:
+                
+            
+} else if (v.getId() == R.id.btnViewEmail) {
+
                 binding.progress.setVisibility(View.VISIBLE);
                 getCreditListing(accessToken, "3", "2", "");
-                break;
+                
 
-            case R.id.tvApplyListing:
+            
+} else if (v.getId() == R.id.tvApplyListing) {
+
                 applyToJobDialog();
-                break;
+                
 
-            case R.id.tvLiveConversation:
+            
+} else if (v.getId() == R.id.tvLiveConversation) {
+
                 if (userDetailModel.getPaidStatusModel().getCall_status().equals("1")){
                     sendNotification(accessToken, String.valueOf(userDetailModel.getUserDetailModel()
                                     .getId()),
@@ -183,16 +194,19 @@ public class FavouriteJobListingProfileActivity extends BaseActivity implements 
                     binding.progress.setVisibility(View.VISIBLE);
                     pw.dismiss();
                 }else getCreditListing(accessToken,"4", "7","live");
-                break;
+                
 
-            case R.id.tvViewUserListing:
+            
+} else if (v.getId() == R.id.tvViewUserListing) {
+
                 Intent intent1 = new Intent(FavouriteJobListingProfileActivity.this,
                         UserJobListingActivity.class);
                 intent1.putExtra("user_id", userDetailModel.getUser_id());
                 startActivity(intent1);
-                break;
+                
 
-        }
+        
+}
     }
 
     private void callPopUpNoti(AppCompatImageView ivAdd) {
@@ -329,7 +343,7 @@ public class FavouriteJobListingProfileActivity extends BaseActivity implements 
         binding.tvUserMaritalStatus.setText(userDetailModel.getUserDetailModel().getMarital_status());
         binding.tvDob.setText(userDetailModel.getUserDetailModel().getDob());
 
-        Glide.with(itemView.getContext()).load(imageModelArrayList.get(0).getImageModel().getBig()).error(R.drawable.avatar)
+        Glide.with(this).load(imageModelArrayList.get(0).getImageModel().getBig()).error(R.drawable.avatar)
                 .fit().centerCrop().into(binding.ivProfilePicBig);
 
         binding.tvCity.setText(userDetailModel.getCity_name());

@@ -143,33 +143,43 @@ public class CompleteProfileMaid4 extends BaseActivity implements View.OnClickLi
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.ivBack:
-                onBackPressed();
-                break;
+        if (v.getId() == R.id.ivBack) {
 
-            case R.id.btnNext:
+                onBackPressed();
+                
+
+            
+} else if (v.getId() == R.id.btnNext) {
+
                 openNextActivity();
-                break;
+                
 
-            case R.id.btnPrevious:
+            
+} else if (v.getId() == R.id.btnPrevious) {
+
                 onBackPressed();
-                break;
+                
 
-            case R.id.btnAdd1:
+            
+} else if (v.getId() == R.id.btnAdd1) {
+
                 binding.llAdd1.setVisibility(View.GONE);
                 binding.llExperience2.setVisibility(View.VISIBLE);
                 checkState=2;
-                break;
+                
 
-            case R.id.btnAdd2:
+            
+} else if (v.getId() == R.id.btnAdd2) {
+
                 binding.llAdd2.setVisibility(View.GONE);
                 binding.llExperience3.setVisibility(View.VISIBLE);
                 checkState=3;
-                break;
+                
 
 
-            case R.id.tvStartDate:
+            
+} else if (v.getId() == R.id.tvStartDate) {
+
                 getSelectedDate(new DatePickerDialog.OnDateSetListener() {
                     @Override
                     public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
@@ -181,9 +191,11 @@ public class CompleteProfileMaid4 extends BaseActivity implements View.OnClickLi
                         startYear = year;
                     }
                 });
-                break;
+                
 
-            case R.id.tvEndDate:
+            
+} else if (v.getId() == R.id.tvEndDate) {
+
                 getSelectedDate(new DatePickerDialog.OnDateSetListener() {
                     @Override
                     public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
@@ -198,8 +210,10 @@ public class CompleteProfileMaid4 extends BaseActivity implements View.OnClickLi
 
                     }
                 });
-                break;
-            case R.id.tvStartDate2:
+                
+            
+} else if (v.getId() == R.id.tvStartDate2) {
+
                 getSelectedDate(new DatePickerDialog.OnDateSetListener() {
                     @Override
                     public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
@@ -211,9 +225,11 @@ public class CompleteProfileMaid4 extends BaseActivity implements View.OnClickLi
                         startYear = year;
                     }
                 });
-                break;
+                
 
-            case R.id.tvEndDate2:
+            
+} else if (v.getId() == R.id.tvEndDate2) {
+
                 getSelectedDate(new DatePickerDialog.OnDateSetListener() {
                     @Override
                     public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
@@ -228,8 +244,10 @@ public class CompleteProfileMaid4 extends BaseActivity implements View.OnClickLi
 
                     }
                 });
-                break;
-            case R.id.tvStartDate3:
+                
+            
+} else if (v.getId() == R.id.tvStartDate3) {
+
                 getSelectedDate(new DatePickerDialog.OnDateSetListener() {
                     @Override
                     public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
@@ -242,9 +260,11 @@ public class CompleteProfileMaid4 extends BaseActivity implements View.OnClickLi
 
                     }
                 });
-                break;
+                
 
-            case R.id.tvEndDate3:
+            
+} else if (v.getId() == R.id.tvEndDate3) {
+
                 getSelectedDate(new DatePickerDialog.OnDateSetListener() {
                     @Override
                     public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
@@ -258,8 +278,9 @@ public class CompleteProfileMaid4 extends BaseActivity implements View.OnClickLi
                                     R.string.choose_corect_date, Toast.LENGTH_SHORT).show();
                     }
                 });
-                break;
-        }
+                
+        
+}
     }
 
     private void openNextActivity() {

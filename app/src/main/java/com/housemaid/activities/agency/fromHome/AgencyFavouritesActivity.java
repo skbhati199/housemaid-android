@@ -42,11 +42,12 @@ public class AgencyFavouritesActivity extends BaseActivity implements View.OnCli
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.ivBack:
+        if (v.getId() == R.id.ivBack) {
+
                 onBackPressed();
-                break;
-        }
+                
+        
+}
 
     }
 

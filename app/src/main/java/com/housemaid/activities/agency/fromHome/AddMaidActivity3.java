@@ -99,9 +99,8 @@ public class AddMaidActivity3 extends BaseActivity implements View.OnClickListen
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()) {
+        if (v.getId() == R.id.btnNext) {
 
-            case R.id.btnNext:
                 if (binding.tvEducation.getText().toString().trim().isEmpty()) {
                     Toast.makeText(this, R.string.please_enter_education, Toast.LENGTH_SHORT)
                             .show();
@@ -116,40 +115,53 @@ public class AddMaidActivity3 extends BaseActivity implements View.OnClickListen
 
                 }
 
-                break;
+                
 
-            case R.id.rlEducation:
+            
+} else if (v.getId() == R.id.rlEducation) {
+
                 Intent educationIntent = new Intent(this, EducationListActivity.class);
                 educationIntent.putExtra("educationIdList", educationIdList);
                 educationIntent.putExtra("educationNameList", educationNameList);
                 startActivityForResult(educationIntent, 524);
-                break;
+                
 
-            case R.id.rlLanguage:
+            
+} else if (v.getId() == R.id.rlLanguage) {
+
                 Intent languageIntent = new Intent(this, LanguageListActivity.class);
                 languageIntent.putExtra("languageIdList", languageIdList);
                 languageIntent.putExtra("languageNameList", languageNameList);
                 startActivityForResult(languageIntent, 526);
-                break;
+                
 
-            case R.id.rlPetProblem:
+            
+} else if (v.getId() == R.id.rlPetProblem) {
+
                 Intent petIntent = new Intent(this, PetProblemListActivity.class);
                 petIntent.putExtra("petProblemList", petProblemList);
                 petIntent.putExtra("petProblemIdList", petProblemIdList);
                 startActivityForResult(petIntent, 528);
-                break;
-            case R.id.rlWorkStatus:
+                
+            
+} else if (v.getId() == R.id.rlWorkStatus) {
+
                 binding.spinnerWorkStatus.performClick();
-                break;
+                
 
-            case R.id.rlAlcohol:
+            
+} else if (v.getId() == R.id.rlAlcohol) {
+
                 binding.spinnerAlcohol.performClick();
-                break;
+                
 
-            case R.id.rlSmoke:
+            
+} else if (v.getId() == R.id.rlSmoke) {
+
                 binding.spinnerSmoke.performClick();
-                break;
-        }
+                
+        
+}
     }
 
     @Override

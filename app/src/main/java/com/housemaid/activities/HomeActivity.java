@@ -123,26 +123,33 @@ public class HomeActivity extends BaseActivity implements View.OnClickListener,
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.ivMenu:
+        if (v.getId() == R.id.ivMenu) {
+
                 openDrawerLayout();
-                break;
+                
 
-            case R.id.ivBack:
+            
+} else if (v.getId() == R.id.ivBack) {
+
                 super.onBackPressed();
-                break;
+                
 
-            case R.id.tvSignUp:
+            
+} else if (v.getId() == R.id.tvSignUp) {
+
                 startActivity(new Intent(this, SignUpActivity.class));
                 binding.drawerLayout.closeDrawers();
-                break;
+                
 
-            case R.id.tvLogin:
+            
+} else if (v.getId() == R.id.tvLogin) {
+
                 startActivity(new Intent(this, SignInActivity.class));
                 binding.drawerLayout.closeDrawers();
-                break;
+                
 
-        }
+        
+}
     }
 
     private void openDrawerLayout() {

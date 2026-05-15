@@ -269,7 +269,7 @@ public class LiveConversationActivity extends BaseActivity {
         TextView tvCallingtext = dialog1.findViewById(R.id.tvCallingText);
         CircleImageView ivProfilePic = dialog1.findViewById(R.id.ivProfilePic);
 
-        Glide.with(itemView.getContext())
+        Glide.with(this)
                 .load(profileToCaller)
                 .fit()
                 .error(R.drawable.user_c)
@@ -299,7 +299,7 @@ public class LiveConversationActivity extends BaseActivity {
         TextView tvCallingtext = dialog.findViewById(R.id.tvCallingText);
         CircleImageView ivProfilePic = dialog.findViewById(R.id.ivProfilePic);
 
-        Glide.with(itemView.getContext())
+        Glide.with(this)
                 .load(profileCaller)
                 .fit()
                 .error(R.drawable.user_c)

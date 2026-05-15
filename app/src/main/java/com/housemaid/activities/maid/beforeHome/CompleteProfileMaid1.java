@@ -104,38 +104,51 @@ public class CompleteProfileMaid1 extends BaseActivity implements View.OnClickLi
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()) {
+        if (v.getId() == R.id.ivBack) {
 
-            case R.id.ivBack:
                 onBackPressed();
-                break;
+                
 
 
-            case R.id.rlNationality:
+            
+} else if (v.getId() == R.id.rlNationality) {
+
                 startActivityForResult(new Intent(this, NationalityListActivity.class), 522);
-                break;
+                
 
-            case R.id.rlCountry:
+            
+} else if (v.getId() == R.id.rlCountry) {
+
                 startActivityForResult(new Intent(this, CountryListActivity.class), 512);
-                break;
+                
 
-            case R.id.rlState:
+            
+} else if (v.getId() == R.id.rlState) {
+
                 startActivityForResult(new Intent(this, StateListActivity.class), 520);
-                break;
+                
 
-            case R.id.rlMaritalStatus:
+            
+} else if (v.getId() == R.id.rlMaritalStatus) {
+
                 binding.spinnerMaritalStatus.performClick();
-                break;
+                
 
-            case R.id.rlKidsStatus:
+            
+} else if (v.getId() == R.id.rlKidsStatus) {
+
                 binding.spinnerKidStatus.performClick();
-                break;
+                
 
-            case R.id.rlHijob:
+            
+} else if (v.getId() == R.id.rlHijob) {
+
                 binding.spinnerHijab.performClick();
-                break;
+                
 
-            case R.id.btnNext:
+            
+} else if (v.getId() == R.id.btnNext) {
+
                 if (binding.tvCountry.getText ().toString ().trim ().isEmpty ()){
                     Toast.makeText ( this, R.string.please_select_country_name, Toast.LENGTH_SHORT ).show ();
                 }else if (binding.tvState.getText ().toString ().trim ().isEmpty ()){
@@ -155,13 +168,17 @@ public class CompleteProfileMaid1 extends BaseActivity implements View.OnClickLi
                 }else {
                     openNextActivity();
                 }
-                break;
+                
 
-            case R.id.tv_dob:
+            
+} else if (v.getId() == R.id.tv_dob) {
+
                 onSelectDate();
-                break;
+                
 
-            case R.id.tv_male:
+            
+} else if (v.getId() == R.id.tv_male) {
+
                 count++;
                 if (count % 2 == 1) {
                     binding.tvMaleColor.setVisibility(View.VISIBLE);
@@ -169,17 +186,21 @@ public class CompleteProfileMaid1 extends BaseActivity implements View.OnClickLi
                     if (count2 % 2 == 1)
                     count2++;
                     binding.tvFemaleColor.setVisibility(View.GONE);
-                    break;
+                    
                 }
 
-            case R.id.tv_male_color:
+            
+} else if (v.getId() == R.id.tv_male_color) {
+
                 count++;
                 if (count % 2 == 0) {
                     binding.tvMaleColor.setVisibility(View.GONE);
-                    break;
+                    
                 }
 
-            case R.id.tv_female:
+            
+} else if (v.getId() == R.id.tv_female) {
+
                 count2++;
                 if (count2 % 2 == 1) {
                     binding.tvFemaleColor.setVisibility(View.VISIBLE);
@@ -188,17 +209,20 @@ public class CompleteProfileMaid1 extends BaseActivity implements View.OnClickLi
                         count++;
                         binding.tvMaleColor.setVisibility(View.GONE);
                     }
-                    break;
+                    
                 }
 
-            case R.id.tv_female_color:
+            
+} else if (v.getId() == R.id.tv_female_color) {
+
                 count2++;
                 if (count2 % 2 == 0) {
                     count++;
                     binding.tvFemaleColor.setVisibility(View.GONE);
-                    break;
+                    
                 }
-        }
+        
+}
     }
 
     @Override

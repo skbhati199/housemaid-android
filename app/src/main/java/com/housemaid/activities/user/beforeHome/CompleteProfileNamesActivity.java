@@ -153,33 +153,42 @@ public class CompleteProfileNamesActivity extends BaseActivity implements View.O
 
     @Override
     public void onClick(View v) {
-        switch (v.getId ()) {
+        if (v.getId () == R.id.btnSubmit) {
 
-            case R.id.btnSubmit:
                 setImageInPart ();
-                break;
+                
 
-            case R.id.rlCountry:
+            
+} else if (v.getId () == R.id.rlCountry) {
+
                 if (ValidationUtils.isOnline ( binding.relativeLayout, this )) {
                     startActivityForResult ( new Intent ( this, CountryListActivity.class ), 512 );
                 }
-                break;
+                
 
-            case R.id.rlState:
+            
+} else if (v.getId () == R.id.rlState) {
+
                 if (binding.tvCountryName.getText().length()==0){
                     Toast.makeText(this, "Please enter country first", Toast.LENGTH_SHORT).show();
                 }else startActivityForResult ( new Intent ( this, StateListActivity.class ), 520 );
-                break;
+                
 
-            case R.id.rlMaritalStatus:
+            
+} else if (v.getId () == R.id.rlMaritalStatus) {
+
                 binding.spinnerMaritalStatus.performClick ();
-                break;
+                
 
-            case R.id.tv_dob:
+            
+} else if (v.getId () == R.id.tv_dob) {
+
                 onSelectDate ();
-                break;
+                
 
-            case R.id.tv_male:
+            
+} else if (v.getId () == R.id.tv_male) {
+
                 count++;
                 if (count % 2 == 1) {
                     binding.tvMaleColor.setVisibility ( View.VISIBLE );
@@ -188,17 +197,21 @@ public class CompleteProfileNamesActivity extends BaseActivity implements View.O
                     if (count2 % 2 == 1)
                         count2++;
                     binding.tvFemaleColor.setVisibility ( View.GONE );
-                    break;
+                    
                 }
 
-            case R.id.tv_male_color:
+            
+} else if (v.getId () == R.id.tv_male_color) {
+
                 count++;
                 if (count % 2 == 0) {
                     binding.tvMaleColor.setVisibility ( View.GONE );
-                    break;
+                    
                 }
 
-            case R.id.tv_female:
+            
+} else if (v.getId () == R.id.tv_female) {
+
                 count2++;
                 if (count2 % 2 == 1) {
                     binding.tvFemaleColor.setVisibility ( View.VISIBLE );
@@ -208,17 +221,20 @@ public class CompleteProfileNamesActivity extends BaseActivity implements View.O
                         count++;
                         binding.tvMaleColor.setVisibility ( View.GONE );
                     }
-                    break;
+                    
                 }
 
-            case R.id.tv_female_color:
+            
+} else if (v.getId () == R.id.tv_female_color) {
+
                 count2++;
                 if (count2 % 2 == 0) {
                     count++;
                     binding.tvFemaleColor.setVisibility ( View.GONE );
-                    break;
+                    
                 }
-        }
+        
+}
     }
 
     @Override

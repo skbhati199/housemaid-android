@@ -140,12 +140,13 @@ public class EnterLocationActivity extends BaseActivity implements View.OnClickL
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()) {
+        if (v.getId() == R.id.tvSearchLocation) {
 
-            case R.id.tvSearchLocation:
                 openAutoComplePicker();
-                break;
-            case R.id.btnSubmit:
+                
+            
+} else if (v.getId() == R.id.btnSubmit) {
+
 
 
                 if (!currentLocation.isEmpty()) {
@@ -164,8 +165,9 @@ public class EnterLocationActivity extends BaseActivity implements View.OnClickL
                     }
                 } else
                     Toast.makeText(this, R.string.please_enter_location, Toast.LENGTH_SHORT).show();
-                break;
-        }
+                
+        
+}
 
     }
 

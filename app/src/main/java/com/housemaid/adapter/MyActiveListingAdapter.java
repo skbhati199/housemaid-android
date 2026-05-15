@@ -94,10 +94,10 @@ public class MyActiveListingAdapter extends RecyclerView.Adapter<MyActiveListing
         holder.tvLanguage.setText(languages);
 
         if (jobListing.get(position).getUserDetailModel().getUserImageModel().size() > 0) {
-            /*Glide.with(itemView.getContext()).load(jobListing.get(position).getUserDetailModel().getUserImagesModel()
+            /*Glide.with(context).load(jobListing.get(position).getUserDetailModel().getUserImagesModel()
                     .get(0).getImageModel().getBig())
                     .error(R.drawable.user).into(holder.ivProfilePic);*/
-            Glide.with(itemView.getContext()).load(jobListing.get(position).getImage().getSmall())
+            Glide.with(context).load(jobListing.get(position).getImage().getSmall())
                     .error(R.drawable.user).into(holder.ivProfilePic);
         } else {
             holder.ivProfilePic.setImageResource(R.drawable.user);
@@ -134,8 +134,8 @@ public class MyActiveListingAdapter extends RecyclerView.Adapter<MyActiveListing
                 popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
                     @Override
                     public boolean onMenuItemClick(MenuItem item) {
-                        switch (item.getItemId()) {
-                            case R.id.highlight_item:
+                        if (item.getItemId() == R.id.highlight_item) {
+
                                 if (jobListing.get(position).getHighlight_job_status().equals("0")) {
                                     getCreditListing(accessToken, "13", "9", position);
                                     binding.progress.setVisibility(View.VISIBLE);
@@ -143,21 +143,26 @@ public class MyActiveListingAdapter extends RecyclerView.Adapter<MyActiveListing
                                         " already highlighted.", Toast.LENGTH_SHORT).show();
                                 return true;
 
-                            case R.id.delete_item:
+                            
+} else if (item.getItemId() == R.id.delete_item) {
+
                                 binding.progress.setVisibility(View.VISIBLE);
                                 JobPost(accessToken,
                                         String.valueOf(jobListing.get(position).getId()),
                                         position, 2);
                                 return true;
 
-                            case R.id.completed_item:
+                            
+} else if (item.getItemId() == R.id.completed_item) {
+
                                 binding.progress.setVisibility(View.VISIBLE);
                                 JobPost(accessToken,
                                         String.valueOf(jobListing.get(position).getId()),
                                         position, 1);
                                 return true;
 
-                        }
+                        
+}
 
                         return false;
                     }

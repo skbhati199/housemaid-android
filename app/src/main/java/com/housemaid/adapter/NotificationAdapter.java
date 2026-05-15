@@ -122,7 +122,7 @@ public class NotificationAdapter extends RecyclerView.Adapter<NotificationAdapte
         holder.tvTime.setText(time);
         holder.tvName.setText(senderName);
         if (!path.isEmpty())
-            Glide.with(itemView.getContext()).load(path).error(R.drawable.men_icon).into(holder.civImage);
+            Glide.with(context).load(path).error(R.drawable.men_icon).into(holder.civImage);
         else holder.civImage.setImageResource(R.drawable.app_icon);
         holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override

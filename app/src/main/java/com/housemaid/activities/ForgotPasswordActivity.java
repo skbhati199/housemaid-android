@@ -64,15 +64,18 @@ public class ForgotPasswordActivity extends BaseActivity implements View.OnClick
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.btnNext:
+        if (v.getId() == R.id.btnNext) {
+
                 openForgotOTP();
                 ValidationUtils.hideSoftKeyboard(this);
-                break;
-            case R.id.ivBack:
+                
+            
+} else if (v.getId() == R.id.ivBack) {
+
                 onBackPressed();
-                break;
-        }
+                
+        
+}
     }
 
     private void openForgotOTP() {

@@ -37,22 +37,27 @@ public class SelectionEntryActivity extends BaseActivity implements View.OnClick
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.btnSignIn:
+        if (v.getId() == R.id.btnSignIn) {
+
                 openSignIn();
-                break;
+                
 
-            case R.id.btnSignUp:
+            
+} else if (v.getId() == R.id.btnSignUp) {
+
                 openSignUp();
-                break;
+                
 
-            case R.id.btnWithoutSignUp:
+            
+} else if (v.getId() == R.id.btnWithoutSignUp) {
+
                 Intent intent = new Intent(SelectionEntryActivity.this,
                         EnterLocationActivity.class);
                 intent.putExtra("nologin", 1);
                 startActivity(intent);
-                break;
-        }
+                
+        
+}
     }
 
     private void openSignUp() {

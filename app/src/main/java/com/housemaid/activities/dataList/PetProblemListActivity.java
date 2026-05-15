@@ -62,11 +62,12 @@ public class PetProblemListActivity extends BaseActivity implements View.OnClick
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.btnSubmit:
+        if (v.getId() == R.id.btnSubmit) {
+
                 sendLanguageList();
-                break;
-        }
+                
+        
+}
 
     }
 

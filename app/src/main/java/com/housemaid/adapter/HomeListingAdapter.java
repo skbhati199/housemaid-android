@@ -172,7 +172,7 @@ public class HomeListingAdapter extends RecyclerView.Adapter<HomeListingAdapter.
 
         if (maidDetailModel.get(position).getMaidImageModel().size() > 0
                 && !maidDetailModel.get(position).getMaidImageModel().get(0).getImageModel().getSmall().isEmpty()) {
-            Glide.with(itemView.getContext()).load(maidDetailModel.get(position).getMaidImageModel().get(0).getImageModel().getSmall())
+            Glide.with(context).load(maidDetailModel.get(position).getMaidImageModel().get(0).getImageModel().getSmall())
                     .error(R.drawable.avatar).into(holder.ivProfilePic);
         } else holder.ivProfilePic.setImageResource(R.drawable.user);
 

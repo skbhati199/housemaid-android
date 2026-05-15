@@ -62,11 +62,12 @@ public class EducationListActivity extends BaseActivity implements View.OnClickL
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.btnSubmit:
+        if (v.getId() == R.id.btnSubmit) {
+
                 sendEducationList();
-                break;
-        }
+                
+        
+}
     }
 
     private void sendEducationList() {

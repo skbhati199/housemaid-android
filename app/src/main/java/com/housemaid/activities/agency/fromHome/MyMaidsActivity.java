@@ -81,15 +81,18 @@ public class MyMaidsActivity extends BaseActivity implements View.OnClickListene
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.ivAdd:
+        if (v.getId() == R.id.ivAdd) {
+
                 startActivity(new Intent(this, AddListingActivity.class));
-                break;
-            case R.id.ivBack:
+                
+            
+} else if (v.getId() == R.id.ivBack) {
+
                 onBackPressed();
                 finish();
-                break;
-        }
+                
+        
+}
     }
 
     private void getMaidList(String access_token, String agency_id) {

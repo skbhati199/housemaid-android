@@ -39,24 +39,31 @@ public class ListingSuccessfulActivity extends BaseActivity implements View.OnCl
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.ivBack:
+        if (v.getId() == R.id.ivBack) {
+
                 onBackPressed();
-                break;
-            case R.id.btnBuyCredit:
+                
+            
+} else if (v.getId() == R.id.btnBuyCredit) {
+
                 startActivity(new Intent(this, UpgradeMemberShipActivity.class));
                 finish();
-                break;
+                
 
-                case R.id.btnReturnToMain:
+                
+} else if (v.getId() == R.id.btnReturnToMain) {
+
                 startActivity(new Intent(this, MyListingsActivity.class));
                 finish();
-                break;
+                
 
-                case R.id.btnNewListing:
+                
+} else if (v.getId() == R.id.btnNewListing) {
+
                 startActivity(new Intent(this, AddListingFirstPageActivity.class));
-                break;
-        }
+                
+        
+}
 
     }
 }

@@ -26,7 +26,7 @@ public class Constants {
 
     /**
      * Gets the FCM token asynchronously.
-     * Replaces the deprecated null /* TODO: use FirebaseMessaging.getInstance().getToken() */.
+     * Replaces the deprecated FirebaseInstanceId.
      */
     public static void getFcmToken(FcmTokenCallback callback) {
         FirebaseMessaging.getInstance().getToken()

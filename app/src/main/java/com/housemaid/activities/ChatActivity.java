@@ -114,29 +114,36 @@ public class ChatActivity extends BaseActivity implements View.OnClickListener {
     @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.ivBack:
-                onBackPressed();
-                break;
+        if (v.getId() == R.id.ivBack) {
 
-            case R.id.ivSearch:
+                onBackPressed();
+                
+
+            
+} else if (v.getId() == R.id.ivSearch) {
+
                 binding.toolbar.layoutSearch.setVisibility(View.VISIBLE);
                 binding.toolbar.tvTitle.setVisibility(View.GONE);
                 binding.toolbar.ivSearch.setVisibility(View.GONE);
-                break;
+                
 
-            case R.id.ivCancel:
+            
+} else if (v.getId() == R.id.ivCancel) {
+
                 binding.toolbar.etSearch.setText("");
-                break;
+                
 
-            case R.id.ivSearchBack:
+            
+} else if (v.getId() == R.id.ivSearchBack) {
+
                 binding.toolbar.layoutSearch.setVisibility(View.GONE);
                 binding.toolbar.tvTitle.setVisibility(View.VISIBLE);
                 binding.toolbar.ivSearch.setVisibility(View.VISIBLE);
                 ValidationUtils.hideSoftKeyboard(this);
-                break;
+                
 
-        }
+        
+}
     }
 
     @Override

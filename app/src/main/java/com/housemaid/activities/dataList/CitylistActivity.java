@@ -83,11 +83,12 @@ ActivityCitylistBinding binding;
     @Override
     public void onClick(View v) {
 
-        switch (v.getId()) {
-            case R.id.btnSubmit:
+        if (v.getId() == R.id.btnSubmit) {
+
                 sendCityList();
-                break;
-        }
+                
+        
+}
     }
     private void sendCityList() {
         Intent resultIntent = new Intent();

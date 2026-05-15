@@ -87,7 +87,7 @@ public class AgencyListingAdapter extends RecyclerView.Adapter<AgencyListingAdap
 
         if (!agencyDetailModelList.get(position).getUserImagesModel().isEmpty() &&
                 !agencyDetailModelList.get(position).getUserImagesModel().get(0).getImageModel().getSmall().isEmpty()) {
-            Glide.with(itemView.getContext()).load(agencyDetailModelList.get(position).getUserImagesModel().get(0).getImageModel().getSmall())
+            Glide.with(context).load(agencyDetailModelList.get(position).getUserImagesModel().get(0).getImageModel().getSmall())
                     .error(R.drawable.user).into(holder.ivProfilePic);
         } else {
             holder.ivProfilePic.setImageResource(R.drawable.user);

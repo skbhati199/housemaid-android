@@ -137,37 +137,51 @@ public class AgencyDetailsActivity extends BaseActivity implements View.OnClickL
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.ivBack:
+        if (v.getId() == R.id.ivBack) {
+
                 onBackPressed();
                 finish();
-                break;
-            case R.id.btnViewPhoneNumber:
+                
+            
+} else if (v.getId() == R.id.btnViewPhoneNumber) {
+
                 binding.progress.setVisibility(View.VISIBLE);
                 getCreditListing(accessToken, "2", "1", "");
-                break;
-            case R.id.btnViewEmail:
+                
+            
+} else if (v.getId() == R.id.btnViewEmail) {
+
                 binding.progress.setVisibility(View.VISIBLE);
                 getCreditListing(accessToken, "2", "2", "");
-                break;
-            case R.id.btnViewAddress:
+                
+            
+} else if (v.getId() == R.id.btnViewAddress) {
+
                 binding.progress.setVisibility(View.VISIBLE);
                 getCreditListing(accessToken, "2", "4", "");
-                break;
-            case R.id.btnViewCompanyPhone:
+                
+            
+} else if (v.getId() == R.id.btnViewCompanyPhone) {
+
                 binding.progress.setVisibility(View.VISIBLE);
                 getCreditListing(accessToken, "2", "5", "");
-                break;
+                
 
-            case R.id.ivAdd:
+            
+} else if (v.getId() == R.id.ivAdd) {
+
                 callPopUpNoti(binding.toolbar.ivAdd);
-                break;
-            case R.id.tvApplyThisAgency:
+                
+            
+} else if (v.getId() == R.id.tvApplyThisAgency) {
+
                 applyAgencyDialog();
                 pw.dismiss();
-                break;
+                
 
-            case R.id.tvRequestMaid:
+            
+} else if (v.getId() == R.id.tvRequestMaid) {
+
                 if (agencyDetailModel.getPaidStatusModel().getRequest_maid_status().equals("1")) {
                     applyToAgency(accessToken, String.valueOf(agencyDetailModel.getId()));
                     binding.progress.setVisibility(View.VISIBLE);
@@ -179,16 +193,20 @@ public class AgencyDetailsActivity extends BaseActivity implements View.OnClickL
                     pw.dismiss();
                 }
 
-                break;
+                
 
-            case R.id.tvAgencyMaid:
+            
+} else if (v.getId() == R.id.tvAgencyMaid) {
+
                 Intent intent = new Intent(this, AgencyMaidsActivity.class);
                 intent.putExtra("agency_Id", agencyDetailModel.getId());
                 startActivity(intent);
                 pw.dismiss();
-                break;
+                
 
-            case R.id.tvLiveConversation:
+            
+} else if (v.getId() == R.id.tvLiveConversation) {
+
                 if (agencyDetailModel.getPaidStatusModel().getCall_status().equals("1")) {
                     sendNotification(accessToken, String.valueOf(agencyDetailModel.getId()),
                             firstCallerName + "_" + senderId, "0");
@@ -199,8 +217,9 @@ public class AgencyDetailsActivity extends BaseActivity implements View.OnClickL
                     getCreditListing(accessToken, "4", "7", "live");
                     pw.dismiss();
                 }
-                break;
-        }
+                
+        
+}
     }
 
 
@@ -284,7 +303,7 @@ public class AgencyDetailsActivity extends BaseActivity implements View.OnClickL
 
         if (agencyDetailModel.getUserImagesModel().size() > 0 &&
                 !agencyDetailModel.getUserImagesModel().get(0).getImageModel().getBig().isEmpty()) {
-            Glide.with(itemView.getContext()).load(agencyDetailModel.getUserImagesModel().get(0).getImageModel().getBig())
+            Glide.with(this).load(agencyDetailModel.getUserImagesModel().get(0).getImageModel().getBig())
                     .error(R.drawable.user).into(binding.ivProfilePicBig);
 
         } else {

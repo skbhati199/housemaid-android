@@ -67,11 +67,12 @@ public class UserJobListingActivity extends BaseActivity implements View.OnClick
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.ivBack:
+        if (v.getId() == R.id.ivBack) {
+
                 onBackPressed();
-                break;
-        }
+                
+        
+}
     }
 
     private void getJobListing(String access_token, String key, String user_id) {

@@ -164,60 +164,76 @@ public class MaidProfileActivity extends BaseActivity implements View.OnClickLis
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()) {
+        if (v.getId() == R.id.ivBack) {
 
-            case R.id.ivBack:
                 onBackPressed();
-                break;
-            case R.id.ivAdd:
+                
+            
+} else if (v.getId() == R.id.ivAdd) {
+
                 callPopUpNoti(binding.toolbar.ivAdd);
-                break;
-            case R.id.btnViewPhoneNumber:
+                
+            
+} else if (v.getId() == R.id.btnViewPhoneNumber) {
+
                 binding.progress.setVisibility(View.VISIBLE);
                 getCreditListing(accessToken, "3", "1", "");
-                break;
-            case R.id.btnViewEmail:
+                
+            
+} else if (v.getId() == R.id.btnViewEmail) {
+
                 binding.progress.setVisibility(View.VISIBLE);
                 getCreditListing(accessToken, "3", "2", "");
-                break;
-            case R.id.tvApplyListing:
+                
+            
+} else if (v.getId() == R.id.tvApplyListing) {
+
                 applyToJobDialog();
                 pw.dismiss();
-                break;
-            case R.id.tvSuggestMaid:
+                
+            
+} else if (v.getId() == R.id.tvSuggestMaid) {
+
                 Intent intent = new Intent(MaidProfileActivity.this, MyMaidsActivity.class);
                 intent.putExtra("user_Id", String.valueOf(userDetailModel.getUser_id()));
                 intent.putExtra("job_Id", String.valueOf(userDetailModel.getId()));
                 intent.putExtra("select_maid", 1);
                 startActivity(intent);
                 pw.dismiss();
-                break;
+                
 
-            case R.id.tvLiveConversation:
+            
+} else if (v.getId() == R.id.tvLiveConversation) {
+
                 if (userDetailModel.getPaidStatusModel().getCall_status().equals("1")) {
                     sendNotification(accessToken, String.valueOf(userDetailModel.getUserDetailModel()
                                     .getId()),
                             firstCallerName + "_" + senderId, "0");
                     binding.progress.setVisibility(View.VISIBLE);
                 } else getCreditListing(accessToken, "4", "7", "live");
-                break;
+                
 
-            case R.id.rlName:
+            
+} else if (v.getId() == R.id.rlName) {
+
                 Intent intent3 = new Intent(MaidProfileActivity.this,
                         UserJobListingActivity.class);
                 intent3.putExtra("user_id", userDetailModel.getId());
                 startActivity(intent3);
 
-                break;
+                
 
-            case R.id.tvViewUserListing:
+            
+} else if (v.getId() == R.id.tvViewUserListing) {
+
                 Intent intent2 = new Intent(MaidProfileActivity.this,
                         UserJobListingActivity.class);
                 intent2.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 intent2.putExtra("user_id", userDetailModel.getUser_id());
                 startActivity(intent2);
-                break;
-        }
+                
+        
+}
     }
 
     private void callDialogForMoreThenImages(final String key, final String fromWhere) {

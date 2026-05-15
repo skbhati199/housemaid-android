@@ -61,11 +61,12 @@ public class OtherMaidsProfileActivity extends BaseActivity implements View.OnCl
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.ivBack:
+        if (v.getId() == R.id.ivBack) {
+
                 onBackPressed();
-                break;
-        }
+                
+        
+}
     }
 
     private void getMaidList(String access_token) {
