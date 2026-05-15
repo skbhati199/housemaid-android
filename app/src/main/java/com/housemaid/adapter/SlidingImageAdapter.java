@@ -2,15 +2,15 @@ package com.housemaid.adapter;
 
 import android.content.Context;
 import android.content.Intent;
-import android.support.v4.view.PagerAdapter;
-import android.support.v4.view.ViewPager;
+import androidx.viewpager.widget.PagerAdapter;
+import androidx.viewpager.widget.ViewPager;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
-import com.androidquery.AQuery;
+// AQuery removed - use Glide for image loading
 import com.housemaid.R;
 import com.housemaid.activities.ZoomPhotoActivity;
 

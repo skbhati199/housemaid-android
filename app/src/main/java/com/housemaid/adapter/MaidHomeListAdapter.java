@@ -4,8 +4,8 @@ import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
-import android.support.annotation.NonNull;
-import android.support.v7.widget.RecyclerView;
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -38,7 +38,7 @@ import com.housemaid.rest.ApiClient;
 import com.housemaid.rest.ApiInterface;
 import com.housemaid.utils.SharedPreference;
 import com.google.gson.Gson;
-import com.squareup.picasso.Picasso;
+import com.bumptech.glide.Glide;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -143,7 +143,7 @@ public class MaidHomeListAdapter extends RecyclerView.Adapter<MaidHomeListAdapte
 
 
         if (jobDetail.getUserDetailModel().getUserImageModel().size() > 0) {
-            Picasso.get().load(jobDetail.getUserDetailModel().getUserImagesModel().get(0)
+            Glide.with(itemView.getContext()).load(jobDetail.getUserDetailModel().getUserImagesModel().get(0)
                     .getImageModel()
                     .getBig())
                     .fit()

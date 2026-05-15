@@ -1,128 +1,103 @@
-buildscript {
-    repositories {
-        maven { url 'https://maven.fabric.io/public' }
-    }
-
-    dependencies {
-        classpath 'io.fabric.tools:gradle:1.+'
-    }
+plugins {
+    id 'com.android.application'
+    id 'com.google.gms.google-services'
+    id 'com.google.firebase.crashlytics'
 }
-apply plugin: 'com.android.application'
-
-repositories {
-    maven { url 'https://maven.fabric.io/public' }
-}
-
-apply plugin: 'io.fabric'
 
 android {
+    namespace 'com.housemaid'
+    compileSdk 35
+
     signingConfigs {
         config {
             keyAlias 'key0'
             keyPassword 'housemaid@123'
-            storeFile file('/home/fluper/android-studio/housemaid_keyStore.jks')
+            storeFile rootProject.file('housemaid_keyStore.jks')
             storePassword 'housemaid@123'
         }
     }
-    compileSdkVersion 28
-    buildToolsVersion '28.0.3'
+
     defaultConfig {
         applicationId "com.housemaid"
-        minSdkVersion 21
-        targetSdkVersion 28
+        minSdk 23
+        targetSdk 35
         versionCode 4
         versionName "1.3"
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         signingConfig signingConfigs.config
     }
+
     buildTypes {
         release {
             minifyEnabled true
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
             signingConfig signingConfigs.config
-            // debuggable true //false when live
         }
-    }
-    dataBinding {
-        enabled = true
-    }
-    lintOptions {
-        checkReleaseBuilds false
-        // Or, if you prefer, you can continue to check for errors in release builds,
-        // but continue the build even when errors are found:
-        abortOnError false
-    }
-    compileOptions {
-        sourceCompatibility = '1.8'
-        targetCompatibility = '1.8'
-    }
-    productFlavors {
     }
 
-    sourceSets {
-        main {
-            jniLibs.srcDirs = ['/home/fluper/Documents/housemaid-android/app/libs']
-        }
+    buildFeatures {
+        dataBinding true
+        buildConfig true
+    }
+
+    lint {
+        checkReleaseBuilds false
+        abortOnError false
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    productFlavors {
     }
 }
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
 
-    //noinspection GradleCompatible
-    implementation 'com.android.support:support-v4:28.0.0'
-    implementation 'com.android.support:appcompat-v7:28.0.0'
-    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
-    implementation 'com.android.support:design:28.0.0'
-    implementation 'com.android.support:cardview-v7:28.0.0'
-    implementation 'com.android.support:recyclerview-v7:28.0.0'
-    implementation 'com.crystal:crystalrangeseekbar:1.1.3'
-    implementation 'com.hbb20:ccp:2.2.4'
-    implementation 'de.hdodenhof:circleimageview:2.2.0'
-    //image library
-    implementation 'com.squareup.picasso:picasso:2.71828'
-    implementation 'com.github.bumptech.glide:glide:4.9.0'
-    annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0'
+    // AndroidX
+    implementation 'androidx.core:core:1.13.1'
+    implementation 'androidx.appcompat:appcompat:1.7.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'com.google.android.material:material:1.12.0'
+    implementation 'androidx.cardview:cardview:1.0.0'
+    implementation 'androidx.recyclerview:recyclerview:1.3.2'
+    implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
 
-    // retrofit, gson
-    implementation 'com.squareup.okhttp3:logging-interceptor:3.11.0'
-    implementation 'com.squareup.retrofit2:retrofit:2.4.0'
-    implementation 'com.intuit.sdp:sdp-android:1.0.6'
-    implementation 'com.squareup.retrofit2:converter-gson:2.3.0'
+    // UI Libraries
+    implementation 'com.github.syedowaisali:crystal-range-seekbar:77d3cc9994'
+    implementation 'com.hbb20:ccp:2.7.0'
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
+    implementation 'com.intuit.sdp:sdp-android:1.1.1'
 
-    //noinspection GradleCompatible
-    implementation 'com.google.firebase:firebase-core:16.0.8'
-    implementation 'com.google.firebase:firebase-messaging:17.5.0'
-    implementation 'com.google.firebase:firebase-crash:16.2.1'
-    implementation 'com.google.firebase:firebase-database:16.1.0'
+    // Image loading (Glide only — Picasso is deprecated)
+    implementation 'com.github.bumptech.glide:glide:4.16.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.16.0'
 
-    implementation 'com.google.android.libraries.places:places:1.1.0'
-    //implementation 'com.google.android.gms:play-services-places:16.0.0'
-    implementation 'com.google.android.gms:play-services-location:16.0.0'
-    implementation 'com.google.android.gms:play-services-maps:16.1.0'
+    // Networking: Retrofit + OkHttp
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.12.0'
+    implementation 'com.squareup.retrofit2:retrofit:2.11.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.11.0'
 
-    //video Call Agora
-//    implementation 'io.agora.rtc:full-sdk:2.3.2'
-    //ViewPagerIndicator
-    implementation 'com.googlecode.android-query:android-query:0.24.3'
-    //imagePicker
-    //implementation 'com.github.himangipatel:ImagePickerUtil:0.1.2'
-    implementation 'com.crashlytics.sdk.android:crashlytics:2.9.8'
+    // Firebase (BOM-managed)
+    implementation platform('com.google.firebase:firebase-bom:33.7.0')
+    implementation 'com.google.firebase:firebase-analytics'
+    implementation 'com.google.firebase:firebase-crashlytics'
+    implementation 'com.google.firebase:firebase-messaging'
+    implementation 'com.google.firebase:firebase-database'
 
-    //Most Important thing is that you have to
-    // -keep class rx.internal.util.unsafe.** { *; } in progaurd-rules//
+    // Google Play Services
+    implementation 'com.google.android.libraries.places:places:4.1.0'
+    implementation 'com.google.android.gms:play-services-location:21.3.0'
+    implementation 'com.google.android.gms:play-services-maps:19.0.0'
+    implementation 'com.google.android.gms:play-services-auth-api-phone:17.5.1'
+
+    // Image Picker module
     implementation project(':imagepicker')
-    //-keep class rx.internal.util.unsafe.** { *; } in progaurd-rules
-    //-keep class rx.internal.util.unsafe.** { *; } in progaurd-rules
 
-    androidTestImplementation 'junit:junit:4.12'
-
-    // used For Auto OTP Detection
-    implementation 'com.google.android.gms:play-services-auth-api-phone:16.0.0'
-
+    // Testing
+    androidTestImplementation 'junit:junit:4.13.2'
+    testImplementation 'junit:junit:4.13.2'
 }
-
-apply plugin: 'com.google.gms.google-services'
-
-
-apply plugin: 'com.google.gms.google-services'

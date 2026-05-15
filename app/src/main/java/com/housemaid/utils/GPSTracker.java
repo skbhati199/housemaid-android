@@ -11,8 +11,8 @@ import android.location.LocationManager;
 import android.net.ConnectivityManager;
 import android.os.Bundle;
 import android.os.IBinder;
-import android.support.annotation.Nullable;
-import android.support.v7.app.AlertDialog;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 import android.util.Log;
 
 import static android.content.ContentValues.TAG;

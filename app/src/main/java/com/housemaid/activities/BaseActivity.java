@@ -1,6 +1,6 @@
 package com.housemaid.activities;
 
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 
 /**
  * Created by fluper on 1/5/18.

@@ -1,6 +1,6 @@
 package com.imagepicker.pdfpicker;
 
-import android.support.v4.app.FragmentActivity;
+import androidx.fragment.app.FragmentActivity;
 
 import static com.imagepicker.pdfpicker.FileLoaderCallbacks.TYPE_FILE;
 

@@ -22,19 +22,19 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
-                <android.support.v4.widget.SwipeRefreshLayout
+                <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
                     android:id="@+id/swipe_refresh_layout"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
-                    <android.support.v7.widget.RecyclerView
+                    <androidx.recyclerview.widget.RecyclerView
                         android:id="@+id/rvFavoritesListing"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_marginTop="5dp"
                         tools:listitem="@layout/single_item_home_list_layout" />
 
-                </android.support.v4.widget.SwipeRefreshLayout>
+                </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
             </RelativeLayout>
 
             <ProgressBar

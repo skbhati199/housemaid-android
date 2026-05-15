@@ -2,7 +2,7 @@ package com.housemaid.activities.user.fromHome;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.databinding.DataBindingUtil;
+import androidx.databinding.DataBindingUtil;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;

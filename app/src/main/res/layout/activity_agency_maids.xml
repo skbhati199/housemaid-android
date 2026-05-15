@@ -16,7 +16,7 @@
             layout="@layout/toolbar_header" />
 
 
-            <android.support.v7.widget.RecyclerView
+            <androidx.recyclerview.widget.RecyclerView
                 android:layout_below="@+id/toolbar"
                 android:id="@+id/rvAgencymaidsListing"
                 android:layout_width="match_parent"

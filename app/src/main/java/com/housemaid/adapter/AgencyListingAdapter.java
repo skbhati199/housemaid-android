@@ -4,8 +4,8 @@ import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
-import android.support.annotation.NonNull;
-import android.support.v7.widget.RecyclerView;
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -31,7 +31,7 @@ import com.housemaid.rest.ApiClient;
 import com.housemaid.rest.ApiInterface;
 import com.housemaid.utils.SharedPreference;
 import com.google.gson.Gson;
-import com.squareup.picasso.Picasso;
+import com.bumptech.glide.Glide;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -87,8 +87,8 @@ public class AgencyListingAdapter extends RecyclerView.Adapter<AgencyListingAdap
 
         if (!agencyDetailModelList.get(position).getUserImagesModel().isEmpty() &&
                 !agencyDetailModelList.get(position).getUserImagesModel().get(0).getImageModel().getSmall().isEmpty()) {
-            Picasso.get().load(agencyDetailModelList.get(position).getUserImagesModel().get(0).getImageModel().getSmall())
-                    .fit().error(R.drawable.user).into(holder.ivProfilePic);
+            Glide.with(itemView.getContext()).load(agencyDetailModelList.get(position).getUserImagesModel().get(0).getImageModel().getSmall())
+                    .error(R.drawable.user).into(holder.ivProfilePic);
         } else {
             holder.ivProfilePic.setImageResource(R.drawable.user);
         }

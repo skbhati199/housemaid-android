@@ -4,8 +4,8 @@ import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
-import android.support.annotation.NonNull;
-import android.support.v7.widget.RecyclerView;
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -27,7 +27,7 @@ import com.housemaid.rest.ApiClient;
 import com.housemaid.rest.ApiInterface;
 import com.housemaid.utils.SharedPreference;
 import com.google.gson.Gson;
-import com.squareup.picasso.Picasso;
+import com.bumptech.glide.Glide;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -81,14 +81,14 @@ public class ImageAdapter1 extends RecyclerView.Adapter<ImageAdapter1.MyViewHold
 
         if (i == 0) {
             if (!imageList.get(position).isEmpty()) {
-                Picasso.get().load(imageList.get(position))
-                        .fit().error(R.drawable.user).into(holder.ivProfilePic);
+                Glide.with(itemView.getContext()).load(imageList.get(position))
+                        .error(R.drawable.user).into(holder.ivProfilePic);
             } else holder.ivProfilePic.setImageResource(R.drawable.user);
         }
         if (position <= imageList.size() - 1) {
             if (!imageList.get(position).isEmpty()) {
-                Picasso.get().load(imageList.get(position))
-                        .fit().error(R.drawable.user).into(holder.ivProfilePic);
+                Glide.with(itemView.getContext()).load(imageList.get(position))
+                        .error(R.drawable.user).into(holder.ivProfilePic);
             } else holder.ivProfilePic.setImageResource(R.drawable.user);
 
             holder.tvCreditPrice.setVisibility(View.GONE);
@@ -103,8 +103,8 @@ public class ImageAdapter1 extends RecyclerView.Adapter<ImageAdapter1.MyViewHold
                 if (holder.getAdapterPosition() <= bigImageList.size() - 1) {
                     ((EditAgencyPofileActivity) context).updateList(holder.getAdapterPosition(), imageIdList);
                     if (!bigImageList.get(holder.getAdapterPosition()).isEmpty()) {
-                        Picasso.get().load(bigImageList.get(holder.getAdapterPosition()))
-                                .fit().error(R.drawable.user).into(binding.ivProfilePicBig);
+                        Glide.with(itemView.getContext()).load(bigImageList.get(holder.getAdapterPosition()))
+                                .error(R.drawable.user).into(binding.ivProfilePicBig);
                     } else binding.ivProfilePicBig.setImageResource(R.drawable.user);
 
                 } else {
@@ -260,8 +260,8 @@ public class ImageAdapter1 extends RecyclerView.Adapter<ImageAdapter1.MyViewHold
                         notifyDataSetChanged();
                         if (position <= imageList.size() - 1) {
                             if (!imageList.get(position).isEmpty()) {
-                                Picasso.get().load(imageList.get(position))
-                                        .fit().error(R.drawable.user).into(holder.ivProfilePic);
+                                Glide.with(itemView.getContext()).load(imageList.get(position))
+                                        .error(R.drawable.user).into(holder.ivProfilePic);
                             } else holder.ivProfilePic.setImageResource(R.drawable.user);
 
                             holder.tvCreditPrice.setVisibility(View.GONE);

@@ -590,7 +590,7 @@
                                 android:textSize="15sp"
                                 tools:ignore="RelativeOverlap" />
 
-                            <android.support.v7.widget.SwitchCompat
+                            <androidx.appcompat.widget.SwitchCompat
                                 android:id="@+id/switchNotification"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -614,7 +614,7 @@
                                 android:textSize="15sp"
                                 tools:ignore="RelativeOverlap" />
 
-                            <android.support.v7.widget.SwitchCompat
+                            <androidx.appcompat.widget.SwitchCompat
                                 android:id="@+id/switchHidePhoto"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"

@@ -1,7 +1,7 @@
 package com.housemaid.activities;
 
 import android.app.ProgressDialog;
-import android.databinding.DataBindingUtil;
+import androidx.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.view.View;
 import android.webkit.WebView;

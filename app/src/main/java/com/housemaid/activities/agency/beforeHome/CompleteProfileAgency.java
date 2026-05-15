@@ -2,9 +2,9 @@ package com.housemaid.activities.agency.beforeHome;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.databinding.DataBindingUtil;
+import androidx.databinding.DataBindingUtil;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 import android.util.Log;
 import android.view.View;
 import android.widget.Toast;

@@ -5,7 +5,7 @@ import android.app.Activity;
 import android.app.Dialog;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.databinding.DataBindingUtil;
+import androidx.databinding.DataBindingUtil;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
@@ -13,10 +13,10 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
-import android.support.annotation.NonNull;
-import android.support.v4.app.ActivityCompat;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
+import androidx.annotation.NonNull;
+import androidx.core.app.ActivityCompat;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 import android.view.Window;
@@ -42,7 +42,7 @@ import com.housemaid.utils.ValidationUtils;
 import com.google.gson.Gson;
 import com.imagepicker.FilePickUtils;
 import com.imagepicker.LifeCycleCallBackManager;
-import com.squareup.picasso.Picasso;
+import com.bumptech.glide.Glide;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -144,8 +144,8 @@ public class EditAgencyPofileActivity extends BaseActivity implements View.OnCli
                 imageList.add(signUpModel.getUserImagesModel().get(i - 1).getImageModel().getSmall());
                 bigImageList.add(signUpModel.getUserImagesModel().get(i - 1).getImageModel().getBig());
             }
-            Picasso.get().load(signUpModel.getUserImagesModel().get(0).getImageModel().getBig())
-                    .fit().error(R.drawable.avatar).into(binding.ivProfilePicBig);
+            Glide.with(itemView.getContext()).load(signUpModel.getUserImagesModel().get(0).getImageModel().getBig())
+                    .error(R.drawable.avatar).into(binding.ivProfilePicBig);
 
         } else binding.ivProfilePicBig.setImageResource(R.drawable.user);
 

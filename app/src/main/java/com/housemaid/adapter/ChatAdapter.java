@@ -3,9 +3,9 @@ package com.housemaid.adapter;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
-import android.support.annotation.NonNull;
-import android.support.v7.widget.CardView;
-import android.support.v7.widget.RecyclerView;
+import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
+import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,7 +16,7 @@ import com.housemaid.R;
 import com.housemaid.activities.SingleChatActivity;
 import com.housemaid.model.bean.ChattingModel;
 import com.housemaid.utils.SharedPreference;
-import com.squareup.picasso.Picasso;
+import com.bumptech.glide.Glide;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -144,7 +144,7 @@ public class ChatAdapter extends RecyclerView.Adapter<ChatAdapter.MyViewHolder> 
                 holder.tvTime.setText(time);
             } else holder.tvTime.setText(date);
 
-            Picasso.get().load(image)
+            Glide.with(itemView.getContext()).load(image)
                     .fit()
                     .error(R.drawable.user)
                     .into(holder.ivProfilePic);

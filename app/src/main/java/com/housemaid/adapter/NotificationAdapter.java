@@ -3,11 +3,11 @@ package com.housemaid.adapter;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
-import android.support.annotation.NonNull;
-import android.support.annotation.RequiresApi;
-import android.support.v7.widget.AppCompatImageView;
-import android.support.v7.widget.CardView;
-import android.support.v7.widget.RecyclerView;
+import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
+import androidx.appcompat.widget.AppCompatImageView;
+import androidx.cardview.widget.CardView;
+import androidx.recyclerview.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -29,7 +29,7 @@ import com.housemaid.rest.ApiClient;
 import com.housemaid.rest.ApiInterface;
 import com.housemaid.utils.MyButton;
 import com.housemaid.utils.SharedPreference;
-import com.squareup.picasso.Picasso;
+import com.bumptech.glide.Glide;
 
 import java.io.IOException;
 import java.text.DateFormat;
@@ -45,7 +45,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-import static com.androidquery.util.AQUtility.getContext;
+// AQuery removed
 
 /**
  * Created by fluper on 31/5/18.
@@ -122,7 +122,7 @@ public class NotificationAdapter extends RecyclerView.Adapter<NotificationAdapte
         holder.tvTime.setText(time);
         holder.tvName.setText(senderName);
         if (!path.isEmpty())
-            Picasso.get().load(path).fit().error(R.drawable.men_icon).into(holder.civImage);
+            Glide.with(itemView.getContext()).load(path).error(R.drawable.men_icon).into(holder.civImage);
         else holder.civImage.setImageResource(R.drawable.app_icon);
         holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override

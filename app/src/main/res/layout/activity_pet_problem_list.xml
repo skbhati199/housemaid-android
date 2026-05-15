@@ -27,14 +27,14 @@
 
 
 
-            <android.support.v7.widget.RecyclerView
+            <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rvPetProblem"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_below="@+id/tvHeader"
                 tools:listitem ="@layout/single_list_checkbox_item">
 
-            </android.support.v7.widget.RecyclerView>
+            </androidx.recyclerview.widget.RecyclerView>
 
             <com.housemaid.utils.MyButton
                 android:id="@+id/btnSubmit"

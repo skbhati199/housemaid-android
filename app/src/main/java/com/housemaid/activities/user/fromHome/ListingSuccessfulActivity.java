@@ -1,7 +1,7 @@
 package com.housemaid.activities.user.fromHome;
 
 import android.content.Intent;
-import android.databinding.DataBindingUtil;
+import androidx.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.view.View;
 

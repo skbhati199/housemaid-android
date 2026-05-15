@@ -11,9 +11,9 @@ import android.graphics.Bitmap;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.annotation.NonNull;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.content.ContextCompat;
+import androidx.annotation.NonNull;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import android.util.Log;
 import android.view.SurfaceView;
 import android.view.View;
@@ -35,7 +35,7 @@ import com.housemaid.model.response.RegisterApi;
 import com.housemaid.rest.ApiClient;
 import com.housemaid.rest.ApiInterface;
 import com.housemaid.utils.SharedPreference;
-import com.squareup.picasso.Picasso;
+import com.bumptech.glide.Glide;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -269,7 +269,7 @@ public class LiveConversationActivity extends BaseActivity {
         TextView tvCallingtext = dialog1.findViewById(R.id.tvCallingText);
         CircleImageView ivProfilePic = dialog1.findViewById(R.id.ivProfilePic);
 
-        Picasso.get()
+        Glide.with(itemView.getContext())
                 .load(profileToCaller)
                 .fit()
                 .error(R.drawable.user_c)
@@ -299,7 +299,7 @@ public class LiveConversationActivity extends BaseActivity {
         TextView tvCallingtext = dialog.findViewById(R.id.tvCallingText);
         CircleImageView ivProfilePic = dialog.findViewById(R.id.ivProfilePic);
 
-        Picasso.get()
+        Glide.with(itemView.getContext())
                 .load(profileCaller)
                 .fit()
                 .error(R.drawable.user_c)

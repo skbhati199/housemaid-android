@@ -4,10 +4,10 @@ import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
-import android.support.annotation.NonNull;
-import android.support.v7.widget.CardView;
-import android.support.v7.widget.PopupMenu;
-import android.support.v7.widget.RecyclerView;
+import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
+import androidx.appcompat.widget.PopupMenu;
+import androidx.recyclerview.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
@@ -32,7 +32,7 @@ import com.housemaid.rest.ApiClient;
 import com.housemaid.rest.ApiInterface;
 import com.housemaid.utils.SharedPreference;
 import com.google.gson.Gson;
-import com.squareup.picasso.Picasso;
+import com.bumptech.glide.Glide;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -94,11 +94,11 @@ public class MyActiveListingAdapter extends RecyclerView.Adapter<MyActiveListing
         holder.tvLanguage.setText(languages);
 
         if (jobListing.get(position).getUserDetailModel().getUserImageModel().size() > 0) {
-            /*Picasso.get().load(jobListing.get(position).getUserDetailModel().getUserImagesModel()
+            /*Glide.with(itemView.getContext()).load(jobListing.get(position).getUserDetailModel().getUserImagesModel()
                     .get(0).getImageModel().getBig())
-                    .fit().error(R.drawable.user).into(holder.ivProfilePic);*/
-            Picasso.get().load(jobListing.get(position).getImage().getSmall())
-                    .fit().error(R.drawable.user).into(holder.ivProfilePic);
+                    .error(R.drawable.user).into(holder.ivProfilePic);*/
+            Glide.with(itemView.getContext()).load(jobListing.get(position).getImage().getSmall())
+                    .error(R.drawable.user).into(holder.ivProfilePic);
         } else {
             holder.ivProfilePic.setImageResource(R.drawable.user);
         }

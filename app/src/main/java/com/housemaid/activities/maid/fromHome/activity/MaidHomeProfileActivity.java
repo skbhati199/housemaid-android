@@ -1,9 +1,9 @@
 package com.housemaid.activities.maid.fromHome.activity;
 
 import android.annotation.SuppressLint;
-import android.databinding.DataBindingUtil;
-import android.support.design.widget.TabLayout;
-import android.support.v4.view.ViewPager;
+import androidx.databinding.DataBindingUtil;
+import com.google.android.material.tabs.TabLayout;
+import androidx.viewpager.widget.ViewPager;
 import android.os.Bundle;
 import android.view.View;
 

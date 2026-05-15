@@ -4,9 +4,9 @@ import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
-import android.databinding.DataBindingUtil;
+import androidx.databinding.DataBindingUtil;
 import android.os.Bundle;
-import android.support.v7.widget.AppCompatImageView;
+import androidx.appcompat.widget.AppCompatImageView;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -33,7 +33,7 @@ import com.housemaid.utils.MyBoldTextView;
 import com.housemaid.utils.MyButton;
 import com.housemaid.utils.SharedPreference;
 import com.google.gson.Gson;
-import com.squareup.picasso.Picasso;
+import com.bumptech.glide.Glide;
 
 import java.io.IOException;
 import java.net.ConnectException;
@@ -284,8 +284,8 @@ public class AgencyDetailsActivity extends BaseActivity implements View.OnClickL
 
         if (agencyDetailModel.getUserImagesModel().size() > 0 &&
                 !agencyDetailModel.getUserImagesModel().get(0).getImageModel().getBig().isEmpty()) {
-            Picasso.get().load(agencyDetailModel.getUserImagesModel().get(0).getImageModel().getBig())
-                    .fit().error(R.drawable.user).into(binding.ivProfilePicBig);
+            Glide.with(itemView.getContext()).load(agencyDetailModel.getUserImagesModel().get(0).getImageModel().getBig())
+                    .error(R.drawable.user).into(binding.ivProfilePicBig);
 
         } else {
             binding.ivProfilePicBig.setImageResource(R.drawable.user);

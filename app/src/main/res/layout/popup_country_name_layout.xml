@@ -33,13 +33,13 @@
         android:textColor="@color/colorDarkGrey"
         android:textColorHint="@color/colorGrey"/>
 
-    <android.support.v7.widget.RecyclerView
+    <androidx.recyclerview.widget.RecyclerView
         android:layout_below="@+id/etSearchCountry"
         android:id="@+id/rvCountry"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
 
-    </android.support.v7.widget.RecyclerView>
+    </androidx.recyclerview.widget.RecyclerView>
 </RelativeLayout>
 </layout>

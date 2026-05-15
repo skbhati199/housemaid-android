@@ -75,7 +75,7 @@
                             android:elevation="6dp"
                             android:padding="7dp">
 
-                            <android.support.v7.widget.AppCompatImageView
+                            <androidx.appcompat.widget.AppCompatImageView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_alignParentEnd="true"
@@ -112,7 +112,7 @@
                             android:elevation="6dp"
                             android:padding="7dp">
 
-                            <android.support.v7.widget.AppCompatImageView
+                            <androidx.appcompat.widget.AppCompatImageView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_alignParentEnd="true"
@@ -150,7 +150,7 @@
                             android:elevation="6dp"
                             android:padding="1dp">
 
-                            <android.support.v7.widget.AppCompatImageView
+                            <androidx.appcompat.widget.AppCompatImageView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_alignParentEnd="true"
@@ -193,7 +193,7 @@
                             android:elevation="6dp"
                             android:padding="1dp">
 
-                            <android.support.v7.widget.AppCompatImageView
+                            <androidx.appcompat.widget.AppCompatImageView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_alignParentEnd="true"
@@ -236,7 +236,7 @@
                             android:elevation="6dp"
                             android:padding="1dp">
 
-                            <android.support.v7.widget.AppCompatImageView
+                            <androidx.appcompat.widget.AppCompatImageView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_alignParentEnd="true"
@@ -280,7 +280,7 @@
                             android:elevation="6dp"
                             android:padding="1dp">
 
-                            <android.support.v7.widget.AppCompatImageView
+                            <androidx.appcompat.widget.AppCompatImageView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_alignParentEnd="true"
@@ -323,7 +323,7 @@
                             android:elevation="6dp"
                             android:padding="7dp">
 
-                            <android.support.v7.widget.AppCompatImageView
+                            <androidx.appcompat.widget.AppCompatImageView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_alignParentEnd="true"

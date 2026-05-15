@@ -1,7 +1,7 @@
 package com.housemaid.activities.user.fromHome;
 
 import android.content.Intent;
-import android.databinding.DataBindingUtil;
+import androidx.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.view.View;
 
@@ -10,7 +10,7 @@ import com.housemaid.R;
 import com.housemaid.activities.BaseActivity;
 import com.housemaid.databinding.ActivityMyListingDetailsBinding;
 import com.housemaid.model.SignUpModel;
-import com.squareup.picasso.Picasso;
+import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
 
@@ -55,8 +55,8 @@ public class MyListingDetailsActivity extends BaseActivity implements View.OnCli
         }
         //LOAD IMAGE HERE
         if (imgUrl != null) {
-            /*Picasso.get().load(imgUrl)
-                    .fit().error(R.drawable.user).into(binding.profilePic);*/
+            /*Glide.with(itemView.getContext()).load(imgUrl)
+                    .error(R.drawable.user).into(binding.profilePic);*/
             Glide.with(this).load(imgUrl).error(R.drawable.user).into(binding.profilePic);
 
         } else {

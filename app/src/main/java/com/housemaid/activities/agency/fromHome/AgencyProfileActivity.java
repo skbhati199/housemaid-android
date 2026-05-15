@@ -1,9 +1,9 @@
 package com.housemaid.activities.agency.fromHome;
 
-import android.databinding.DataBindingUtil;
+import androidx.databinding.DataBindingUtil;
 import android.os.Bundle;
-import android.support.design.widget.TabLayout;
-import android.support.v4.view.ViewPager;
+import com.google.android.material.tabs.TabLayout;
+import androidx.viewpager.widget.ViewPager;
 import android.view.View;
 
 import com.housemaid.R;
@@ -11,7 +11,7 @@ import com.housemaid.activities.BaseActivity;
 import com.housemaid.adapter.ViewPageAdapter;
 import com.housemaid.databinding.ActivityAgencyProfileBinding;
 import com.housemaid.model.SignUpModel;
-import com.squareup.picasso.Picasso;
+import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
 

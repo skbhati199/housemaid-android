@@ -12,10 +12,12 @@ import android.media.AudioAttributes;
 import android.media.RingtoneManager;
 import android.net.Uri;
 import android.os.Build;
-import android.support.annotation.RequiresApi;
-import android.support.v4.app.NotificationCompat;
-import android.support.v4.content.ContextCompat;
 import android.util.Log;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
+import androidx.core.app.NotificationCompat;
+import androidx.core.content.ContextCompat;
 
 import com.housemaid.activities.LiveConversationActivity;
 import com.housemaid.activities.NotificationActivity;
@@ -35,7 +37,8 @@ import java.util.Set;
 
 public class MyFirebaseMessagingService extends FirebaseMessagingService {
 
-    private static String CHANNEL_ID = "channel_01";
+    private static final String TAG = "FCMService";
+    private static final String CHANNEL_ID = "channel_01";
     PendingIntent pendingIntent, pIntentAccept, pIntentReject;
     String title;
     String msg;
@@ -48,33 +51,44 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
     String identifier;
     int notificationId = new Random().nextInt(60000);
 
+    /**
+     * Called when a new FCM token is generated.
+     * Replaces the deprecated FirebaseInstanceIdService.
+     */
     @Override
-    public void onMessageReceived(RemoteMessage message) {
+    public void onNewToken(@NonNull String token) {
+        super.onNewToken(token);
+        Log.d(TAG, "New FCM Token: " + token);
+        // TODO: Send token to your backend server if needed
+    }
+
+    @Override
+    public void onMessageReceived(@NonNull RemoteMessage message) {
         sharedPreference = SharedPreference.getInstance(this);
         String accessToken = sharedPreference.getString("signUp_token", "");
 
         if (sharedPreference.getInteger("entry_key", 0) == 1) {
             try {
                 userID = sharedPreference.getString("maid_id", "");
-            }catch (Exception e){
+            } catch (Exception e) {
                 e.printStackTrace();
-                System.out.print("Error My messaging Service:"+ e.toString());
+                Log.e(TAG, "Error My messaging Service:" + e.toString());
             }
         }
         if (sharedPreference.getInteger("entry_key", 0) == 2) {
             try {
                 userID = sharedPreference.getString("user_id", "");
-            }catch (Exception e){
+            } catch (Exception e) {
                 e.printStackTrace();
-                System.out.print("Error My messaging Service:"+ e.toString());
+                Log.e(TAG, "Error My messaging Service:" + e.toString());
             }
         }
         if (sharedPreference.getInteger("entry_key", 0) == 3) {
             try {
                 userID = sharedPreference.getString("agency_Id", "");
-                }catch (Exception e){
+            } catch (Exception e) {
                 e.printStackTrace();
-                System.out.print("Error My messaging Service:"+ e.toString());
+                Log.e(TAG, "Error My messaging Service:" + e.toString());
             }
         }
 
@@ -91,8 +105,15 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
                 URL url = new URL(image);
                 userImage = BitmapFactory.decodeStream(url.openConnection().getInputStream());
             } catch (IOException e) {
-                System.out.println(e);
+                Log.e(TAG, "Error loading image: " + e.toString());
             }
+        }
+
+        if (title == null) return;
+
+        int pendingIntentFlags = PendingIntent.FLAG_UPDATE_CURRENT;
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            pendingIntentFlags |= PendingIntent.FLAG_IMMUTABLE;
         }
 
         if (title.equals("Request for Vedio call")) {
@@ -108,27 +129,10 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
             intentAction2.putExtra("sender_id", sender_id);
             intentAction2.putExtra("accessToken", accessToken);
 
+            pIntentAccept = PendingIntent.getBroadcast(this, 1, intentAction1, pendingIntentFlags);
+            pIntentReject = PendingIntent.getBroadcast(this, 2, intentAction2, pendingIntentFlags);
 
-            pIntentAccept = PendingIntent.getBroadcast(this, 1, intentAction1, PendingIntent.FLAG_UPDATE_CURRENT);
-            pIntentReject = PendingIntent.getBroadcast(this, 2, intentAction2, PendingIntent.FLAG_UPDATE_CURRENT);
-
-            if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
-                setupforLiveConversation(msg, notificationId);
-            } else {
-
-                NotificationCompat.Builder notificationBuilder = (NotificationCompat.Builder) new NotificationCompat.Builder(this)
-                        .setSmallIcon(R.drawable.logo)
-                        .setContentTitle("Live Conversation Request")
-                        .setContentText(msg)
-                        //Using this action button I would like to call logTest
-                        .addAction(R.drawable.check_selected, "Accept", pIntentAccept)
-                        .addAction(R.drawable.check_selected, "Reject", pIntentReject)
-                        .setOngoing(true);
-                NotificationManager notificationManager =
-                        (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
-
-                notificationManager.notify(notificationId, notificationBuilder.build());
-            }
+            setupforLiveConversation(msg, notificationId);
 
         } else if (title.equals("VideoCall")) {
 
@@ -155,8 +159,13 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
 
     private void sendMyNotification(RemoteMessage message) {
 
-
         Log.d("msg", msg);
+
+        int pendingIntentFlags = PendingIntent.FLAG_ONE_SHOT;
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            pendingIntentFlags |= PendingIntent.FLAG_IMMUTABLE;
+        }
+
         if (title.equals("Live Chat")) {
             String runningState = sharedPreference.getString("running", "no");
             if (runningState.equals("no")) {
@@ -169,28 +178,9 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
                 intent.putExtra("identifier", identifier);
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 pendingIntent = PendingIntent.getActivity(this, 0,
-                        intent, PendingIntent.FLAG_ONE_SHOT);
+                        intent, pendingIntentFlags);
 
-                if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
-                    setupChannels(msg, pendingIntent);
-                } else {
-                    Uri soundUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
-                    NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(this)
-                            .setColor(ContextCompat.getColor(this, R.color.colorPrimary))
-                            .setSmallIcon(R.drawable.logo)
-                            .setLargeIcon(userImage)
-                            .setContentTitle(name)
-                            .setContentText(msg)
-                            .setSound(soundUri)
-                            .setPriority(NotificationManager.IMPORTANCE_HIGH)
-                            .setAutoCancel(true)
-                            .setContentIntent(pendingIntent);
-
-                    NotificationManager notificationManager =
-                            (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
-
-                    notificationManager.notify(notificationId, notificationBuilder.build());
-                }
+                setupChannels(msg, pendingIntent);
             }
 
         } else {
@@ -198,59 +188,39 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
             Intent intent = new Intent(this, NotificationActivity.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             pendingIntent = PendingIntent.getActivity(this, 0,
-                    intent, PendingIntent.FLAG_ONE_SHOT);
+                    intent, pendingIntentFlags);
 
-
-            if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
-                setupChannels(msg, pendingIntent);
-            } else {
-
-                Uri soundUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
-                NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(this)
-                        .setColor(ContextCompat.getColor(this, R.color.colorPrimary))
-                        .setSmallIcon(R.drawable.logo)
-                        .setLargeIcon(userImage)
-                        .setContentTitle(name)
-                        .setContentText(msg)
-                        .setSound(soundUri)
-                        .setPriority(NotificationManager.IMPORTANCE_HIGH)
-                        .setAutoCancel(true)
-                        .setContentIntent(pendingIntent);
-
-                NotificationManager notificationManager =
-                        (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
-
-                notificationManager.notify(notificationId, notificationBuilder.build());
-            }
+            setupChannels(msg, pendingIntent);
         }
-        //Setting up Notification channels for android O and above
     }
 
 
-    @RequiresApi(api = Build.VERSION_CODES.O)
     private void setupChannels(String message, PendingIntent pendingIntent) {
         CharSequence adminChannelName = "Housemaid_Channel";
         String adminChannelDescription = "Housemaid Notification Channel";
         Uri soundUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
 
-        AudioAttributes audioAttributes = new AudioAttributes.Builder()
-                .setUsage(AudioAttributes.USAGE_ASSISTANCE_SONIFICATION)
-                .setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION)
-                .build();
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            AudioAttributes audioAttributes = new AudioAttributes.Builder()
+                    .setUsage(AudioAttributes.USAGE_ASSISTANCE_SONIFICATION)
+                    .setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION)
+                    .build();
 
-        NotificationChannel adminChannel;
-        adminChannel = new NotificationChannel(CHANNEL_ID, adminChannelName,
-                NotificationManager.IMPORTANCE_DEFAULT);
-        adminChannel.setDescription(adminChannelDescription);
-        adminChannel.enableLights(true);
-        adminChannel.setLightColor(Color.RED);
-        adminChannel.enableVibration(true);
-        adminChannel.setSound(soundUri, audioAttributes);
-        NotificationManager notificationManager1 = getSystemService(NotificationManager.class);
+            NotificationChannel adminChannel;
+            adminChannel = new NotificationChannel(CHANNEL_ID, adminChannelName,
+                    NotificationManager.IMPORTANCE_DEFAULT);
+            adminChannel.setDescription(adminChannelDescription);
+            adminChannel.enableLights(true);
+            adminChannel.setLightColor(Color.RED);
+            adminChannel.enableVibration(true);
+            adminChannel.setSound(soundUri, audioAttributes);
+            NotificationManager notificationManager1 = getSystemService(NotificationManager.class);
 
-        if (notificationManager1 != null) {
-            notificationManager1.createNotificationChannel(adminChannel);
+            if (notificationManager1 != null) {
+                notificationManager1.createNotificationChannel(adminChannel);
+            }
         }
+
         NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(this,
                 CHANNEL_ID)
                 .setColor(ContextCompat.getColor(this, R.color.colorPrimary))
@@ -259,38 +229,43 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
                 .setContentText(message)
                 .setContentTitle(name)
                 .setSound(soundUri)
-                .setPriority(NotificationManager.IMPORTANCE_HIGH)
+                .setPriority(NotificationCompat.PRIORITY_HIGH)
                 .setAutoCancel(true)
                 .setContentIntent(pendingIntent);
 
-        notificationManager1.notify(notificationId, notificationBuilder.build());
-
+        NotificationManager notificationManager =
+                (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+        if (notificationManager != null) {
+            notificationManager.notify(notificationId, notificationBuilder.build());
+        }
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.O)
     private void setupforLiveConversation(String message, int notificationId) {
         CharSequence adminChannelName = "Housemaid_Channel";
         String adminChannelDescription = "Housemaid Notification Channel";
         Uri soundUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
 
-        AudioAttributes audioAttributes = new AudioAttributes.Builder()
-                .setUsage(AudioAttributes.USAGE_ASSISTANCE_SONIFICATION)
-                .setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION)
-                .build();
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            AudioAttributes audioAttributes = new AudioAttributes.Builder()
+                    .setUsage(AudioAttributes.USAGE_ASSISTANCE_SONIFICATION)
+                    .setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION)
+                    .build();
 
-        NotificationChannel adminChannel;
-        adminChannel = new NotificationChannel(CHANNEL_ID, adminChannelName,
-                NotificationManager.IMPORTANCE_DEFAULT);
-        adminChannel.setDescription(adminChannelDescription);
-        adminChannel.enableLights(true);
-        adminChannel.setLightColor(Color.RED);
-        adminChannel.enableVibration(true);
-        adminChannel.setSound(soundUri, audioAttributes);
-        NotificationManager notificationManager1 = getSystemService(NotificationManager.class);
+            NotificationChannel adminChannel;
+            adminChannel = new NotificationChannel(CHANNEL_ID, adminChannelName,
+                    NotificationManager.IMPORTANCE_DEFAULT);
+            adminChannel.setDescription(adminChannelDescription);
+            adminChannel.enableLights(true);
+            adminChannel.setLightColor(Color.RED);
+            adminChannel.enableVibration(true);
+            adminChannel.setSound(soundUri, audioAttributes);
+            NotificationManager notificationManager1 = getSystemService(NotificationManager.class);
 
-        if (notificationManager1 != null) {
-            notificationManager1.createNotificationChannel(adminChannel);
+            if (notificationManager1 != null) {
+                notificationManager1.createNotificationChannel(adminChannel);
+            }
         }
+
         NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(this,
                 CHANNEL_ID)
                 .setColor(ContextCompat.getColor(this, R.color.colorPrimary))
@@ -298,16 +273,18 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
                 .setContentTitle("Live Conversation Request")
                 .setContentText(message)
                 .setSound(soundUri)
-                //Using this action button I would like to call logTest
                 .addAction(R.drawable.check_selected, "Accept", pIntentAccept)
                 .addAction(R.drawable.check_selected, "Reject", pIntentReject)
-                .setPriority(NotificationManager.IMPORTANCE_MAX)
+                .setPriority(NotificationCompat.PRIORITY_MAX)
                 .setAutoCancel(true)
                 .setContentIntent(pendingIntent)
                 .setOngoing(true);
 
-        notificationManager1.notify(notificationId, notificationBuilder.build());
-
+        NotificationManager notificationManager =
+                (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+        if (notificationManager != null) {
+            notificationManager.notify(notificationId, notificationBuilder.build());
+        }
     }
 
 

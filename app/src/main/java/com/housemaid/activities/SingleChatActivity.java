@@ -1,12 +1,12 @@
 package com.housemaid.activities;
 
 import android.content.Intent;
-import android.databinding.DataBindingUtil;
+import androidx.databinding.DataBindingUtil;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.PopupMenu;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.appcompat.widget.PopupMenu;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.Gravity;
@@ -46,7 +46,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-import static com.androidquery.util.AQUtility.getContext;
+// AQuery removed
 
 public class SingleChatActivity extends BaseActivity implements View.OnClickListener {
 

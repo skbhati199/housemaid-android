@@ -8,7 +8,7 @@
         android:layout_marginStart="5dp"
         android:background="@color/colorGrey">
 
-        <android.support.v7.widget.AppCompatImageView
+        <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/ivProfilePic"
             android:layout_width="match_parent"
             android:layout_height="match_parent"

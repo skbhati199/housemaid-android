@@ -1,8 +1,8 @@
 package com.housemaid.activities.agency.fromHome;
 
 import android.content.Intent;
-import android.databinding.DataBindingUtil;
-import android.support.design.widget.TabLayout;
+import androidx.databinding.DataBindingUtil;
+import com.google.android.material.tabs.TabLayout;
 import android.os.Bundle;
 import android.view.View;
 

@@ -5,7 +5,7 @@ import android.content.Context;
 import android.graphics.Color;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
-import android.support.design.widget.Snackbar;
+import com.google.android.material.snackbar.Snackbar;
 import android.text.TextUtils;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
@@ -52,7 +52,7 @@ public class ValidationUtils {
             snackbar.setActionTextColor(Color.WHITE);
             View sbView = snackbar.getView();
             sbView.setAlpha(0.8f);
-            TextView textView = sbView.findViewById(android.support.design.R.id.snackbar_text);
+            TextView textView = sbView.findViewById(com.google.android.material.R.id.snackbar_text);
             textView.setTextColor(Color.WHITE);
             snackbar.show();
             return false;

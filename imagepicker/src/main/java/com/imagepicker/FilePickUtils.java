@@ -21,19 +21,19 @@ import android.os.Build;
 import android.os.Environment;
 import android.provider.MediaStore;
 import android.provider.Settings;
-import android.support.annotation.NonNull;
-import android.support.annotation.RequiresApi;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.app.Fragment;
-import android.support.v7.app.AlertDialog;
+import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
+import androidx.core.app.ActivityCompat;
+import androidx.fragment.app.Fragment;
+import androidx.appcompat.app.AlertDialog;
 import android.util.Log;
 import android.widget.Toast;
 
 import com.imagepicker.pdfpicker.Constant;
 import com.imagepicker.pdfpicker.NormalFile;
 import com.imagepicker.pdfpicker.NormalFilePickActivity;
-import com.theartofdev.edmodo.cropper.CropImage;
-import com.theartofdev.edmodo.cropper.CropImageView;
+import com.canhub.cropper.CropImage;
+import com.canhub.cropper.CropImageView;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -44,11 +44,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-import rx.Observable;
-import rx.Subscriber;
-import rx.android.schedulers.AndroidSchedulers;
-import rx.functions.Func0;
-import rx.schedulers.Schedulers;
+import io.reactivex.rxjava3.core.Observable;
+import io.reactivex.rxjava3.core.Observer;
+import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
+import io.reactivex.rxjava3.disposables.Disposable;
+import io.reactivex.rxjava3.schedulers.Schedulers;
 
 /**
  * Created by krupal on 10/10/16.
@@ -516,27 +516,25 @@ public class FilePickUtils implements LifeCycleCallBackManager {
     //This method is for compress image
     private void performImageProcessing(final String imageUrl,
                                         final FileType type) {
-        Observable.defer(new Func0<Observable<String>>() {
-            @Override
-            public Observable<String> call() {
-                return Observable.just(compressImage(imageUrl));
-            }
-        }).subscribeOn(Schedulers.io())
+        Observable.fromCallable(() -> compressImage(imageUrl))
+                .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new Subscriber<String>() {
+                .subscribe(new Observer<String>() {
                     @Override
-                    public void onCompleted() {
-
+                    public void onSubscribe(@io.reactivex.rxjava3.annotations.NonNull Disposable d) {
                     }
 
                     @Override
-                    public void onError(Throwable e) {
-
-                    }
-
-                    @Override
-                    public void onNext(String s) {
+                    public void onNext(@io.reactivex.rxjava3.annotations.NonNull String s) {
                         onFileChoose(s);
+                    }
+
+                    @Override
+                    public void onError(@io.reactivex.rxjava3.annotations.NonNull Throwable e) {
+                    }
+
+                    @Override
+                    public void onComplete() {
                     }
                 });
     }

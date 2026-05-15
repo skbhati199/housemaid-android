@@ -1,22 +1,22 @@
 package com.housemaid.activities.user.fromHome;
 
-import android.databinding.DataBindingUtil;
+import androidx.databinding.DataBindingUtil;
 import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
-import android.support.design.widget.TabLayout;
-import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
+import com.google.android.material.tabs.TabLayout;
+import androidx.viewpager.widget.ViewPager;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
-import com.androidquery.AQuery;
+// AQuery removed - use Glide for image loading
 import com.housemaid.R;
 import com.housemaid.activities.BaseActivity;
 import com.housemaid.adapter.ViewPageAdapter;
 import com.housemaid.adapter.ViewPagerAdapter;
 import com.housemaid.databinding.ActivityUserProfileBinding;
 import com.housemaid.model.SignUpModel;
-import com.squareup.picasso.Picasso;
+import com.bumptech.glide.Glide;
 import com.squareup.picasso.Target;
 
 import java.net.MalformedURLException;

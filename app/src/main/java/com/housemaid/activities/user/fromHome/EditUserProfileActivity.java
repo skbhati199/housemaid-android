@@ -6,7 +6,7 @@ import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.databinding.DataBindingUtil;
+import androidx.databinding.DataBindingUtil;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
@@ -14,10 +14,10 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
-import android.support.annotation.NonNull;
-import android.support.v4.app.ActivityCompat;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
+import androidx.annotation.NonNull;
+import androidx.core.app.ActivityCompat;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 import android.view.Window;
@@ -46,7 +46,7 @@ import com.housemaid.utils.ValidationUtils;
 import com.google.gson.Gson;
 import com.imagepicker.FilePickUtils;
 import com.imagepicker.LifeCycleCallBackManager;
-import com.squareup.picasso.Picasso;
+import com.bumptech.glide.Glide;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -161,8 +161,8 @@ public class EditUserProfileActivity extends BaseActivity implements View.OnClic
                         .getBig());
             }
 
-            Picasso.get().load(signUpModel.getUserImagesModel().get(0).getImageModel().getBig())
-                    .fit().error(R.drawable.user).into(binding.ivProfilePicBig);
+            Glide.with(itemView.getContext()).load(signUpModel.getUserImagesModel().get(0).getImageModel().getBig())
+                    .error(R.drawable.user).into(binding.ivProfilePicBig);
         }
         imageAdapter = new ImageAdapter(EditUserProfileActivity.this, imageList, bigImageList
                 , binding, imageIdList);

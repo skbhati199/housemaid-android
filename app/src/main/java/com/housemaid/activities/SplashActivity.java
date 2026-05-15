@@ -3,19 +3,18 @@ package com.housemaid.activities;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.v7.app.AppCompatActivity;
+import android.os.Looper;
 import android.util.Log;
 import android.view.WindowManager;
 
-import com.crashlytics.android.Crashlytics;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.housemaid.R;
 import com.housemaid.activities.agency.fromHome.HomeAgencyActivity;
 import com.housemaid.activities.maid.fromHome.activity.HomeForMaidActivity;
 import com.housemaid.activities.user.fromHome.HomeUserActivity;
 import com.housemaid.utils.AppSignatureHelper;
 import com.housemaid.utils.SharedPreference;
-
-import io.fabric.sdk.android.Fabric;
 
 public class SplashActivity extends AppCompatActivity {
 
@@ -24,7 +23,7 @@ public class SplashActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Fabric.with(this, new Crashlytics());
+        // Firebase Crashlytics auto-initializes — no Fabric.with() needed
         setContentView(R.layout.activity_splash);
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
@@ -37,7 +36,7 @@ public class SplashActivity extends AppCompatActivity {
 
 
         // Using handler with postDelayed called runnable run method
-        new Handler().postDelayed(() -> {
+        new Handler(Looper.getMainLooper()).postDelayed(() -> {
             if (isSessioMantained) {
 
                 if (sharedPreference.getInteger("entry_key", 0) == 1) {

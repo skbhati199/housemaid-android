@@ -4,15 +4,15 @@ import android.Manifest;
 import android.app.Dialog;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.databinding.DataBindingUtil;
+import androidx.databinding.DataBindingUtil;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
-import android.support.annotation.NonNull;
-import android.support.v4.app.ActivityCompat;
+import androidx.annotation.NonNull;
+import androidx.core.app.ActivityCompat;
 import android.util.Log;
 import android.view.View;
 import android.view.Window;
@@ -296,7 +296,7 @@ public class AddMaidFirstActivity extends BaseActivity implements View.OnClickLi
                     .getDefaultCountryCodeWithPlus()));
             userDetailMap.put("mobile", createPartFromString(binding.etMobileNumber.getText()
                     .toString().trim()));
-            userDetailMap.put("device_token", createPartFromString(Constants.REFRESHTOKEN));
+            userDetailMap.put("device_token", createPartFromString(""));
             userDetailMap.put("device_type", createPartFromString(Constants.userType(this)));
             userDetailMap.put("email", createPartFromString(binding.etEmailID.getText().toString()
                     .trim()));

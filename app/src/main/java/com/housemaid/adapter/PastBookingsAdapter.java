@@ -4,10 +4,10 @@ import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
-import android.support.annotation.NonNull;
-import android.support.v7.widget.CardView;
-import android.support.v7.widget.PopupMenu;
-import android.support.v7.widget.RecyclerView;
+import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
+import androidx.appcompat.widget.PopupMenu;
+import androidx.recyclerview.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
@@ -34,7 +34,7 @@ import com.housemaid.rest.ApiInterface;
 import com.housemaid.utils.MyEditText;
 import com.housemaid.utils.SharedPreference;
 import com.google.gson.Gson;
-import com.squareup.picasso.Picasso;
+import com.bumptech.glide.Glide;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -102,7 +102,7 @@ public class PastBookingsAdapter extends RecyclerView.Adapter<PastBookingsAdapte
 
         if (pastBookingDetail.getMaidBookedImageModel() != null && pastBookingDetail.getMaidBookedImageModel().size() > 0) {
 
-            Picasso.get().load(pastBookingDetail.getMaidBookedImageModel().get(0).getImageModel().getSmall())
+            Glide.with(itemView.getContext()).load(pastBookingDetail.getMaidBookedImageModel().get(0).getImageModel().getSmall())
                     .error(R.drawable.avatar)
                     .fit().centerCrop().into(holder.ivPic);
         } else holder.ivPic.setImageResource(R.drawable.user );
@@ -172,7 +172,7 @@ public class PastBookingsAdapter extends RecyclerView.Adapter<PastBookingsAdapte
 
                 if (pastBookingDetail.getMaidBookedImageModel() != null && pastBookingDetail.getMaidBookedImageModel().size() > 0) {
 
-                    Picasso.get().load(pastBookingDetail.getMaidBookedImageModel().get(0).getImageModel().getSmall())
+                    Glide.with(itemView.getContext()).load(pastBookingDetail.getMaidBookedImageModel().get(0).getImageModel().getSmall())
                             .error(R.drawable.avatar)
                             .fit().centerCrop().into(civProfile);
                 } else holder.ivPic.setImageResource(R.drawable.user);

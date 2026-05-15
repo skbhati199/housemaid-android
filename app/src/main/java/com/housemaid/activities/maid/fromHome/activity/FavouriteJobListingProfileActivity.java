@@ -4,9 +4,9 @@ import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
-import android.databinding.DataBindingUtil;
+import androidx.databinding.DataBindingUtil;
 import android.os.Bundle;
-import android.support.v7.widget.AppCompatImageView;
+import androidx.appcompat.widget.AppCompatImageView;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -42,7 +42,7 @@ import com.housemaid.rest.ApiClient;
 import com.housemaid.rest.ApiInterface;
 import com.housemaid.utils.SharedPreference;
 import com.google.gson.Gson;
-import com.squareup.picasso.Picasso;
+import com.bumptech.glide.Glide;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -329,7 +329,7 @@ public class FavouriteJobListingProfileActivity extends BaseActivity implements 
         binding.tvUserMaritalStatus.setText(userDetailModel.getUserDetailModel().getMarital_status());
         binding.tvDob.setText(userDetailModel.getUserDetailModel().getDob());
 
-        Picasso.get().load(imageModelArrayList.get(0).getImageModel().getBig()).error(R.drawable.avatar)
+        Glide.with(itemView.getContext()).load(imageModelArrayList.get(0).getImageModel().getBig()).error(R.drawable.avatar)
                 .fit().centerCrop().into(binding.ivProfilePicBig);
 
         binding.tvCity.setText(userDetailModel.getCity_name());

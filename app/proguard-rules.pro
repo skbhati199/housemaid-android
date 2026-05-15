@@ -19,6 +19,61 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
- -ignorewarnings
- -keep class io.agora.**{*;}
- -keep class rx.internal.util.unsafe.** { *; }
+
+-ignorewarnings
+
+# Retrofit
+-keepattributes Signature, InnerClasses, EnclosingMethod
+-keepattributes RuntimeVisibleAnnotations, RuntimeVisibleParameterAnnotations
+-keepattributes AnnotationDefault
+-keepclassmembers,allowshrinking,allowobfuscation interface * {
+    @retrofit2.http.* <methods>;
+}
+-dontwarn org.codehaus.mojo.animal_sniffer.IgnoreJRERequirement
+-dontwarn javax.annotation.**
+-dontwarn kotlin.Unit
+-dontwarn retrofit2.KotlinExtensions
+-dontwarn retrofit2.KotlinExtensions$*
+-if interface * { @retrofit2.http.* <methods>; }
+-keep,allowobfuscation interface <1>
+-keep,allowobfuscation,allowshrinking interface retrofit2.Call
+-keep,allowobfuscation,allowshrinking class retrofit2.Response
+
+# OkHttp
+-dontwarn okhttp3.**
+-dontwarn okio.**
+-keep class okhttp3.** { *; }
+
+# Gson
+-keepattributes Signature
+-keep class com.google.gson.** { *; }
+-keep class * implements com.google.gson.TypeAdapterFactory
+-keep class * implements com.google.gson.JsonSerializer
+-keep class * implements com.google.gson.JsonDeserializer
+-keepclassmembers,allowobfuscation class * {
+  @com.google.gson.annotations.SerializedName <fields>;
+}
+
+# Glide
+-keep public class * implements com.bumptech.glide.module.GlideModule
+-keep class * extends com.bumptech.glide.module.AppGlideModule {
+ <init>(...);
+}
+-keep public enum com.bumptech.glide.load.ImageHeaderParser$** {
+  **[] $VALUES;
+  public *;
+}
+-keep class com.bumptech.glide.load.data.ParcelFileDescriptorRewinder$InternalRewinder {
+  *** rewind();
+}
+
+# Firebase Crashlytics
+-keepattributes SourceFile,LineNumberTable
+-keep public class * extends java.lang.Exception
+
+# Data models (keep for Gson deserialization)
+-keep class com.housemaid.model.** { *; }
+
+# Google Play Services
+-keep class com.google.android.gms.** { *; }
+-dontwarn com.google.android.gms.**

@@ -3,15 +3,15 @@ package com.housemaid.activities.agency.fromHome;
 import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.Intent;
-import android.databinding.DataBindingUtil;
+import androidx.databinding.DataBindingUtil;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.v4.widget.DrawerLayout;
-import android.support.v4.widget.SwipeRefreshLayout;
-import android.support.v7.app.ActionBarDrawerToggle;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.Toolbar;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
+import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.appcompat.widget.Toolbar;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
@@ -52,7 +52,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.gson.Gson;
-import com.squareup.picasso.Picasso;
+import com.bumptech.glide.Glide;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -568,7 +568,7 @@ public class HomeAgencyActivity extends BaseActivity implements View.OnClickList
                                 !signUpModel.getUserImagesModel().get(0).getImageModel().getSmall().isEmpty()) {
                             sharedPreference.putString("agency_pic", String.valueOf(signUpModel
                                     .getUserImagesModel().get(0).getImageModel().getBig()));
-                            Picasso.get().load(signUpModel.getUserImagesModel().get(0).getImageModel()
+                            Glide.with(itemView.getContext()).load(signUpModel.getUserImagesModel().get(0).getImageModel()
                                     .getSmall())
                                     .fit()
                                     .error(R.drawable.avatar)
